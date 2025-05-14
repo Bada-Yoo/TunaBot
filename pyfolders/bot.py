@@ -36,33 +36,4 @@ async def tuna(ctx, cmd, *, name):
         await ctx.send("지원하지 않는 명령어입니다.")
 
 
-
-
-import requests
-
-RIOT_API_KEY = "RGAPI-7a9876f6-e68d-4907-aa0e-502b39ebc6ae"
-summoner_name = "바다속참치"
-encoded_name = requests.utils.quote(summoner_name)
-url = f"https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{encoded_name}"
-
-headers = {
-    "X-Riot-Token": RIOT_API_KEY
-}
-
-res = requests.get(url, headers=headers)
-
-print("🔍 요청 URL:", url)
-print("🔍 응답 코드:", res.status_code)
-print("🔍 응답 내용:", res.text)
-
-
-
-
-
-
-
-
-
-
-
 bot.run(TOKEN)
