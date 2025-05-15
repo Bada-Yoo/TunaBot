@@ -77,7 +77,6 @@ async def send_lol_stats(ctx, riot_id):
         win = me["win"]
         champion_pool.append(champ)
 
-        # 모든 큐를 수집
         queue_counter[queue_id].append(win)
 
         if i < 5:
@@ -85,11 +84,9 @@ async def send_lol_stats(ctx, riot_id):
             result = "🏆 승" if win else "💀 패"
             recent_games_text += f"{champ} | {k}/{d}/{a} | {result} | {queue_name}\n"
 
-    # 모스트 챔피언
     most_common = Counter(champion_pool).most_common(3)
     most_used = ", ".join([c for c, _ in most_common]) if most_common else "정보 없음"
 
-    # 큐별 승률 출력
     queue_lines = []
     for qid, games in queue_counter.items():
         name = QUEUE_TYPES.get(qid, "이벤트 모드")
@@ -100,12 +97,13 @@ async def send_lol_stats(ctx, riot_id):
             queue_lines.append(f"{name}: {total}판 ({winrate}%)")
     queue_summary_text = " | ".join(queue_lines) if queue_lines else "분석된 경기 없음"
 
-    # Embed 생성
     embed = discord.Embed(
-        title=f"{game_name}#{tag_line}님의 롤 전적",
+        title=f"{game_name}#{tag_line}님's\n롤 전적",
         description=(
             f"레벨: {level} | 현 시즌 랭크: {rank_info}\n\n"
-            f"🌊 최근 10경기 (판수 & 승률)\n"
+            f"**🌊 최근 5경기 (KDA & 결과)**\n"
+            f"{recent_games_text}\n"
+            f"**🌊 최근 10경기 (판수 & 승률)**\n"
             f"모스트 챔피언: {most_used}\n"
             f"{queue_summary_text}"
         ),
@@ -113,9 +111,6 @@ async def send_lol_stats(ctx, riot_id):
     )
     embed.set_author(name="🐟TunaBot 전적 정보")
     embed.set_thumbnail(url=icon_url)
-    if tier_image_url:
-        embed.set_image(url=tier_image_url)
-    embed.add_field(name="🌊 최근 5경기 (KDA & 결과)", value=recent_games_text, inline=False)
     embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
 
     await ctx.send(embed=embed)
