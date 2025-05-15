@@ -25,18 +25,29 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send('퐁!')
 
-@bot.command(name="참치")
-async def tuna(ctx, cmd, *, name):
-    if cmd == "롤전적":
-        await send_lol_stats(ctx, name)
-    elif cmd == "롤체전적":
-        await send_tft_stats(ctx, name)
-    elif cmd == "롤현재":
-        await send_lol_live_status(ctx, name)
-#    elif cmd == "발로전적":
-#        await send_valorant_stats(ctx, name)
+# !롤 전적 [RiotID]
+@bot.command(name="롤")
+async def lol_command(ctx, subcommand, *, riot_id):
+    if subcommand == "전적":
+        await send_lol_stats(ctx, riot_id)
+    elif subcommand == "현재":
+        await send_lol_live_status(ctx, riot_id)
     else:
         await ctx.send("지원하지 않는 명령어입니다.")
+
+# !롤체 전적 [RiotID]
+@bot.command(name="롤체")
+async def tft_command(ctx, subcommand, *, riot_id):
+    if subcommand == "전적":
+        await send_tft_stats(ctx, riot_id)
+    else:
+        await ctx.send("지원하지 않는 명령어입니다.")
+
+# 예시 확장 가능:
+# @bot.command(name="발로")
+# async def valorant_command(ctx, subcommand, *, riot_id):
+#     if subcommand == "전적":
+#         await send_valorant_stats(ctx, riot_id)
 
 
 bot.run(TOKEN)
