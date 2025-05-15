@@ -1,41 +1,34 @@
-import discord
-import requests
 import os
+import requests
+import discord
+from urllib.parse import quote
 from dotenv import load_dotenv
-import urllib.parse #깨질까봐
+from collections import Counter, defaultdict
 
 load_dotenv()
 RIOT_API_KEY = os.getenv("RIOT_API_KEY")
 HEADERS = {"X-Riot-Token": RIOT_API_KEY}
 
-# 큐 이름 매핑
 QUEUE_TYPES = {
-    420: "솔로랭크",
+    420: "솔로 랭크",
     430: "일반 게임",
     440: "자유랭크",
-    450: "칼바람 나락",
-    900: "URF",
-    700: "격전",
-    1700: "아레나"
+    450: "칼바람 나락"
 }
 
-# Riot API 요청 함수들
-def get_summoner_data(summoner_name):
-    encoded_name = urllib.parse.quote(summoner_name)
-    url = f"https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{encoded_name}"
-    res = requests.get(url, headers=HEADERS)
+def get_puuid_by_riot_id(game_name, tag_line):
+    url = f"https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{quote(game_name)}/{quote(tag_line)}"
+    return requests.get(url, headers=HEADERS).json()
 
-    print("🔍 요청 URL:", url)
-    print("🔍 응답 코드:", res.status_code)
-    print("🔍 응답 내용:", res.text)
-
-    return res.json()
+def get_summoner_by_puuid(puuid):
+    url = f"https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{puuid}"
+    return requests.get(url, headers=HEADERS).json()
 
 def get_rank_data(encrypted_summoner_id):
     url = f"https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/{encrypted_summoner_id}"
     return requests.get(url, headers=HEADERS).json()
 
-def get_match_ids(puuid, count=5):
+def get_match_ids(puuid, count=10):
     url = f"https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?start=0&count={count}"
     return requests.get(url, headers=HEADERS).json()
 
@@ -43,48 +36,86 @@ def get_match_detail(match_id):
     url = f"https://asia.api.riotgames.com/lol/match/v5/matches/{match_id}"
     return requests.get(url, headers=HEADERS).json()
 
-# 디스코드 메시지 함수
-async def send_lol_stats(ctx, summoner_name):
-    summoner = get_summoner_data(summoner_name)
-    if "id" not in summoner:
-        await ctx.send("❌ 소환사를 찾을 수 없습니다.")
+async def send_lol_stats(ctx, riot_id):
+    if "#" not in riot_id:
+        await ctx.send("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.")
         return
 
-    profile_icon_id = summoner["profileIconId"]
+    game_name, tag_line = riot_id.split("#")
+    account = get_puuid_by_riot_id(game_name, tag_line)
+    if "puuid" not in account:
+        await ctx.send("❌ Riot ID를 찾을 수 없습니다.")
+        return
+
+    puuid = account["puuid"]
+    summoner = get_summoner_by_puuid(puuid)
+    encrypted_id = summoner["id"]
     level = summoner["summonerLevel"]
+    profile_icon_id = summoner["profileIconId"]
     icon_url = f"http://ddragon.leagueoflegends.com/cdn/14.10.1/img/profileicon/{profile_icon_id}.png"
 
-    rank_data = get_rank_data(summoner["id"])
+    # 랭크 정보
+    rank_data = get_rank_data(encrypted_id)
     solo = next((r for r in rank_data if r["queueType"] == "RANKED_SOLO_5x5"), None)
+    rank_info = solo["tier"] + " " + solo["rank"] if solo else "Unranked"
+    tier_image_url = f"https://opgg-static.akamaized.net/images/medals/{solo['tier'].upper()}.png" if solo else None
 
-    if solo:
-        tier = solo["tier"]
-        rank = solo["rank"]
-        wins = solo["wins"]
-        losses = solo["losses"]
-        total = wins + losses
-        winrate = round(wins / total * 100, 1)
-        rank_info = f"{tier} {rank} / {wins}승 {losses}패 / 승률 {winrate}%"
-    else:
-        rank_info = "솔로랭크 정보 없음"
+    # 최근 경기 분석
+    match_ids = get_match_ids(puuid, count=10)
 
-    match_ids = get_match_ids(summoner["puuid"], count=5)
-    match_lines = []
-    for i, mid in enumerate(match_ids):
-        match = get_match_detail(mid)
-        me = next(p for p in match["info"]["participants"] if p["puuid"] == summoner["puuid"])
+    champion_pool = []
+    queue_counter = defaultdict(list)
+    recent_games_text = ""
+
+    for i, match_id in enumerate(match_ids):
+        match = get_match_detail(match_id)
+        queue_id = match["info"].get("queueId", -1)
+        me = next(p for p in match["info"]["participants"] if p["puuid"] == puuid)
+
         champ = me["championName"]
         k, d, a = me["kills"], me["deaths"], me["assists"]
-        win = "승" if me["win"] else "패"
-        queue = QUEUE_TYPES.get(match["info"].get("queueId", -1), "기타")
-        match_lines.append(f"{i+1}. {champ} / {k}/{d}/{a} / {win} / {queue}")
+        win = me["win"]
+        champion_pool.append(champ)
 
+        # 모든 큐를 수집
+        queue_counter[queue_id].append(win)
+
+        if i < 5:
+            queue_name = QUEUE_TYPES.get(queue_id, "이벤트 모드")
+            result = "🏆 승" if win else "💀 패"
+            recent_games_text += f"{champ} | {k}/{d}/{a} | {result} | {queue_name}\n"
+
+    # 모스트 챔피언
+    most_common = Counter(champion_pool).most_common(3)
+    most_used = ", ".join([c for c, _ in most_common]) if most_common else "정보 없음"
+
+    # 큐별 승률 출력
+    queue_lines = []
+    for qid, games in queue_counter.items():
+        name = QUEUE_TYPES.get(qid, "이벤트 모드")
+        if games:
+            total = len(games)
+            wins = sum(games)
+            winrate = round(wins / total * 100, 1)
+            queue_lines.append(f"{name}: {total}판 ({winrate}%)")
+    queue_summary_text = " | ".join(queue_lines) if queue_lines else "분석된 경기 없음"
+
+    # Embed 생성
     embed = discord.Embed(
-        title=f"{summoner_name} 님의 롤 전적",
-        description=f"📊 레벨: {level}\n🏆 {rank_info}",
-        color=discord.Color.blue()
+        title=f"{game_name}#{tag_line}님의 롤 전적",
+        description=(
+            f"레벨: {level} | 현 시즌 랭크: {rank_info}\n\n"
+            f"🌊 최근 10경기 (판수 & 승률)\n"
+            f"모스트 챔피언: {most_used}\n"
+            f"{queue_summary_text}"
+        ),
+        color=discord.Color.dark_blue()
     )
+    embed.set_author(name="🐟TunaBot 전적 정보")
     embed.set_thumbnail(url=icon_url)
-    embed.add_field(name="최근 5경기", value="\n".join(match_lines), inline=False)
+    if tier_image_url:
+        embed.set_image(url=tier_image_url)
+    embed.add_field(name="🌊 최근 5경기 (KDA & 결과)", value=recent_games_text, inline=False)
+    embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
 
     await ctx.send(embed=embed)
