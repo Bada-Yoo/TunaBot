@@ -31,7 +31,7 @@ for set_entry in data.get("setData", []):
                 elif category == "traits":
                     TRAIT_MAP[api_name] = name
 
-# 증강 매핑: items에서
+# 증강 매핑: items에서 (현재 API에서는 사용되지 않음)
 for entry in data.get("items", []):
     api_name = entry.get("apiName")
     name = entry.get("name")
@@ -110,23 +110,24 @@ async def send_tft_stats(ctx, riot_id):
         if place <= 4:
             top4_count += 1
 
-        units = [u["character_id"] for u in me["units"]]
-        unit_counter.update(units)
+        units = me["units"]
+        unit_counter.update([u["character_id"] for u in units])
+
+        units_sorted = sorted(units, key=lambda x: -x.get("rarity", 0))
+        top_units = [translate_unit(u["character_id"]) for u in units_sorted[:5]]
+        used_units_text = ", ".join(top_units) + ("..." if len(units_sorted) > 5 else "")
 
         traits = [t for t in me["traits"] if t["tier_current"] > 0]
         traits.sort(key=lambda x: x["tier_current"] * x["num_units"], reverse=True)
         top_traits = [translate_synergy(t["name"]) for t in traits[:3]]
 
-        augments = me.get("augments", [])
-        augments_text = ", ".join([translate_augment(a) for a in augments]) if augments else "정보 없음"
-
-        three_star_units = [translate_unit(u["character_id"]) for u in me["units"] if u.get("tier") == 3]
+        three_star_units = [translate_unit(u["character_id"]) for u in units if u.get("tier") == 3]
         stars_text = ", ".join(three_star_units) if three_star_units else "없음"
 
         recent5_text += (
-            f"{place}위 | Lv{level_final} | 시너지: {', '.join(top_traits)}\n"
-            f"       증강: {augments_text}\n"
-            f"       3성 유닛: {stars_text}\n"
+            f"**{place}위**  |  Lv{level_final}  |  시너지: {', '.join(top_traits)}\n"
+            f"사용 유닛: {used_units_text}\n"
+            f"3성 유닛: {stars_text}\n"
         )
 
     avg_level = round(total_level / len(match_ids), 2)
@@ -134,19 +135,21 @@ async def send_tft_stats(ctx, riot_id):
     most_units = ", ".join([translate_unit(u) for u, _ in unit_counter.most_common(3)])
 
     embed = discord.Embed(
-        title=f"{game_name}#{tag_line}님의 롤토체스 전적",
+        title=f"{game_name}#{tag_line}님's\n롤토체스 전적",
         description=(
-            f"🌊 **현 시즌 랭크**\n"
-            f"솔로 랭크: {solo_rank} | 더블업: {duo_rank}\n\n"
-            f"🌊 **최근 10경기**\n"
+            f"**🌊 현 시즌 랭크**\n"
+            f"솔로 랭크: {solo_rank}\n" 
+            f"더블업: {duo_rank}\n\n"
+            f"**🌊 최근 10경기**\n"
             f"평균 최종 레벨: {avg_level}\n"
             f"Top 4 비율: {top4_rate}%\n"
             f"모스트 유닛: {most_units}\n\n"
-            f"🌊 **최근 5경기**\n{recent5_text}"
+            f"**🌊 최근 5경기**\n{recent5_text}"
         ),
-        color=discord.Color.teal()
+        color=discord.Color.dark_blue()
     )
-    embed.set_author(name="🐟TunaBot TFT 정보", icon_url=icon_url)
+    embed.set_author(name="🐟 TunaBot 전적 정보") 
+    embed.set_thumbnail(url=icon_url)
     embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
 
     await ctx.send(embed=embed)
