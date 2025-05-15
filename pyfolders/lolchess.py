@@ -11,39 +11,41 @@ HEADERS = {"X-Riot-Token": RIOT_API_KEY}
 
 # 한글 번역 JSON 불러오기
 CD_URL = "https://raw.communitydragon.org/latest/cdragon/tft/ko_kr.json"
-CD_DATA = requests.get(CD_URL).json()
+data = requests.get(CD_URL).json()
 
-# 정규화 함수
-def normalize_key(key):
-    return key.replace("_", "").replace(" ", "").lower()
+CHAMPION_MAP = {}
+TRAIT_MAP = {}
+AUGMENT_MAP = {}
 
-# 챔피언, 시너지, 증강 이름 매핑
-CHAMPION_MAP = {
-    normalize_key(v["apiName"]): v["name"]
-    for v in CD_DATA.get("characters", [])
-    if v.get("apiName") and v.get("name")
-}
+# 유닛/시너지 매핑: setData 내부
+for set_entry in data.get("setData", []):
+    for category in ["champions", "traits"]:
+        for entry in set_entry.get(category, []):
+            if not isinstance(entry, dict):
+                continue
+            api_name = entry.get("apiName")
+            name = entry.get("name")
+            if api_name and name:
+                if category == "champions":
+                    CHAMPION_MAP[api_name] = name
+                elif category == "traits":
+                    TRAIT_MAP[api_name] = name
 
-TRAIT_MAP = {
-    normalize_key(v["apiName"]): v["name"]
-    for v in CD_DATA.get("traits", [])
-    if v.get("apiName") and v.get("name")
-}
-
-AUGMENT_MAP = {
-    normalize_key(v["apiName"]): v["name"]
-    for v in CD_DATA.get("augments", [])
-    if v.get("apiName") and v.get("name")
-}
+# 증강 매핑: items에서
+for entry in data.get("items", []):
+    api_name = entry.get("apiName")
+    name = entry.get("name")
+    if api_name and name and "Augment" in api_name:
+        AUGMENT_MAP[api_name] = name
 
 def translate_unit(name):
-    return CHAMPION_MAP.get(normalize_key(name), name)
+    return CHAMPION_MAP.get(name, name)
 
 def translate_synergy(name):
-    return TRAIT_MAP.get(normalize_key(name), name)
+    return TRAIT_MAP.get(name, name)
 
 def translate_augment(name):
-    return AUGMENT_MAP.get(normalize_key(name), name)
+    return AUGMENT_MAP.get(name, name)
 
 def get_puuid_by_riot_id(game_name, tag_line):
     url = f"https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{quote(game_name)}/{quote(tag_line)}"
