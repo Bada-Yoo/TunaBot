@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import discord    
 from discord.ext import commands
 from lol import send_lol_stats
-#from lolchess import send_tft_stats
+from lolchess import send_tft_stats
 #from valorant import send_valorant_stats
 
 # 토큰 불러오기
@@ -28,8 +28,8 @@ async def ping(ctx):
 async def tuna(ctx, cmd, *, name):
     if cmd == "롤전적":
         await send_lol_stats(ctx, name)
-#    elif cmd == "롤체전적":
-#        await send_tft_stats(ctx, name)
+    elif cmd == "롤체전적":
+        await send_tft_stats(ctx, name)
 #    elif cmd == "발로전적":
 #        await send_valorant_stats(ctx, name)
     else:
