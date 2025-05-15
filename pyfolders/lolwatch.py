@@ -124,7 +124,7 @@ async def send_lol_live_status(ctx, riot_id):
         ),
         color=discord.Color.teal()
     )
-    embed.set_author(name="🐟TunaBot 롤 라이브 정보")
+    embed.set_author(name="🐟TunaBot 라이브 정보")
     embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
 
     # 챔피언 썸네일 (영문 이름 기준)

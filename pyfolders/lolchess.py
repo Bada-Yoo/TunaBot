@@ -158,7 +158,7 @@ async def send_tft_stats(ctx, riot_id):
         ),
         color=discord.Color.dark_blue()
     )
-    embed.set_author(name="🐟TunaBot TFT 정보")
+    embed.set_author(name="🐟TunaBot 전적 정보")
     embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
 
     

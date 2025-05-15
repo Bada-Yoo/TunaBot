@@ -5,6 +5,7 @@ from discord.ext import commands
 from lol import send_lol_stats
 from lolchess import send_tft_stats
 from lolwatch import send_lol_live_status
+from tftwatch import send_tft_live_status
 #from valorant import send_valorant_stats
 
 # 토큰 불러오기
@@ -30,7 +31,7 @@ async def ping(ctx):
 async def lol_command(ctx, subcommand, *, riot_id):
     if subcommand == "전적":
         await send_lol_stats(ctx, riot_id)
-    elif subcommand == "현재":
+    elif subcommand == "관전":
         await send_lol_live_status(ctx, riot_id)
     else:
         await ctx.send("지원하지 않는 명령어입니다.")
@@ -40,6 +41,8 @@ async def lol_command(ctx, subcommand, *, riot_id):
 async def tft_command(ctx, subcommand, *, riot_id):
     if subcommand == "전적":
         await send_tft_stats(ctx, riot_id)
+    elif subcommand == "관전" :
+        await send_tft_live_status(ctx, riot_id)
     else:
         await ctx.send("지원하지 않는 명령어입니다.")
 
