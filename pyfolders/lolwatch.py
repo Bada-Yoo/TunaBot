@@ -88,7 +88,7 @@ async def send_lol_live_status(ctx, riot_id):
     game_name, tag_line = riot_id.split("#")
     puuid = get_puuid_by_riot_id(game_name, tag_line)
     if not puuid:
-        await ctx.send("❌ Riot ID를 찾을 수 없습니다.")
+        await ctx.send("🤔 Riot ID를 찾을 수 없습니다.")
         return
 
     live_game = get_live_game_by_puuid(puuid)

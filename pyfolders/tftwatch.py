@@ -44,7 +44,7 @@ async def send_tft_live_status(ctx, riot_id):
 
     puuid = get_puuid(game_name, tag_line)
     if not puuid:
-        await ctx.send("❌ Riot ID를 찾을 수 없습니다.")
+        await ctx.send("🤔 Riot ID를 찾을 수 없습니다.")
         return
 
     live_game = get_tft_live_game_by_puuid(puuid)

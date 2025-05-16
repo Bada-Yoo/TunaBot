@@ -48,7 +48,7 @@ async def send_lol_stats(ctx, riot_id):
     game_name, tag_line = riot_id.split("#")
     account = get_puuid_by_riot_id(game_name, tag_line)
     if "puuid" not in account:
-        await ctx.send("❌ Riot ID를 찾을 수 없습니다.")
+        await ctx.send("🤔 Riot ID를 찾을 수 없습니다.")
         return
 
     puuid = account["puuid"]

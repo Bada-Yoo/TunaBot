@@ -27,30 +27,63 @@ async def ping(ctx):
     await ctx.send('퐁!')
 
 # !롤 전적 [RiotID]
-@bot.command(name="롤")
-async def lol_command(ctx, subcommand, *, riot_id):
-    if subcommand == "전적":
+@bot.command(name="롤", aliases=["ㄹ"])
+async def lol_command(ctx, subcommand: str, *, riot_id: str = None):
+    if subcommand in ["전적", "ㅈㅈ"]:
         await send_lol_stats(ctx, riot_id)
-    elif subcommand == "관전":
+    elif subcommand in ["관전", "ㄱㅈ"]:
         await send_lol_live_status(ctx, riot_id)
     else:
-        await ctx.send("지원하지 않는 명령어입니다.")
+        await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
 # !롤체 전적 [RiotID]
-@bot.command(name="롤체")
-async def tft_command(ctx, subcommand, *, riot_id):
-    if subcommand == "전적":
+@bot.command(name="롤체", aliases=["ㄹㅊ"])
+async def tft_command(ctx, subcommand: str, *, riot_id: str = None):
+    if subcommand in ["전적", "ㅈㅈ"]:
         await send_tft_stats(ctx, riot_id)
-    elif subcommand == "관전" :
+    elif subcommand in ["관전", "ㄱㅈ"]:
         await send_tft_live_status(ctx, riot_id)
     else:
-        await ctx.send("지원하지 않는 명령어입니다.")
+        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+
+# !참치 도움
+@bot.command(name="참치")
+async def tuna(ctx, subcommand=None):
+    if subcommand == "help":
+        await ctx.send("""
+🐟 **참치봇 사용 가이드**
+
+🌊 **롤 전적 및 라이브**
+- `!롤 전적 닉#태그` 또는 `!ㄹ ㅈㅈ 닉#태그` : 소환사 전적 확인
+- `!롤 관전 닉#태그` 또는 `!ㄹ ㄱㅈ 닉#태그` : 현재 게임 정보 확인
+- `!롤 상대정보 닉#태그` 또는 `!ㄹ ㅅㄷ 닉#태그` : 상대 팀 티어/모스트 분석
+
+🌊 **롤체(TFT)**
+- `!롤체 전적 닉#태그` 또는 `!ㄹㅊ ㅈㅈ 닉#태그`
+- `!롤체 관전 닉#태그` 또는 `!ㄹㅊ ㄱㅈ 닉#태그`
+
+🌊 **즐겨찾기 기능**
+- `!등록 닉#태그` : 즐겨찾는 Riot ID 등록
+- `!내전적` / `!내현재` : 등록된 Riot ID로 전적/관전 확인
+
+💡 모든 명령어는 줄임말로도 사용 가능하며, 명령어를 잘못 입력하면 자동으로 안내됩니다.
+""")
+    else:
+        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+
+# !잘못된 명령어
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+    else:
+        raise error  # 다른 오류는 디버깅을 위해 그대로 발생시킴
+
 
 # 예시 확장 가능:
 # @bot.command(name="발로")
 # async def valorant_command(ctx, subcommand, *, riot_id):
 #     if subcommand == "전적":
 #         await send_valorant_stats(ctx, riot_id)
-
 
 bot.run(TOKEN)
