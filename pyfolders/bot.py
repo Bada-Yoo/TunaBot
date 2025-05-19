@@ -3,10 +3,11 @@ from dotenv import load_dotenv
 import discord    
 from discord.ext import commands
 from lol import send_lol_stats
-from lolchess import send_tft_stats
+from tft import send_tft_stats
 from lolwatch import send_lol_live_status, send_lol_opponent_info
 from tftwatch import send_tft_live_status
 from lolpatch import send_lol_patch_note
+from tftpatch import send_tft_patch_note
 #from valorant import send_valorant_stats
 
 # 토큰 불러오기
@@ -48,7 +49,9 @@ async def tft_command(ctx, subcommand: str, *, riot_id: str = None):
         await send_tft_stats(ctx, riot_id)
     elif subcommand in ["관전", "ㄱㅈ"]:
         await send_tft_live_status(ctx, riot_id)
-    else:
+    elif subcommand in ["패치", "ㅍㅊ"]:
+        await send_tft_patch_note(ctx)
+    else:   
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
 # !참치 도움
@@ -60,17 +63,14 @@ async def tuna(ctx, subcommand=None):
 
 🌊 **롤 전적 및 라이브**
 - `!롤 전적 닉#태그` 또는 `!ㄹ ㅈㅈ 닉#태그` : 소환사 전적 확인
-- `!롤 관전 닉#태그` 또는 `!ㄹ ㄱㅈ 닉#태그` : 현재 롤롤 정보 확인
+- `!롤 관전 닉#태그` 또는 `!ㄹ ㄱㅈ 닉#태그` : 현재 롤 정보 확인
 - `!롤 상대정보 닉#태그` 또는 `!ㄹ ㅅㄷ 닉#태그` : 상대 팀 티어/모스트 분석
 - `!롤 패치` 또는 `!ㄹ ㅍㅊ` : 최신 패치노트 확인
 
 🌊 **롤체(TFT)**
 - `!롤체 전적 닉#태그` 또는 `!ㄹㅊ ㅈㅈ 닉#태그` : 소환사 전적 확인
 - `!롤체 관전 닉#태그` 또는 `!ㄹㅊ ㄱㅈ 닉#태그` : 현재 롤체 정보 확인인
-
-🌊 **즐겨찾기 기능**
-- `!등록 닉#태그` : 즐겨찾는 Riot ID 등록
-- `!내전적` / `!내현재` : 등록된 Riot ID로 전적/관전 확인
+- `!롤체 패치` 또는 `!ㄹㅊ ㅍㅊ` : 최신 TFT 패치노트 확인
 
 🐬 모든 명령어는 줄임말로도 사용 가능합니다!
 """)
@@ -91,5 +91,9 @@ async def on_command_error(ctx, error):
 # async def valorant_command(ctx, subcommand, *, riot_id):
 #     if subcommand == "전적":
 #         await send_valorant_stats(ctx, riot_id)
+
+#🌊 **즐겨찾기 기능**
+#- `!등록 닉#태그` : 즐겨찾는 Riot ID 등록
+#- `!내전적` / `!내현재` : 등록된 Riot ID로 전적/관전 확인
 
 bot.run(TOKEN)
