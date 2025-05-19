@@ -5,6 +5,11 @@ from urllib.parse import quote
 from dotenv import load_dotenv
 from collections import Counter, defaultdict
 
+#최신 버전으로
+versions = requests.get("https://ddragon.leagueoflegends.com/api/versions.json").json()
+latest_version = versions[0]
+
+
 load_dotenv()
 RIOT_API_KEY = os.getenv("RIOT_API_KEY")
 HEADERS = {"X-Riot-Token": RIOT_API_KEY}
@@ -56,7 +61,7 @@ async def send_lol_stats(ctx, riot_id):
     encrypted_id = summoner["id"]
     level = summoner["summonerLevel"]
     profile_icon_id = summoner["profileIconId"]
-    icon_url = f"http://ddragon.leagueoflegends.com/cdn/14.10.1/img/profileicon/{profile_icon_id}.png"
+    icon_url = f"http://ddragon.leagueoflegends.com/cdn/{latest_version}/img/profileicon/{profile_icon_id}.png"
 
     # 랭크 정보
     rank_data = get_rank_data(encrypted_id)
