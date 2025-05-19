@@ -109,7 +109,9 @@ async def send_tft_stats(ctx, riot_id):
 
     #각 판당 레벨과 순위, 사용한 유닛과 시너지를 가져온다.
     #최근 5판만 가져온다.
-    for match_id in match_ids[:5]:
+    matches_to_analyze = match_ids[:5]
+
+    for match_id in matches_to_analyze:
         match = get_tft_match_detail(match_id)
         info = match["info"]
         me = next(p for p in info["participants"] if p["puuid"] == puuid)
@@ -141,8 +143,9 @@ async def send_tft_stats(ctx, riot_id):
             key = (companion.get("species"), companion.get("skin_ID"))
             companion_counter[key] += 1
 
-    avg_level = round(total_level / len(match_ids), 2)
-    top4_rate = round((top4_count / len(match_ids)) * 100, 1)
+    match_count = len(matches_to_analyze)
+    avg_level = round(total_level / match_count, 2)
+    top4_rate = round((top4_count / match_count) * 100, 1)
     most_units = ", ".join([translate_unit(u) for u, _ in unit_counter.most_common(3)])
 
     embed = discord.Embed(
@@ -150,7 +153,7 @@ async def send_tft_stats(ctx, riot_id):
         description=(
             f"**🌊 현 시즌 랭크**\n"
             f"솔로 랭크: {solo_rank} \n더블업: {duo_rank}\n\n"
-            f"**🌊 최근 10경기**\n"
+            f"**🌊 최근 경기 요약**\n"
             f"평균 최종 레벨: {avg_level}\n"
             f"Top 4 비율: {top4_rate}%\n"
             f"모스트 유닛: {most_units}\n\n"
