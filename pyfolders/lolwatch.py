@@ -82,6 +82,7 @@ def load_champion_eng_name_map():
 
 CHAMPION_ENG_NAME_MAP = load_champion_eng_name_map()
 
+#롤 전적 함수
 async def send_lol_live_status(ctx, riot_id):
     if "#" not in riot_id:
         await ctx.send("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.")
@@ -136,7 +137,7 @@ async def send_lol_live_status(ctx, riot_id):
 
     await ctx.send(embed=embed)
 
-# ✅ 상대정보 분석 함수 추가
+# 상대정보 분석 함수
 from collections import defaultdict
 
 def get_summoner_by_puuid(puuid):
