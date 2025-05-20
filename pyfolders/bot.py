@@ -8,6 +8,7 @@ from lolwatch import send_lol_live_status, send_lol_opponent_info
 from tftwatch import send_tft_live_status
 from lolpatch import send_lol_patch_note
 from tftpatch import send_tft_patch_note
+from tftmeta import send_tft_meta
 #from valorant import send_valorant_stats
 
 # 토큰 불러오기
@@ -51,7 +52,9 @@ async def tft_command(ctx, subcommand: str, *, riot_id: str = None):
         await send_tft_live_status(ctx, riot_id)
     elif subcommand in ["패치", "ㅍㅊ"]:
         await send_tft_patch_note(ctx)
-    else:   
+    elif subcommand in ["메타", "ㅁㅌ"]:
+        await send_tft_meta(ctx)
+    else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
 # !참치 도움
@@ -71,6 +74,7 @@ async def tuna(ctx, subcommand=None):
 - `!롤체 전적 닉#태그` 또는 `!ㄹㅊ ㅈㅈ 닉#태그` : 소환사 전적 확인
 - `!롤체 관전 닉#태그` 또는 `!ㄹㅊ ㄱㅈ 닉#태그` : 현재 롤체 정보 확인인
 - `!롤체 패치` 또는 `!ㄹㅊ ㅍㅊ` : 최신 TFT 패치노트 확인
+- `!롤체 메타` 또는 `!ㄹㅊ ㅁㅌ` : 현재 TFT 메타 추천 조합 확인
 
 🐬 모든 명령어는 줄임말로도 사용 가능합니다!
 """)
