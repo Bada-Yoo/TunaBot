@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from collections import Counter
 
 load_dotenv()
-RIOT_API_KEY = os.getenv("RIOT_API_KEY")
+RIOT_API_KEY = os.getenv("RIOT_TFT_API_KEY")
 HEADERS = {"X-Riot-Token": RIOT_API_KEY}
 
 #해당 url에서 롤체 영문이름과 한글이름 매핑을 가져옵니다.

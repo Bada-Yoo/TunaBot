@@ -18,6 +18,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 # 디스코드 봇 설정
 intents = discord.Intents.default()
 intents.message_content = True
+intents.reactions = True
 bot = commands.Bot(command_prefix='!', intents=intents) 
 
 @bot.event
@@ -31,7 +32,7 @@ async def ping(ctx):
 
 # !롤 전적 [RiotID]
 @bot.command(name="롤", aliases=["ㄹ"])
-async def lol_command(ctx, subcommand: str, *, riot_id: str = None):
+async def lol_command(ctx, subcommand: str = None, *, riot_id: str = None):
     if subcommand in ["전적", "ㅈㅈ"]:
         await send_lol_stats(ctx, riot_id)
     elif subcommand in ["관전", "ㄱㅈ"]:
@@ -45,7 +46,7 @@ async def lol_command(ctx, subcommand: str, *, riot_id: str = None):
 
 # !롤체 전적 [RiotID]
 @bot.command(name="롤체", aliases=["ㄹㅊ"])
-async def tft_command(ctx, subcommand: str, *, riot_id: str = None):
+async def tft_command(ctx, subcommand: str = None, *, riot_id: str = None):
     if subcommand in ["전적", "ㅈㅈ"]:
         await send_tft_stats(ctx, riot_id)
     elif subcommand in ["관전", "ㄱㅈ"]:
@@ -59,7 +60,7 @@ async def tft_command(ctx, subcommand: str, *, riot_id: str = None):
 
 # !참치 도움
 @bot.command(name="참치")
-async def tuna(ctx, subcommand=None):
+async def tuna(ctx, subcommand = None):
     if subcommand == "help":
         await ctx.send("""
 🐟 **참치봇 사용 가이드**
@@ -72,7 +73,7 @@ async def tuna(ctx, subcommand=None):
 
 🌊 **롤체(TFT)**
 - `!롤체 전적 닉#태그` 또는 `!ㄹㅊ ㅈㅈ 닉#태그` : 소환사 전적 확인
-- `!롤체 관전 닉#태그` 또는 `!ㄹㅊ ㄱㅈ 닉#태그` : 현재 롤체 정보 확인인
+- `!롤체 관전 닉#태그` 또는 `!ㄹㅊ ㄱㅈ 닉#태그` : 현재 롤체 정보 확인
 - `!롤체 패치` 또는 `!ㄹㅊ ㅍㅊ` : 최신 TFT 패치노트 확인
 - `!롤체 메타` 또는 `!ㄹㅊ ㅁㅌ` : 현재 TFT 메타 추천 조합 확인
 

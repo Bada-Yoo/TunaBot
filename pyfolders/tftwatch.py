@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import datetime
 
 load_dotenv()
-RIOT_API_KEY = os.getenv("RIOT_API_KEY")
+RIOT_API_KEY = os.getenv("RIOT_TFT_API_KEY")
 HEADERS = {"X-Riot-Token": RIOT_API_KEY}
 
 # 큐 Id → TFT 모드 이름 매핑

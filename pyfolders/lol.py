@@ -11,7 +11,7 @@ latest_version = versions[0]
 
 
 load_dotenv()
-RIOT_API_KEY = os.getenv("RIOT_API_KEY")
+RIOT_API_KEY = os.getenv("RIOT_LOL_API_KEY")
 HEADERS = {"X-Riot-Token": RIOT_API_KEY}
 
 QUEUE_TYPES = {

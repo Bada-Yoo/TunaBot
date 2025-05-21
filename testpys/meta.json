@@ -1,0 +1,1801 @@
+{
+  "updated_at": "2025-05-21",
+  "meta": [
+    {
+      "index": 1,
+      "name": "5증폭 유미 애니\nHOT",
+      "url": "https://lolchess.gg/builder/guide/377cfdcefa290d26b2a281c26757217f3c3514ed?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "나피리",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "에코",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "유미",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "애니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "직스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "사미라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "4다이나모 브라움 엘리스\nHOT",
+      "url": "https://lolchess.gg/builder/guide/a98137e88e4b9dbc3cddea0ec6da84a15054a40f?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "엘리스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "미스 포츈",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "가렌",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "4니트로 4다이나모\nHOT",
+      "url": "https://lolchess.gg/builder/guide/18318ddc4371ba8b70288c5bc447e3cf355a8b47?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "킨드레드",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "쉬바나",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "엘리스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "미스 포츈",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "5범죄 조직 트페 리롤",
+      "url": "https://lolchess.gg/builder/guide/6de0820490d94fad4d2dded0dfef48f9027589cf?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "샤코",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "샤코",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "트위스티드 페이트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "드레이븐",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "미스 포츈",
+          "cost": 4,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "7동물특공대 자야",
+      "url": "https://lolchess.gg/builder/guide/55f8c9c0945f8ad03f8bee248e96befbfba58111?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "사일러스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "사일러스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "베인",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "일라오이",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "유미",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "레오나",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "자야",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "레넥톤",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "7거리의 악마 브랜드\nHOT",
+      "url": "https://lolchess.gg/builder/guide/d4e41991f52ee766247678e07e64a7996bb68875?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "자이라",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "에코",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "렝가",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "브랜드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "직스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "사미라",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "엑소테크 신성기업 벡스\nHOT",
+      "url": "https://lolchess.gg/builder/guide/02c3a7472c69807cf8afadd711c7dfbaaac3d749?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "바루스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "벡스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "4선봉대 4사격수 자야\nHOT",
+      "url": "https://lolchess.gg/builder/guide/2dc550ee278b2277e62b9fc1ad8efb5e7ab46c2e?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "사일러스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "사일러스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "징크스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "레오나",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "아펠리오스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "자야",
+          "cost": 4,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "name": "5엑소테크 제리 미포",
+      "url": "https://lolchess.gg/builder/guide/b4ccde91da1a1501555df10ddb4a793c4f6e8cb5?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "트위스티드 페이트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "미스 포츈",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "제리",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "name": "4다이나모 4선봉대 미포",
+      "url": "https://lolchess.gg/builder/guide/5d3d8879113277c42867d20305397916c5be683a?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "사일러스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "엘리스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "레오나",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "미스 포츈",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "name": "4니트로 제리 엘리스",
+      "url": "https://lolchess.gg/builder/guide/bfa8d7a6e14038090f8fcca06fd4b7dd38b3b2a5?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "킨드레드",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "나피리",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "쉬바나",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "엘리스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "제리",
+          "cost": 4,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "name": "신성기업 레넥톤 벡스",
+      "url": "https://lolchess.gg/builder/guide/6c1e943494e3f0c20442524dde7d8ac4d68b6c90?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세나",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "벡스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "초가스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "레넥톤",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "우르곳",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "name": "5증폭 해적검 나피리",
+      "url": "https://lolchess.gg/builder/guide/9aa20d28f074ca3455ee8f4c83a2719dfb38cc1c?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "나피리",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "에코",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "유미",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "애니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "사미라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "name": "6학살자 샤코 베인",
+      "url": "https://lolchess.gg/builder/guide/2c6b0b1dbb8d56f73470fbd4fd9c7b97317bbf69?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "샤코",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "베인",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세나",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "제드",
+          "cost": 4,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "name": "4사이버보스 베이가",
+      "url": "https://lolchess.gg/builder/guide/18af974dc2ab7337d2c10b2dc9bb52fc1c2d832a?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "뽀삐",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "뽀삐",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "베이가",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "에코",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "브랜드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "직스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "name": "[상징] 6난동꾼 피들스틱",
+      "url": "https://lolchess.gg/builder/guide/8286849ba3d2e6b0762faa143b64dc95253196ef?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "다리우스",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "스카너",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "피들스틱",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "초가스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "우르곳",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "name": "[상징] 6속사포 레넥톤",
+      "url": "https://lolchess.gg/builder/guide/e52022b162f3117d9ef7f2768ac56f99e7d6ca2b?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "코그모",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "킨드레드",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "트위스티드 페이트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "갈리오",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "드레이븐",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "제리",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "레넥톤",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "name": "[상징] 6황금 황소 밸류",
+      "url": "https://lolchess.gg/builder/guide/e8f622b8d6b13771d16c583ce3063181ffbd50a8?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "알리스타",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "알리스타",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "아펠리오스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "애니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "가렌",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "자크",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "name": "[상징] 6폭발 봇 벡스",
+      "url": "https://lolchess.gg/builder/guide/8d4808d32f3160d1ebb09d3c14813013ae45082d?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "코그모",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "코그모",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "스카너",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "피들스틱",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "벡스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "초가스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "우르곳",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "name": "4요새 사이퍼 드레이븐",
+      "url": "https://lolchess.gg/builder/guide/3b8a9dd9baed292c9abeacdf3977162e7b95e4c8?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "갈리오",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "드레이븐",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세나",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "제드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "제리",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "레넥톤",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "name": "알리스타 세라핀 리롤",
+      "url": "https://lolchess.gg/builder/guide/a447c8819f6e73f160ca2fd810421ade48ccfbaf?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "세라핀",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "알리스타",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "자이라",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "베이가",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "브랜드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "name": "5거악 4기술광 브랜드",
+      "url": "https://lolchess.gg/builder/guide/41b0dfdcf5356d71cc90a6c31c2d682a321e2eff?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "자이라",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "베이가",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "에코",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "브랜드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "직스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "가렌",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "name": "4선봉대 4학살자 베인",
+      "url": "https://lolchess.gg/builder/guide/cc0cf9507e777a5570e06db2edf0b3889ad6b671?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "사일러스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "사일러스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "베인",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "세나",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "레오나",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "제드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "가렌",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "name": "6학살자 세나",
+      "url": "https://lolchess.gg/builder/guide/3cf1f5af850d2364d4ec614f110757fb7de4eaa3?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "샤코",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "베인",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세나",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "제드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "레넥톤",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "name": "6기술광 베이가",
+      "url": "https://lolchess.gg/builder/guide/0844e529fb367cb794422e1534b343b4c00fcae1?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "뽀삐",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "뽀삐",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "자이라",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "베이가",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "쉬바나",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "피들스틱",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "브랜드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "직스",
+          "cost": 4,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "name": "4니트로 3다이나모 진",
+      "url": "https://lolchess.gg/builder/guide/1aa2c083415838bb85ddbbb1d0718c26752f1a93?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "킨드레드",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "나피리",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "쉬바나",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "엘리스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "name": "7엑소테크 제리",
+      "url": "https://lolchess.gg/builder/guide/36c9cad778b9e9b914abc62c54b3540bc91e8327?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "잭스",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "킨드레드",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "나피리",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "바루스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "제리",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "name": "[상징] 8기술광 브랜드",
+      "url": "https://lolchess.gg/builder/guide/f6f31eda494c9bb151886f81fcc6e6a198710cef?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "자이라",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "자이라",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "베이가",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "쉬바나",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "모데카이저",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "피들스틱",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "브랜드",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "직스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "name": "[영원한 브론즈] 밸류",
+      "url": "https://lolchess.gg/builder/guide/dfd52bdc2b1af2affa7304a8130965cb52a09a5b?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "니달리",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "뽀삐",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "쉬바나",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "엘리스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "애니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "name": "[또 다른 자아] 라아스트",
+      "url": "https://lolchess.gg/builder/guide/28212ab033c7eae272843d5e61249d0a13507807?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세나",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "레오나",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "벡스",
+          "cost": 4,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "name": "[특성 추적자]",
+      "url": "https://lolchess.gg/builder/guide/5e7ceae989a521b88cb755e1070cf3f2f28709d1?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "뽀삐",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "알리스타",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "베이가",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "쉬바나",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 3,
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "name": "[공허의 무리] 6신성 즈롯",
+      "url": "https://lolchess.gg/builder/guide/5eef740c6b90e80dfb06dfff7b1aff604e24486d?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "모르가나",
+          "cost": 1,
+          "items": []
+        },
+        {
+          "name": "라아스트",
+          "cost": 2,
+          "items": []
+        },
+        {
+          "name": "그라가스",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "세나",
+          "cost": 3,
+          "items": []
+        },
+        {
+          "name": "벡스",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "세주아니",
+          "cost": 4,
+          "items": []
+        },
+        {
+          "name": "레넥톤",
+          "cost": 5,
+          "items": []
+        },
+        {
+          "name": "오로라",
+          "cost": 5,
+          "items": []
+        }
+      ]
+    }
+  ]
+}
