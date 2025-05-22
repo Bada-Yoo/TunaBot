@@ -48,7 +48,7 @@ async def send_tft_patch_note(ctx):
         )
         embed.set_image(url=thumbnail)
         embed.set_author(name="🐟TunaBot 패치 정보")
-        embed.set_footer(text="🐬 Powered by Data Crawling | tuna.gg")
+        embed.set_footer(text="🐳 Powered by Data Crawling | tuna.gg")
 
         await ctx.send(embed=embed)
 

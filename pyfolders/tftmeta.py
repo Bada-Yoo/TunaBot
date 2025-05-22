@@ -28,7 +28,7 @@ async def send_tft_meta(ctx, query=None):
             color=discord.Color.blue()
         )
         embed.set_author(name="🐟TunaBot 메타 정보")
-        embed.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")
+        embed.set_footer(text=f"🐳 Updated At {updated_at} | tuna.gg")
         await ctx.send(embed=embed)
         return
 
