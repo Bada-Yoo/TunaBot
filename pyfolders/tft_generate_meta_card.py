@@ -14,12 +14,11 @@ COST_COLOR = {
     5: (255, 185, 59),
 }
 
-# 설정
 UNIT_SIZE = 100
 ITEM_SIZE = UNIT_SIZE // 3
 PADDING = 10
 MAX_COLS = 5
-FONT_PATH = "C:/Windows/Fonts/malgun.ttf"  # 윈도우 기본 한글 폰트
+FONT_PATH = "C:/Windows/Fonts/malgun.ttf"
 FONT = ImageFont.truetype(FONT_PATH, 13)
 
 def load_image_from_url(url, size=None, rounded=False):
@@ -40,20 +39,14 @@ def draw_unit_border(draw, box, cost):
 
 def draw_unit_name_inside(card, x, y, name):
     draw_overlay = ImageDraw.Draw(card)
-
-    # 좌하단 위치 기준 (텍스트 높이 13~15 기준)
     text_x = x + 4
     text_y = y + UNIT_SIZE - 20
 
-    # 테두리 효과 (4방향)
     for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
         draw_overlay.text((text_x + dx, text_y + dy), name, fill="black", font=FONT)
-
-    # 중심 흰 텍스트
     draw_overlay.text((text_x, text_y), name, fill="white", font=FONT)
 
-
-def generate_meta_card(meta_data, output_dir="meta_images"):
+def generate_meta_card(meta_data, output_dir="tft_meta_images"):
     units = meta_data["units"]
     index = meta_data["index"]
 
@@ -93,7 +86,14 @@ def generate_meta_card(meta_data, output_dir="meta_images"):
 
 def generate_all_meta_cards():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(script_dir, "meta.json")
+    json_path = os.path.join(script_dir, "tft_meta.json")
+    output_dir = os.path.join(script_dir, "tft_meta_images")
+
+    # 기존 이미지 삭제
+    if os.path.exists(output_dir):
+        for file in os.listdir(output_dir):
+            if file.startswith("meta_card_") and file.endswith(".png"):
+                os.remove(os.path.join(output_dir, file))
 
     with open(json_path, encoding="utf-8") as f:
         data = json.load(f)
