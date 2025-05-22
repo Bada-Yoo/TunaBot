@@ -145,10 +145,10 @@ def crawl_tft_meta():
         driver.quit()
 
 def save_meta_json(data):
-    save_path = os.path.join(os.path.dirname(__file__), "meta.json")
+    save_path = os.path.join(os.path.dirname(__file__), "tft_meta.json")
     with open(save_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"✅ meta.json 저장 완료 ({data['updated_at']} 기준, {len(data['meta'])}개 조합)")
+    print(f"✅ tft_meta.json 저장 완료 ({data['updated_at']} 기준, {len(data['meta'])}개 조합)")
 
 if __name__ == "__main__":
     data = crawl_tft_meta()
