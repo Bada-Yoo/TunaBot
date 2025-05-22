@@ -54,7 +54,7 @@ async def tft_command(ctx, subcommand: str = None, *, riot_id: str = None):
     elif subcommand in ["패치", "ㅍㅊ"]:
         await send_tft_patch_note(ctx)
     elif subcommand in ["메타", "ㅁㅌ"]:
-        await send_tft_meta(ctx)
+        await send_tft_meta(ctx, riot_id)
     else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
@@ -73,9 +73,13 @@ async def tuna(ctx, subcommand = None):
 
 🌊 **롤체(TFT)**
 - `!롤체 전적 닉#태그` 또는 `!ㄹㅊ ㅈㅈ 닉#태그` : 소환사 전적 확인
-- `!롤체 관전 닉#태그` 또는 `!ㄹㅊ ㄱㅈ 닉#태그` : 현재 롤체 정보 확인
+- `!롤체 관전 닉#태그` 또는 `!ㄹㅊ ㄱㅈ 닉#태그` : 현재 게임 관전
 - `!롤체 패치` 또는 `!ㄹㅊ ㅍㅊ` : 최신 TFT 패치노트 확인
-- `!롤체 메타` 또는 `!ㄹㅊ ㅁㅌ` : 현재 TFT 메타 추천 조합 확인
+- `!롤체 메타 전체` : 현재 메타 조합 목록 출력
+- `!롤체 메타 [번호]` : 해당 번호의 메타 + 상세정보 확인
+   예) `!롤체 메타 2`
+- `!롤체 메타 [유닛이름]` : 특정 유닛이 포함된 메타 리스트 출력
+   예) `!롤체 메타 유미`
 
 🐬 모든 명령어는 줄임말로도 사용 가능합니다!
 """)

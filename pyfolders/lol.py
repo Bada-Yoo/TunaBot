@@ -78,6 +78,13 @@ async def send_lol_stats(ctx, riot_id):
 
     for i, match_id in enumerate(match_ids):
         match = get_match_detail(match_id)
+
+        if "info" not in match:
+            print(f"❗ 'info' 누락된 match: {match_id}")
+            continue  # info가 없는 비정상 응답은 스킵
+
+        queue_id = match["info"].get("queueId", -1)
+
         queue_id = match["info"].get("queueId", -1)
         me = next(p for p in match["info"]["participants"] if p["puuid"] == puuid)
 
