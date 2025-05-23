@@ -30,7 +30,7 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send('퐁!')
 
-# !롤 전적 [RiotID]
+# !롤 
 @bot.command(name="롤", aliases=["ㄹ"])
 async def lol_command(ctx, subcommand: str = None, *, riot_id: str = None):
     if subcommand in ["전적", "ㅈㅈ"]:
@@ -44,7 +44,7 @@ async def lol_command(ctx, subcommand: str = None, *, riot_id: str = None):
     else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
-# !롤체 전적 [RiotID]
+# !롤체 
 @bot.command(name="롤체", aliases=["ㄹㅊ"])
 async def tft_command(ctx, subcommand: str = None, *, riot_id: str = None):
     if subcommand in ["전적", "ㅈㅈ"]:
@@ -57,6 +57,15 @@ async def tft_command(ctx, subcommand: str = None, *, riot_id: str = None):
         await send_tft_meta(ctx, riot_id)
     else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
+
+# !발로
+@bot.command(name="발로", aliases=["ㅂㄹ"])
+asuync def valorant_command(ctx, subcommand: str = None, *, riot_id: str = None):
+    if subcommand in ["랜덤", "ㄹㄷ"]:
+        await send_random_weapon(ctx)
+    else:
+        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+
 
 # !참치 도움
 @bot.command(name="참치")
