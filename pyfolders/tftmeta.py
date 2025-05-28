@@ -46,8 +46,8 @@ async def send_tft_meta(ctx, query=None):
             file = discord.File(file_path, filename="meta.png")
             embed1 = discord.Embed(title=f"{meta['name']}", color=0x5CD1E5)
             embed1.set_image(url="attachment://meta.png")
-            embed1.set_author(name="🐟TunaBot 현메타 정보")  # ✅ author 바로 포함
-            embed1.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")  # ✅ footer도 포함
+            embed1.set_author(name="🐟TunaBot 현메타 정보")  
+            embed1.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg") 
 
             file = discord.File(file_path, filename="meta.png")
             message = await ctx.send(file=file, embed=embed1)

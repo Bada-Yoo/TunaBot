@@ -12,6 +12,7 @@ from lolpatch import send_lol_patch_note
 from tftpatch import send_tft_patch_note
 from tftmeta import send_tft_meta
 from valgun import send_random_weapon
+from steamgame import send_steam_game_info
 
 from tft_update_meta import crawl_tft_meta, save_meta_json
 from tft_update_metadetail import crawl_detail_info
@@ -82,6 +83,13 @@ async def valorant_command(ctx, subcommand: str = None):
     else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
+@bot.command(name="스팀")
+async def steam_command(ctx, subcommand: str = None, *, game_name: str = None):
+    if subcommand == "정보" and game_name:
+        await send_steam_game_info(ctx, game_name)
+    else:
+        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+
 
 # !참치 도움
 @bot.command(name="참치")
@@ -118,17 +126,6 @@ async def on_command_error(ctx, error):
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
     else:
         raise error  # 다른 오류는 디버깅을 위해 그대로 발생시킴
-
-
-# 예시 확장 가능:
-# @bot.command(name="발로")
-# async def valorant_command(ctx, subcommand, *, riot_id):
-#     if subcommand == "전적":
-#         await send_valorant_stats(ctx, riot_id)
-
-#🌊 **즐겨찾기 기능**
-#- `!등록 닉#태그` : 즐겨찾는 Riot ID 등록
-#- `!내전적` / `!내현재` : 등록된 Riot ID로 전적/관전 확인
 
 #관리자 명령어
 @bot.command(name="롤토체스")
