@@ -9,6 +9,7 @@ from tftwatch import send_tft_live_status
 from lolpatch import send_lol_patch_note
 from tftpatch import send_tft_patch_note
 from tftmeta import send_tft_meta
+from valgun import send_random_weapon
 #from valorant import send_valorant_stats
 
 # 토큰 불러오기
@@ -60,9 +61,16 @@ async def tft_command(ctx, subcommand: str = None, *, riot_id: str = None):
 
 # !발로
 @bot.command(name="발로", aliases=["ㅂㄹ"])
-asuync def valorant_command(ctx, subcommand: str = None, *, riot_id: str = None):
-    if subcommand in ["랜덤", "ㄹㄷ"]:
-        await send_random_weapon(ctx)
+async def valorant_command(ctx, subcommand: str = None):
+    if subcommand in ["ㄱㅊ", "권총"]:
+        await send_random_weapon(ctx, category="권총")
+    elif subcommand in ["ㅈㅁㄱ", "주무기"]:
+        await send_random_weapon(ctx, category="주무기")
+    elif subcommand in ["ㄹㄷ", "랜덤"]:
+        # 주무기 + 권총 통합해서 랜덤
+        import random
+        category = random.choice(["권총", "주무기"])
+        await send_random_weapon(ctx, category=category)
     else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
