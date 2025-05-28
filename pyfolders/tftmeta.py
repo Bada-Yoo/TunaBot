@@ -44,11 +44,15 @@ async def send_tft_meta(ctx, query=None):
                 await ctx.send("이미지 파일을 찾을 수 없습니다.")
                 return
             file = discord.File(file_path, filename="meta.png")
-            embed1 = discord.Embed(title=f"{meta['name']} (메타 카드)", color=0x5CD1E5)
+            embed1 = discord.Embed(title=f"{meta['name']}", color=0x5CD1E5)
             embed1.set_image(url="attachment://meta.png")
+            embed1.set_author(name="🐟TunaBot 현메타 정보")  # ✅ author 바로 포함
+            embed1.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")  # ✅ footer도 포함
 
+            file = discord.File(file_path, filename="meta.png")
             message = await ctx.send(file=file, embed=embed1)
             await message.add_reaction("✅")
+
 
             def check(reaction, user):
                 return user == ctx.author and str(reaction.emoji) == "✅" and reaction.message.id == message.id
@@ -73,6 +77,7 @@ async def send_tft_meta(ctx, query=None):
                     ),
                     color=discord.Color.dark_blue()
                 )
+                embed2.set_author(name="🐟TunaBot 현메타 정보")
                 embed2.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")
                 await ctx.send(embed=embed2)
             except asyncio.TimeoutError:

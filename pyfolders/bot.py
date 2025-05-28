@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv
 import discord    
+import asyncio
+
 from discord.ext import commands
 from lol import send_lol_stats
 from tft import send_tft_stats
@@ -10,6 +12,12 @@ from lolpatch import send_lol_patch_note
 from tftpatch import send_tft_patch_note
 from tftmeta import send_tft_meta
 from valgun import send_random_weapon
+
+from tft_update_meta import crawl_tft_meta, save_meta_json
+from tft_update_metadetail import crawl_detail_info
+from tft_generate_meta_card import generate_all_meta_cards
+
+
 #from valorant import send_valorant_stats
 
 # 토큰 불러오기
@@ -121,5 +129,29 @@ async def on_command_error(ctx, error):
 #🌊 **즐겨찾기 기능**
 #- `!등록 닉#태그` : 즐겨찾는 Riot ID 등록
 #- `!내전적` / `!내현재` : 등록된 Riot ID로 전적/관전 확인
+
+#관리자 명령어
+@bot.command(name="롤토체스")
+async def tft_meta_patch(ctx, subcommand: str = None):
+    if subcommand in ["메타패치"]:
+        await ctx.send("🔄 롤체 메타 정보를 수집 중입니다. 약 5분가량 소요됩니다./n 오래 걸릴경우 관리자 `pal_tak`에게 문의 주세요!")
+
+        loop = asyncio.get_running_loop()
+
+        # 1. 메타 정보 수집 및 저장
+        data = await loop.run_in_executor(None, crawl_tft_meta)
+        await loop.run_in_executor(None, save_meta_json, data)
+
+        # 2. 세부 정보 수집
+        await loop.run_in_executor(None, crawl_detail_info)
+
+        # 3. 카드 이미지 생성
+        await loop.run_in_executor(None, generate_all_meta_cards)
+
+        await ctx.send("✅ 롤체 메타 패치 완료! 최신 카드 이미지가 생성되었습니다.")
+    else:
+        await ctx.send("❓ 사용법: `!롤체 메타 패치`")
+
+
 
 bot.run(TOKEN)
