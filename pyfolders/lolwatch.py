@@ -125,7 +125,7 @@ async def send_lol_live_status(ctx, riot_id):
             f"**🌊 진행 시간:** {game_time_str}\n"
             f"**🌊 사용 챔피언:** {champ_name}"
         ),
-        color=discord.Color.teal()
+        color=discord.Color.dark_blue()
     )
     embed.set_author(name="🐟TunaBot 라이브 정보")
     embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")

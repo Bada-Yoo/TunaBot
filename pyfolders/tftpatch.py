@@ -44,7 +44,7 @@ async def send_tft_patch_note(ctx):
             title=title,
             url=link,
             description=f"🗓️ {date}\n\n{summary}",
-            color=discord.Color.blurple()
+            color=discord.Color.brand_red()
         )
         embed.set_image(url=thumbnail)
         embed.set_author(name="🐟TunaBot 패치 정보")

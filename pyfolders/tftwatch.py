@@ -80,7 +80,7 @@ async def send_tft_live_status(ctx, riot_id):
             f"**🌊 시작 시간:** {start_str}\n"
             f"**🌊 진행 시간:** {duration_str}"
         ),
-        color=discord.Color.teal()
+        color=discord.Color(0x5CD1E5)
     )
     embed.set_author(name="🐟TunaBot 롤토체스 라이브 정보")
     if icon_url:

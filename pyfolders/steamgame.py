@@ -50,7 +50,7 @@ async def send_steam_game_info(ctx, game_name):
             f"**🌊 카테고리**\n{categories or '정보 없음'}\n\n"
             f"**🌊 게임 정보**\n{desc}"
         ),
-        color=discord.Color.dark_blue()
+        color=discord.Color.purple()
     )
     embed.set_author(name="🐟TunaBot 게임 정보")
     embed.set_footer(text="🐳 Powered by Data Crawling | tuna.gg")

@@ -25,7 +25,7 @@ async def send_tft_meta(ctx, query=None):
         embed = discord.Embed(
             title="롤체 메타 조합 목록",
             description=description,
-            color=discord.Color.blue()
+            color=discord.Color(0x5CD1E5)
         )
         embed.set_author(name="🐟TunaBot 메타 정보")
         embed.set_footer(text=f"🐳 Updated At {updated_at} | tuna.gg")
@@ -75,7 +75,7 @@ async def send_tft_meta(ctx, query=None):
                         f"**🌊 추천 템**\n{item_text or '정보 없음'}\n"
                         f"**🌊 스테이지별 레벨업 추천**\n{level_text or '정보 없음'}"
                     ),
-                    color=discord.Color.dark_blue()
+                    color=discord.Color(0x5CD1E5)
                 )
                 embed2.set_author(name="🐟TunaBot 현메타 정보")
                 embed2.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")
