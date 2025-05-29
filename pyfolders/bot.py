@@ -2,17 +2,25 @@ import os
 from dotenv import load_dotenv
 import discord    
 import asyncio
+import random
 
 from discord.ext import commands
 from lol import send_lol_stats
-from tft import send_tft_stats
 from lolwatch import send_lol_live_status, send_lol_opponent_info
-from tftwatch import send_tft_live_status
 from lolpatch import send_lol_patch_note
+
+from tft import send_tft_stats
+from tftwatch import send_tft_live_status
 from tftpatch import send_tft_patch_note
 from tftmeta import send_tft_meta
+
 from valgun import send_random_weapon
+from valgun import handle_valorant_refresh
+from valpatch import send_val_patch_note
+from valrotate import get_current_valorant_rotation, send_valorant_rotation
+
 from steamgame import send_steam_game_info
+
 
 from tft_update_meta import crawl_tft_meta, save_meta_json
 from tft_update_metadetail import crawl_detail_info
@@ -70,18 +78,25 @@ async def tft_command(ctx, subcommand: str = None, *, riot_id: str = None):
 
 # !발로
 @bot.command(name="발로", aliases=["ㅂㄹ"])
-async def valorant_command(ctx, subcommand: str = None):
-    if subcommand in ["ㄱㅊ", "권총"]:
-        await send_random_weapon(ctx, category="권총")
-    elif subcommand in ["ㅈㅁㄱ", "주무기"]:
-        await send_random_weapon(ctx, category="주무기")
-    elif subcommand in ["ㄹㄷ", "랜덤"]:
-        # 주무기 + 권총 통합해서 랜덤
-        import random
-        category = random.choice(["권총", "주무기"])
-        await send_random_weapon(ctx, category=category)
+async def valorant_command(ctx, subcommand: str = None):  
+    if subcommand in ["권총", "ㄱㅊ"]:
+        await send_random_weapon(ctx, category="권총", label="권총")
+    elif subcommand in ["주무기", "ㅈㅁㄱ"]:
+        await send_random_weapon(ctx, category="주무기", label="주무기")
+    elif subcommand in ["랜덤", "ㄹㄷ", None]:
+        await send_random_weapon(ctx, category="랜덤", label="총")
+    elif subcommand in ["패치", "ㅍㅊ"]:
+        await send_val_patch_note(ctx)
+    elif subcommand in ["로테", "ㄾ", "로테이션"]:
+        await send_valorant_rotation(ctx)
     else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
+
+
+@bot.event
+async def on_reaction_add(reaction, user):
+    await handle_valorant_refresh(reaction, user, bot)
+
 
 @bot.command(name="스팀")
 async def steam_command(ctx, subcommand: str = None, *, game_name: str = None):
