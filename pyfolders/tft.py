@@ -159,7 +159,7 @@ async def send_tft_stats(ctx, riot_id):
             f"모스트 유닛: {most_units}\n\n"
             f"**🌊 최근 5경기**\n{recent5_text}"
         ),
-        color=discord.Color.teal()
+        color=discord.Color(0x5CD1E5)
     )
     embed.set_author(name="🐟TunaBot 전적 정보")
     embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
