@@ -125,7 +125,7 @@ class 참치(app_commands.Group):
 
 # 스팀
 @tree.command(name="스팀정보", description="스팀 게임 정보를 조회합니다.")
-@app_commands.describe(game_name="게임 이름")
+@app_commands.describe(game_name="게임 이름(영문)")
 async def slash_steam(interaction: discord.Interaction, game_name: str):
     await send_steam_game_info(interaction, game_name)
 
