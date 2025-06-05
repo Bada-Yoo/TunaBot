@@ -3,10 +3,9 @@ import requests
 import discord
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+from discord import Interaction
 
-load_dotenv()
-
-async def send_tft_patch_note(ctx):
+async def send_tft_patch_note(interaction: Interaction):
     url = "https://www.leagueoflegends.com/ko-kr/news/tags/teamfight-tactics/"
     headers = {"User-Agent": "Mozilla/5.0"}
 
@@ -14,10 +13,9 @@ async def send_tft_patch_note(ctx):
         res = requests.get(url, headers=headers)
         soup = BeautifulSoup(res.text, "html.parser")
 
-        # TFT 패치노트 링크 추출
         patch_link_tag = soup.select_one('a[href*="teamfight-tactics-patch-"]')
         if not patch_link_tag:
-            await ctx.send("❌ TFT 패치노트를 불러올 수 없습니다.")
+            await interaction.response.send_message("❌ TFT 패치노트를 불러올 수 없습니다.", ephemeral=True)
             return
 
         href = patch_link_tag["href"]
@@ -32,7 +30,7 @@ async def send_tft_patch_note(ctx):
         summary_tag = patch_soup.select_one('div[data-testid="rich-text-html"]')
 
         if not (title_tag and date_tag and thumbnail_tag):
-            await ctx.send("❌ 패치노트 정보를 불러올 수 없습니다.")
+            await interaction.response.send_message("❌ 패치노트 정보를 불러올 수 없습니다.", ephemeral=True)
             return
 
         title = title_tag.text.strip()
@@ -48,13 +46,14 @@ async def send_tft_patch_note(ctx):
         )
         embed.set_image(url=thumbnail)
         embed.set_author(name="🐟TunaBot 패치 정보")
-        embed.set_footer(text="🐳 Powered by Data Crawling | tuna.gg")
+        embed.set_footer(text="🐳 TunaBot TFT Info | tuna.gg")
 
-        await ctx.send(embed=embed)
+        await interaction.response.send_message(embed=embed)
 
     except Exception as e:
         print(f"[TFT 패치노트 오류] {e}")
-        await ctx.send("❌ TFT 패치노트를 불러오는 중 오류가 발생했습니다.")
+        await interaction.response.send_message("❌ TFT 패치노트를 불러오는 중 오류가 발생했습니다.", ephemeral=True)
 
-async def tftpatch(ctx):
-    await send_tft_patch_note(ctx)
+async def tftpatch(interaction: Interaction):
+    await send_tft_patch_note(interaction)
+

@@ -32,7 +32,7 @@ async def send_random_weapon(ctx, category: str, label: str):
     )
     embed.set_author(name="🐟 TunaBot 총기 정보")
     embed.set_image(url=image_url)
-    embed.set_footer(text="🐳 Powered by Data Crawling | tuna.gg")
+    embed.set_footer(text="🐳 TunaBot Valorant Info | tuna.gg")
 
     message = await ctx.send(embed=embed)
     await message.add_reaction("🔁")
@@ -68,7 +68,7 @@ async def handle_valorant_refresh(reaction, user, bot):
     )
     embed.set_author(name="🐟 TunaBot 총기 정보")
     embed.set_image(url=image_url)
-    embed.set_footer(text="🐳 Powered by Data Crawling | tuna.gg")
+    embed.set_footer(text="🐳 TunaBot Valorant Info | tuna.gg")
 
     await message.edit(embed=embed)
     await message.clear_reactions()

@@ -57,7 +57,7 @@ async def send_steam_game_info(interaction: discord.Interaction, game_name: str)
         color=discord.Color.purple()
     )
     embed.set_author(name="🐟TunaBot 게임 정보")
-    embed.set_footer(text="🦈 Powered by Data Crawling | tuna.gg")
+    embed.set_footer(text="🦈 TunaBot STEAM Info | tuna.gg")
     embed.set_image(url=image_url)
 
     await interaction.followup.send(embed=embed)

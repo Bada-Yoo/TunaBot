@@ -48,7 +48,7 @@ async def send_lol_patch_note(interaction: discord.Interaction):
         )
         embed.set_image(url=thumbnail)
         embed.set_author(name="🐟TunaBot 패치 정보")
-        embed.set_footer(text="🐳 Powered by Data Crawling | tuna.gg")
+        embed.set_footer(text="🐳 TunaBot LOL Info | tuna.gg")
 
         await interaction.followup.send(embed=embed)
 

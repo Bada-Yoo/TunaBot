@@ -79,9 +79,9 @@ class 롤체(app_commands.Group):
         await send_tft_patch_note(interaction)
 
     @app_commands.command(name="메타", description="롤체 메타 정보를 확인합니다.")
-    @app_commands.describe(riot_id="전체 | 번호 | 유닛 이름")
-    async def 메타(self, interaction: discord.Interaction, riot_id: str):
-        await send_tft_meta(interaction, riot_id)
+    @app_commands.describe(type="전체 | 번호 | 유닛 이름")
+    async def 메타(self, interaction: discord.Interaction, type: str):
+        await send_tft_meta(interaction, type)
 
 # 발로 명령어 그룹
 class 발로(app_commands.Group):

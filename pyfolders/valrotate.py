@@ -50,7 +50,7 @@ def generate_valorant_rotation_embed():
         color=discord.Color.green()
     )
     embed.set_author(name="🐟 TunaBot 로테이션 정보")
-    embed.set_footer(text="🐳 Powered by Data Crawling | tuna.gg")
+    embed.set_footer(text="🐳 TunaBot Valorant Info | tuna.gg")
 
     return embed
 
