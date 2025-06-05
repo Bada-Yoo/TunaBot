@@ -4,6 +4,7 @@ import discord
 from urllib.parse import quote
 from dotenv import load_dotenv
 from collections import Counter, defaultdict
+from riot_util import lol_safe_get
 
 #최신 버전으로
 versions = requests.get("https://ddragon.leagueoflegends.com/api/versions.json").json()
@@ -27,7 +28,9 @@ QUEUE_TYPES = {
 
 def get_puuid_by_riot_id(game_name, tag_line):
     url = f"https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{quote(game_name)}/{quote(tag_line)}"
-    return requests.get(url, headers=HEADERS).json()
+    response, retry_after = lol_safe_get(url)
+    return (response.json() if response else None), retry_after
+
 
 def get_summoner_by_puuid(puuid):
     url = f"https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{puuid}"
@@ -51,7 +54,18 @@ async def send_lol_stats(ctx, riot_id):
         return
 
     game_name, tag_line = riot_id.split("#")
-    account = get_puuid_by_riot_id(game_name, tag_line)
+    account, retry_after = get_puuid_by_riot_id(game_name, tag_line)
+
+    if account is None:
+        retry_text = f"{retry_after}초 후 다시 시도해주세요." if retry_after else "잠시 후 다시 시도해주세요."
+        await ctx.send(embed=discord.Embed(
+            title="🚫 요청 초과",
+            description=f"Riot API 요청량이 많습니다.\n{retry_text}",
+            color=discord.Color.red()
+        ))
+        return
+
+
     if "puuid" not in account:
         await ctx.send("🤔 Riot ID를 찾을 수 없습니다.")
         return

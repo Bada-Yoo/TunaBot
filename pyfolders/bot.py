@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 import discord    
 import asyncio
-import random
 
 from discord.ext import commands
 from lol import send_lol_stats
@@ -14,13 +13,15 @@ from tftwatch import send_tft_live_status
 from tftpatch import send_tft_patch_note
 from tftmeta import send_tft_meta
 
-from valgun import send_random_weapon
-from valgun import handle_valorant_refresh
+from valgun import send_random_weapon, handle_valorant_refresh
 from valpatch import send_val_patch_note
-from valrotate import get_current_valorant_rotation, send_valorant_rotation
+from valrotate import send_valorant_rotation
 
 from steamgame import send_steam_game_info
 
+from tunaregister import send_tuna_register, send_tuna_unregister
+from tunapointcheck import send_tuna_point
+from tunacheckin import send_tuna_checkin
 
 from tft_update_meta import crawl_tft_meta, save_meta_json
 from tft_update_metadetail import crawl_detail_info
@@ -42,11 +43,6 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready():
     print(f'✅ 봇 로그인 완료: {bot.user}')
-
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send('퐁!')
 
 # !롤 
 @bot.command(name="롤", aliases=["ㄹ"])
@@ -92,7 +88,6 @@ async def valorant_command(ctx, subcommand: str = None):
     else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
-
 @bot.event
 async def on_reaction_add(reaction, user):
     await handle_valorant_refresh(reaction, user, bot)
@@ -107,30 +102,38 @@ async def steam_command(ctx, subcommand: str = None, *, game_name: str = None):
 
 
 # !참치 도움
-@bot.command(name="참치")
+@bot.command(name="참치", aliases=["ㅊㅊ"])
 async def tuna(ctx, subcommand = None):
     if subcommand == "help":
         await ctx.send("""
 🐟 **참치봇 사용 가이드**
 
 🌊 **롤 전적 및 라이브**
-- `!롤 전적 닉#태그` 또는 `!ㄹ ㅈㅈ 닉#태그` : 소환사 전적 확인
-- `!롤 관전 닉#태그` 또는 `!ㄹ ㄱㅈ 닉#태그` : 현재 롤 정보 확인
-- `!롤 상대정보 닉#태그` 또는 `!ㄹ ㅅㄷ 닉#태그` : 상대 팀 티어/모스트 분석
-- `!롤 패치` 또는 `!ㄹ ㅍㅊ` : 최신 패치노트 확인
+- !롤 전적 닉#태그 또는 !ㄹ ㅈㅈ 닉#태그 : 소환사 전적 확인
+- !롤 관전 닉#태그 또는 !ㄹ ㄱㅈ 닉#태그 : 현재 롤 정보 확인
+- !롤 상대정보 닉#태그 또는 !ㄹ ㅅㄷ 닉#태그 : 상대 팀 티어/모스트 분석
+- !롤 패치 또는 !ㄹ ㅍㅊ : 최신 패치노트 확인
 
 🌊 **롤체(TFT)**
-- `!롤체 전적 닉#태그` 또는 `!ㄹㅊ ㅈㅈ 닉#태그` : 소환사 전적 확인
-- `!롤체 관전 닉#태그` 또는 `!ㄹㅊ ㄱㅈ 닉#태그` : 현재 게임 관전
-- `!롤체 패치` 또는 `!ㄹㅊ ㅍㅊ` : 최신 TFT 패치노트 확인
-- `!롤체 메타 전체` : 현재 메타 조합 목록 출력
-- `!롤체 메타 [번호]` : 해당 번호의 메타 + 상세정보 확인
-   예) `!롤체 메타 2`
-- `!롤체 메타 [유닛이름]` : 특정 유닛이 포함된 메타 리스트 출력
-   예) `!롤체 메타 유미`
+- !롤체 전적 닉#태그 또는 !ㄹㅊ ㅈㅈ 닉#태그 : 소환사 전적 확인
+- !롤체 관전 닉#태그 또는 !ㄹㅊ ㄱㅈ 닉#태그 : 현재 게임 관전
+- !롤체 패치 또는 !ㄹㅊ ㅍㅊ : 최신 TFT 패치노트 확인
+- !롤체 메타 전체 : 현재 메타 조합 목록 출력
+- !롤체 메타 [번호] : 해당 번호의 메타 + 상세정보 확인
+   예) !롤체 메타 2
+- !롤체 메타 [유닛이름] : 특정 유닛이 포함된 메타 리스트 출력
+   예) !롤체 메타 유미
 
 🐬 모든 명령어는 줄임말로도 사용 가능합니다!
 """)
+    elif subcommand in ["등록", "ㄷㄹ"]:
+        await send_tuna_register(ctx)   
+    elif subcommand in ["삭제", "ㅅㅈ"]:
+        await send_tuna_unregister(ctx)
+    elif subcommand in ["포인트", "ㅍㅇㅌ"]:
+        await send_tuna_point(ctx)
+    elif subcommand in ["출첵", "ㅊㅊ"]:
+        await send_tuna_checkin(ctx)
     else:
         await ctx.send("🤔 지원하지 않는 명령어입니다.")
 
@@ -146,7 +149,7 @@ async def on_command_error(ctx, error):
 @bot.command(name="롤토체스")
 async def tft_meta_patch(ctx, subcommand: str = None):
     if subcommand in ["메타패치"]:
-        await ctx.send("🔄 롤체 메타 정보를 수집 중입니다. 약 5분가량 소요됩니다./n 오래 걸릴경우 관리자 `pal_tak`에게 문의 주세요!")
+        await ctx.send("🔄 롤체 메타 정보를 수집 중입니다. 약 5분가량 소요됩니다./n 오래 걸릴경우 관리자 pal_tak에게 문의 주세요!")
 
         loop = asyncio.get_running_loop()
 
@@ -162,8 +165,4 @@ async def tft_meta_patch(ctx, subcommand: str = None):
 
         await ctx.send("✅ 롤체 메타 패치 완료! 최신 카드 이미지가 생성되었습니다.")
     else:
-        await ctx.send("❓ 사용법: `!롤체 메타 패치`")
-
-
-
-bot.run(TOKEN)
+        await ctx.send("❓ 사용법: !롤체 메타 패치")
