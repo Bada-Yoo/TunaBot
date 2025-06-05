@@ -4,6 +4,7 @@ import discord
 from urllib.parse import quote
 from dotenv import load_dotenv
 from collections import Counter
+from riot_util import tft_safe_get
 
 load_dotenv()
 RIOT_API_KEY = os.getenv("RIOT_TFT_API_KEY")
@@ -38,7 +39,12 @@ def translate_synergy(name):
 
 def get_puuid_by_riot_id(game_name, tag_line):
     url = f"https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{quote(game_name)}/{quote(tag_line)}"
-    return requests.get(url, headers=HEADERS).json()
+    response, retry_after = tft_safe_get(url)
+    if response is None:
+        return None, retry_after
+    if response.status_code == 404:
+        return {}, retry_after
+    return response.json(), retry_after
 
 def get_tft_summoner_by_puuid(puuid):
     url = f"https://kr.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/{puuid}"
@@ -74,21 +80,32 @@ def get_companion_icon_url(species: str, skin_id: int):
     icon_url = "https://raw.communitydragon.org/latest/" + icon_path.lower().replace("assets/", "game/assets/").replace(".tex", ".png")
     return icon_url
 
-async def send_tft_stats(ctx, riot_id):
+async def send_tft_stats(interaction, riot_id):
     if "#" not in riot_id:
-        await ctx.send("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.")
+        await interaction.response.send_message("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.", ephemeral=True)
         return
 
+    await interaction.response.defer()
+
     game_name, tag_line = riot_id.split("#")
-    account = get_puuid_by_riot_id(game_name, tag_line)
+    account, retry_after = get_puuid_by_riot_id(game_name, tag_line)
+
+    if account is None:
+        retry_text = f"{retry_after}초 후 다시 시도해주세요." if retry_after else "잠시 후 다시 시도해주세요."
+        await interaction.followup.send(embed=discord.Embed(
+            title="🚫 요청 실패",
+            description=f"Riot API 요청량이 많습니다.\n{retry_text}",
+            color=discord.Color.red()
+        ))
+        return
+
     if "puuid" not in account:
-        await ctx.send("🤔 Riot ID를 찾을 수 없습니다.")
+        await interaction.followup.send("🤔 Riot ID를 찾을 수 없습니다.")
         return
 
     puuid = account["puuid"]
     summoner = get_tft_summoner_by_puuid(puuid)
     encrypted_id = summoner.get("id")
-
     rank_data = get_tft_rank_by_id(encrypted_id)
     solo = next((r for r in rank_data if r["queueType"] == "RANKED_TFT"), None)
     duo = next((r for r in rank_data if r["queueType"] == "RANKED_TFT_DOUBLE_UP"), None)
@@ -171,4 +188,4 @@ async def send_tft_stats(ctx, riot_id):
         if companion_icon:
             embed.set_thumbnail(url=companion_icon)
 
-    await ctx.send(embed=embed)
+    await interaction.followup.send(embed=embed)
