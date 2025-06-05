@@ -44,7 +44,7 @@ async def send_lol_patch_note(interaction: discord.Interaction):
             title=title,
             url=link,
             description=f"🗓️ {date}\n\n{summary}",
-            color=discord.Color.brand_red()
+            color=discord.Color.dark_purple()
         )
         embed.set_image(url=thumbnail)
         embed.set_author(name="🐟TunaBot 패치 정보")

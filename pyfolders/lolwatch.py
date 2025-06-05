@@ -3,6 +3,7 @@ import requests
 import discord
 from urllib.parse import quote
 from dotenv import load_dotenv
+from riot_util import lol_safe_get
 import time
 
 versions = requests.get("https://ddragon.leagueoflegends.com/api/versions.json").json()
@@ -27,10 +28,12 @@ QUEUE_TYPES = {
 
 def get_puuid_by_riot_id(game_name, tag_line):
     url = f"https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{quote(game_name)}/{quote(tag_line)}"
-    res = requests.get(url, headers=HEADERS)
-    if res.status_code == 200:
-        return res.json().get("puuid")
-    return None
+    response, retry_after = lol_safe_get(url)
+    if response is None:
+        return None, retry_after
+    if response.status_code == 404:
+        return None, retry_after
+    return response.json(), retry_after
 
 def get_live_game_by_puuid(puuid):
     url = f"https://kr.api.riotgames.com/lol/spectator/v5/active-games/by-summoner/{puuid}"
@@ -83,20 +86,36 @@ def load_champion_eng_name_map():
 CHAMPION_ENG_NAME_MAP = load_champion_eng_name_map()
 
 #롤 전적 함수
-async def send_lol_live_status(ctx, riot_id):
+async def send_lol_live_status(interaction, riot_id):
     if "#" not in riot_id:
-        await ctx.send("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.")
+        await interaction.response.send_message("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.", ephemeral=True)
         return
 
+    await interaction.response.defer()
+
     game_name, tag_line = riot_id.split("#")
-    puuid = get_puuid_by_riot_id(game_name, tag_line)
-    if not puuid:
-        await ctx.send("🤔 Riot ID를 찾을 수 없습니다.")
+    account, retry_after = get_puuid_by_riot_id(game_name, tag_line)
+    if retry_after is not None and account is None:
+        # 429 - 요청량 초과
+        retry_text = f"{retry_after}초 후 다시 시도해주세요."
+        await interaction.followup.send(embed=discord.Embed(
+            title="🚫 요청 실패",
+            description=f"Riot API 요청량이 많습니다.\n{retry_text}",
+            color=discord.Color.red()
+        ))
         return
+
+    if account is None or "puuid" not in account:
+        # 404 또는 그 외 실패
+        await interaction.followup.send("🤔 Riot ID를 찾을 수 없습니다.")
+        return
+
+    
+    puuid = account["puuid"]
 
     live_game = get_live_game_by_puuid(puuid)
     if not live_game:
-        await ctx.send(f"{game_name}#{tag_line}님은 현재 게임 중이 아닙니다.")
+        await interaction.followup.send(f"{game_name}#{tag_line}님은 현재 게임 중이 아닙니다.")
         return
 
     queue_id = live_game.get("gameQueueConfigId", -1)
@@ -135,10 +154,9 @@ async def send_lol_live_status(ctx, riot_id):
         img_url = f"https://ddragon.leagueoflegends.com/cdn/{latest_version}/img/champion/{champ_eng}.png"
         embed.set_thumbnail(url=img_url)
 
-    await ctx.send(embed=embed)
+    await interaction.followup.send(embed=embed)
 
 # 상대정보 분석 함수
-from collections import defaultdict
 
 def get_summoner_by_puuid(puuid):
     url = f"https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{puuid}"
@@ -173,28 +191,43 @@ def format_kda_line(me):
     return f"{champ_name} {k}/{d}/{a} ({win})"
 
 
-async def send_lol_opponent_info(ctx, riot_id):
+async def send_lol_opponent_info(interaction, riot_id):
     if "#" not in riot_id:
-        await ctx.send("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.")
+        await interaction.response.send_message("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.", ephemeral=True)
         return
 
+    await interaction.response.defer()
+
     game_name, tag_line = riot_id.split("#")
-    url = f"https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{quote(game_name)}/{quote(tag_line)}"
-    res = requests.get(url, headers=HEADERS)
-    if res.status_code != 200:
-        await ctx.send("❌ Riot ID를 찾을 수 없습니다.")
+    account, retry_after = get_puuid_by_riot_id(game_name, tag_line)
+
+    if retry_after is not None and account is None:
+        # 429 - 요청량 초과
+        retry_text = f"{retry_after}초 후 다시 시도해주세요."
+        await interaction.followup.send(embed=discord.Embed(
+            title="🚫 요청 실패",
+            description=f"Riot API 요청량이 많습니다.\n{retry_text}",
+            color=discord.Color.red()
+        ))
         return
-    puuid = res.json().get("puuid")
+
+    if account is None or "puuid" not in account:
+        # 404 또는 그 외 실패
+        await interaction.followup.send("🤔 Riot ID를 찾을 수 없습니다.")
+        return
+
+
+    puuid = account["puuid"]
 
     live_game = get_live_game_by_puuid(puuid)
     if not live_game:
-        await ctx.send(f"{riot_id}님은 현재 게임 중이 아닙니다.")
+        await interaction.followup.send(f"{riot_id}님은 현재 게임 중이 아닙니다.")
         return
 
     queue_id = live_game.get("gameQueueConfigId")
     queue_name = QUEUE_TYPES.get(queue_id)
     if queue_id not in [420, 440]:
-        await ctx.send(f"🎮 현재 게임 모드({queue_name})는 상대 분석을 지원하지 않습니다.")
+        await interaction.followup.send(f"🎮 현재 게임 모드({queue_name})는 상대 분석을 지원하지 않습니다.")
         return
 
     my_team = None
@@ -204,7 +237,7 @@ async def send_lol_opponent_info(ctx, riot_id):
             break
 
     if my_team is None:
-        await ctx.send("❌ 참가자 팀 정보를 찾을 수 없습니다.")
+        await interaction.followup.send("❌ 참가자 팀 정보를 찾을 수 없습니다.")
         return
 
     enemies = [p for p in live_game["participants"] if p["teamId"] != my_team]
@@ -243,4 +276,4 @@ async def send_lol_opponent_info(ctx, riot_id):
             body += f"\n최근 2판: {', '.join(kda_lines)}"
         embed.add_field(name="\u200b", value=body, inline=False)
 
-    await ctx.send(embed=embed)
+    await interaction.followup.send(embed=embed)
