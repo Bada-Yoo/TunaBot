@@ -1,11 +1,14 @@
 import discord
 from TunaDB import player_dao
 
-async def send_tuna_checkin(ctx):
-    player_id = ctx.author.id
+async def send_tuna_checkin(interaction: discord.Interaction):
+    player_id = interaction.user.id
 
     if not player_dao.is_registered(player_id):
-        await ctx.send(f"{ctx.author.mention} 등록되지 않은 사용자입니다. 먼저 !참치 등록을 해주세요.")
+        await interaction.response.send_message(
+            f"{interaction.user.mention} 등록되지 않은 사용자입니다. 먼저 `/참치 등록`을 해주세요.",
+            ephemeral=False
+        )
         return
 
     if player_dao.has_checked_today(player_id):
@@ -24,4 +27,5 @@ async def send_tuna_checkin(ctx):
 
     embed.set_author(name="🐟 TunaBot 출석체크")
     embed.set_footer(text="🎣 TunaBot Point System | tuna.gg")
-    await ctx.send(embed=embed)
+
+    await interaction.response.send_message(embed=embed, ephemeral=False)
