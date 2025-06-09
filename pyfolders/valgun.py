@@ -1,9 +1,12 @@
 import discord
 import random
 from urllib.parse import quote
+from discord.ext import commands
 
+# 총기 이미지 경로 (GitHub raw)
 GITHUB_BASE_URL = "https://raw.githubusercontent.com/Bada-Yoo/TunaBot/refs/heads/main/pyfolders/gun_images/"
 
+# 무기 목록
 weapon_categories = {
     "권총": ["클래식", "쇼티", "프렌지", "고스트", "셰리프"],
     "주무기": [
@@ -12,12 +15,16 @@ weapon_categories = {
     ]
 }
 
+# 메시지 ID: label 저장
 refresh_targets = {}
 
+# 무기 카테고리 무작위 선택
 def choose_random_category():
     return random.choice(["권총", "주무기"])
 
-async def send_random_weapon(ctx, category: str, label: str):
+
+# 무기 임베드 전송 함수
+async def send_random_weapon(interaction: discord.Interaction, category: str, label: str):
     if category == "랜덤":
         category = choose_random_category()
 
@@ -34,18 +41,23 @@ async def send_random_weapon(ctx, category: str, label: str):
     embed.set_image(url=image_url)
     embed.set_footer(text="🐳 TunaBot Valorant Info | tuna.gg")
 
-    message = await ctx.send(embed=embed)
+    await interaction.response.send_message(embed=embed)
+    message = await interaction.original_response()
     await message.add_reaction("🔁")
 
-    # 리프레시 시 label만 저장 (category는 랜덤 시마다 새로 정함)
     refresh_targets[message.id] = label
 
+
+# 리액션으로 새 무기 갱신
 async def handle_valorant_refresh(reaction, user, bot):
+    print(f"[DEBUG] 리액션 감지됨: {reaction.emoji} by {user.name}")
+
     if user.bot or str(reaction.emoji) != "🔁":
         return
 
     message = reaction.message
     if message.id not in refresh_targets:
+        print("[DEBUG] 메시지 ID가 refresh_targets에 없음")
         return
 
     label = refresh_targets[message.id]
@@ -70,6 +82,27 @@ async def handle_valorant_refresh(reaction, user, bot):
     embed.set_image(url=image_url)
     embed.set_footer(text="🐳 TunaBot Valorant Info | tuna.gg")
 
-    await message.edit(embed=embed)
-    await message.clear_reactions()
-    await message.add_reaction("🔁")
+    try:
+        await message.edit(embed=embed)
+        await message.clear_reactions()
+        await message.add_reaction("🔁")
+    except discord.NotFound:
+        print("[DEBUG] 메시지를 찾을 수 없음 (삭제되었거나 webhook 만료됨)")
+
+
+# 봇 설정 (intents 필수)
+intents = discord.Intents.default()
+intents.message_content = True
+intents.messages = True
+intents.reactions = True
+
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+
+
+
+
+# 리액션 이벤트 핸들러 등록
+@bot.event
+async def on_reaction_add(reaction, user):
+    await handle_valorant_refresh(reaction, user, bot)

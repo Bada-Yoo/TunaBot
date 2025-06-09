@@ -33,6 +33,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 intents.reactions = True
+intents.messages = True
 client = discord.Client(intents=intents)
 tree = app_commands.CommandTree(client)
 
@@ -104,6 +105,11 @@ class 발로(app_commands.Group):
     @app_commands.command(name="로테", description="발로란트 로테이션 확인")
     async def 로테(self, interaction: discord.Interaction):
         await send_valorant_rotation(interaction)
+
+@client.event
+async def on_reaction_add(reaction, user):
+    await handle_valorant_refresh(reaction, user, client)
+
 
 # 참치 명령어 그룹
 class 참치(app_commands.Group):
