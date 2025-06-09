@@ -34,9 +34,9 @@ def get_tft_live_game_by_puuid(puuid):
     print("❌ 라이브 게임 요청 실패:", res.status_code, res.text)
     return None
 
-async def send_tft_live_status(ctx, riot_id):
+async def send_tft_live_status(interaction, riot_id):
     if "#" not in riot_id:
-        await ctx.send("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.")
+        await interaction.response.send_message("❗ Riot ID는 `닉네임#태그` 형식으로 입력해주세요.", ephemeral=True)
         return
 
     game_name, tag_line = riot_id.split("#")
@@ -44,18 +44,17 @@ async def send_tft_live_status(ctx, riot_id):
 
     puuid = get_puuid(game_name, tag_line)
     if not puuid:
-        await ctx.send("🤔 Riot ID를 찾을 수 없습니다.")
+        await interaction.response.send_message("🤔 Riot ID를 찾을 수 없습니다.")
         return
 
     live_game = get_tft_live_game_by_puuid(puuid)
     if not live_game:
-        await ctx.send(f"{riot_id_display}님은 현재 게임 중이 아닙니다.")
+        await interaction.response.send_message(f"{riot_id_display}님은 현재 게임 중이 아닙니다.")
         return
 
     queue_id = live_game.get("gameQueueConfigId", -1)
     game_mode = QUEUE_TYPES_TFT.get(queue_id, "이벤트 게임")
 
-    # 시작 시간 & 경과 시간 계산
     game_start = live_game.get("gameStartTime", 0)
     start_dt = datetime.datetime.fromtimestamp(game_start / 1000)
     start_str = start_dt.strftime("%Y-%m-%d %H:%M:%S")
@@ -64,7 +63,6 @@ async def send_tft_live_status(ctx, riot_id):
     minutes, seconds = divmod(game_length, 60)
     duration_str = f"{minutes}분 {seconds}초"
 
-    # 썸네일: 참가자 중 내가 누구인지 찾고 프로필 아이콘 사용
     participants = live_game.get("participants", [])
     player = next((p for p in participants if p["puuid"] == puuid), None)
     icon_url = None
@@ -72,7 +70,6 @@ async def send_tft_live_status(ctx, riot_id):
         icon_id = player["profileIconId"]
         icon_url = f"http://ddragon.leagueoflegends.com/cdn/14.10.1/img/profileicon/{icon_id}.png"
 
-    # Embed 생성
     embed = discord.Embed(
         title=f"{riot_id_display}님's\n현재 게임 정보",
         description=(
@@ -87,4 +84,4 @@ async def send_tft_live_status(ctx, riot_id):
         embed.set_thumbnail(url=icon_url)
     embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
 
-    await ctx.send(embed=embed)
+    await interaction.response.send_message(embed=embed)

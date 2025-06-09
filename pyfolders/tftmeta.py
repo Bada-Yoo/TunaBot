@@ -3,8 +3,23 @@ import json
 import os
 import asyncio
 
-# !롤체 메타 [전체 | 숫자 | 유닛명] 처리
-async def send_tft_meta(ctx, query=None):
+def get_invalid_query_embed():
+    embed = discord.Embed(
+        title="메타 검색 예시 안내",
+        description=(
+            "**아래와 같이 입력해보세요!**\n\n"
+            " `/메타 전체` → 전체 메타 조합 목록 보기\n"
+            " `/메타 3` → 3번 메타 카드 보기 + 상세정보\n"
+            " `/메타 모르가나` → 모르가나 포함된 메타 보기\n\n"
+            " 숫자 또는 유닛명을 정확히 입력했는지 확인해주세요."
+        ),
+        color=discord.Color.red()
+    )
+    embed.set_author(name="🐟TunaBot 메타 검색 도움말")
+    embed.set_footer(text=f"🐳 TunaBot TFT Info | tuna.gg")
+    return embed
+
+async def send_tft_meta(interaction: discord.Interaction, query=None):
     base_dir = os.path.dirname(__file__)
     meta_path = os.path.join(base_dir, "tft_meta.json")
     detail_path = os.path.join(base_dir, "tft_metadetail.json")
@@ -18,8 +33,7 @@ async def send_tft_meta(ctx, query=None):
     metas = meta_data.get("meta", [])
     updated_at = meta_data.get("updated_at", "알 수 없음")
 
-    # 1. 전체 목록 출력 (임베드)
-    if query is None or query.strip() == "전체":
+    if query is None or query.strip().lower() == "전체":
         name_list = [f"{i+1}. {'🔥 ' if m.get('hot') else ''}{m['name']}" for i, m in enumerate(metas)]
         description = "\n".join(name_list)
         embed = discord.Embed(
@@ -29,38 +43,37 @@ async def send_tft_meta(ctx, query=None):
         )
         embed.set_author(name="🐟TunaBot 메타 정보")
         embed.set_footer(text=f"🐳 Updated At {updated_at} | tuna.gg")
-        await ctx.send(embed=embed)
+        await interaction.response.send_message(embed=embed)
         return
 
-    # 2. 숫자 (카드만 보여주고 ✅ 누르면 상세정보 출력)
     if query.isdigit():
         index = int(query) - 1
         if 0 <= index < len(metas):
             meta = metas[index]
             detail = next((d for d in detail_data["meta"] if d["name"] == meta["name"]), None)
-
             file_path = os.path.join(image_dir, f"meta_card_{meta['index']}.png")
+
             if not os.path.exists(file_path):
-                await ctx.send("이미지 파일을 찾을 수 없습니다.")
+                await interaction.response.send_message("이미지 파일을 찾을 수 없습니다.")
                 return
+
             file = discord.File(file_path, filename="meta.png")
-            embed1 = discord.Embed(title=f"{meta['name']}", color=0x5CD1E5)
+            embed1 = discord.Embed(title=meta['name'], color=0x5CD1E5)
             embed1.set_image(url="attachment://meta.png")
             embed1.set_author(name="🐟TunaBot 현메타 정보")  
             embed1.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg") 
 
-            file = discord.File(file_path, filename="meta.png")
-            message = await ctx.send(file=file, embed=embed1)
+            await interaction.response.defer()
+            message = await interaction.followup.send(file=file, embed=embed1, wait=True)
             await message.add_reaction("✅")
 
-
             def check(reaction, user):
-                return user == ctx.author and str(reaction.emoji) == "✅" and reaction.message.id == message.id
+                return user == interaction.user and str(reaction.emoji) == "✅" and reaction.message.id == message.id
 
             try:
-                reaction, user = await ctx.bot.wait_for("reaction_add", timeout=60.0, check=check)
+                reaction, user = await interaction.client.wait_for("reaction_add", timeout=60.0, check=check)
                 if not detail:
-                    await ctx.send("상세 정보를 찾을 수 없습니다.")
+                    await interaction.followup.send("상세 정보를 찾을 수 없습니다.")
                     return
 
                 item_text = ""
@@ -79,28 +92,32 @@ async def send_tft_meta(ctx, query=None):
                 )
                 embed2.set_author(name="🐟TunaBot 현메타 정보")
                 embed2.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")
-                await ctx.send(embed=embed2)
+                await interaction.followup.send(embed=embed2)
             except asyncio.TimeoutError:
                 pass
         else:
-            await ctx.send("❌ 해당 번호의 메타는 존재하지 않아요.")
+            await interaction.response.send_message(
+                content="❌ 해당 번호의 메타는 존재하지 않아요.",
+                embed=get_invalid_query_embed()
+            )
         return
 
-    # 3. 유닛 이름 포함 메타 필터링 + 페이지네이션
     keyword = query.strip()
     matched = [
         m for m in metas
         if any(keyword in u["name"] for u in m.get("units", []))
     ]
     if not matched:
-        await ctx.send("❌ 메타를 찾을 수 없어요. 이름을 다시 확인해주세요.")
+        await interaction.response.send_message(
+            content="❌ 메타를 찾을 수 없어요.",
+            embed=get_invalid_query_embed()
+        )
         return
 
-    await send_tft_meta_with_filter(ctx, matched, updated_at, detail_data, image_dir)
+    await send_tft_meta_with_filter(interaction, matched, updated_at, detail_data, image_dir)
 
-
-# ✅ 필터링된 메타들에 대한 페이지네이션 + 상세정보 반응 처리
-async def send_tft_meta_with_filter(ctx, metas, updated_at, detail_data, image_dir):
+# 🔁 필터된 메타 페이지네이션
+async def send_tft_meta_with_filter(interaction, metas, updated_at, detail_data, image_dir):
     current_page = 0
     total_pages = len(metas)
 
@@ -119,7 +136,9 @@ async def send_tft_meta_with_filter(ctx, metas, updated_at, detail_data, image_d
 
     file = get_file(current_page)
     embed = make_embed(current_page)
-    message = await ctx.send(embed=embed, file=file)
+    await interaction.response.defer()
+    
+    message = await interaction.followup.send(embed=embed, file=file, wait=True)
 
     if total_pages > 1:
         await message.add_reaction("⬅️")
@@ -127,11 +146,11 @@ async def send_tft_meta_with_filter(ctx, metas, updated_at, detail_data, image_d
     await message.add_reaction("✅")
 
     def check(reaction, user):
-        return user == ctx.author and str(reaction.emoji) in ["⬅️", "➡️", "✅"] and reaction.message.id == message.id
+        return user == interaction.user and str(reaction.emoji) in ["⬅️", "➡️", "✅"] and reaction.message.id == message.id
 
     while True:
         try:
-            reaction, user = await ctx.bot.wait_for("reaction_add", timeout=60.0, check=check)
+            reaction, user = await interaction.client.wait_for("reaction_add", timeout=60.0, check=check)
 
             if str(reaction.emoji) == "➡️" and current_page < total_pages - 1:
                 current_page += 1
@@ -141,7 +160,7 @@ async def send_tft_meta_with_filter(ctx, metas, updated_at, detail_data, image_d
                 meta = metas[current_page]
                 detail = next((d for d in detail_data.get("meta", []) if d["name"] == meta["name"]), None)
                 if not detail:
-                    await ctx.send("상세 정보를 찾을 수 없습니다.")
+                    await interaction.followup.send("상세 정보를 찾을 수 없습니다.")
                     continue
 
                 item_section = ""
@@ -159,11 +178,11 @@ async def send_tft_meta_with_filter(ctx, metas, updated_at, detail_data, image_d
                         f"**🌊 추천 템**\n{item_section or '정보 없음'}\n"
                         f"**🌊 스테이지별 레벨업 추천**\n{leveling_info or '정보 없음'}"
                     ),
-                    color=discord.Color.dark_blue()
+                    color=discord.Color(0x5CD1E5)
                 )
                 detail_embed.set_author(name="🐟TunaBot 현메타 정보")
                 detail_embed.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")
-                await ctx.send(embed=detail_embed)
+                await interaction.followup.send(embed=detail_embed)
                 continue
 
             await message.clear_reactions()

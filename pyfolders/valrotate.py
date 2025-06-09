@@ -1,6 +1,7 @@
 import discord
 import requests
 from bs4 import BeautifulSoup
+from discord import Interaction
 
 # 현재 경쟁전 맵 로테이션 정보를 가져오는 함수
 def get_current_valorant_rotation():
@@ -31,7 +32,7 @@ def get_current_valorant_rotation():
 
     return maps
 
-# Discord Embed 전송 함수
+# Discord Embed 생성 함수
 def generate_valorant_rotation_embed():
     maps = get_current_valorant_rotation()
 
@@ -50,11 +51,11 @@ def generate_valorant_rotation_embed():
         color=discord.Color.green()
     )
     embed.set_author(name="🐟 TunaBot 로테이션 정보")
-    embed.set_footer(text="🐳 Powered by Data Crawling | tuna.gg")
+    embed.set_footer(text="🐳 TunaBot Valorant Info | tuna.gg")
 
     return embed
 
-# 봇 명령어에서 호출할 함수
-async def send_valorant_rotation(ctx):
+# Interaction 슬래시 명령어용 함수
+async def send_valorant_rotation(interaction: Interaction):
     embed = generate_valorant_rotation_embed()
-    await ctx.send(embed=embed)
+    await interaction.response.send_message(embed=embed)

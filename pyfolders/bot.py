@@ -1,9 +1,9 @@
 import os
 from dotenv import load_dotenv
-import discord    
+import discord
 import asyncio
+from discord import app_commands
 
-from discord.ext import commands
 from lol import send_lol_stats
 from lolwatch import send_lol_live_status, send_lol_opponent_info
 from lolpatch import send_lol_patch_note
@@ -27,142 +27,144 @@ from tft_update_meta import crawl_tft_meta, save_meta_json
 from tft_update_metadetail import crawl_detail_info
 from tft_generate_meta_card import generate_all_meta_cards
 
-
-#from valorant import send_valorant_stats
-
-# 토큰 불러오기
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-# 디스코드 봇 설정
 intents = discord.Intents.default()
 intents.message_content = True
 intents.reactions = True
-bot = commands.Bot(command_prefix='!', intents=intents) 
+intents.messages = True
+client = discord.Client(intents=intents)
+tree = app_commands.CommandTree(client)
 
-@bot.event
+@client.event
 async def on_ready():
-    print(f'✅ 봇 로그인 완료: {bot.user}')
+    await tree.sync()
+    print(f"✅ 봇 로그인 완료: {client.user}")
 
-# !롤 
-@bot.command(name="롤", aliases=["ㄹ"])
-async def lol_command(ctx, subcommand: str = None, *, riot_id: str = None):
-    if subcommand in ["전적", "ㅈㅈ"]:
-        await send_lol_stats(ctx, riot_id)
-    elif subcommand in ["관전", "ㄱㅈ"]:
-        await send_lol_live_status(ctx, riot_id)
-    elif subcommand in ["상대정보", "ㅅㄷ"]:  
-        await send_lol_opponent_info(ctx, riot_id)
-    elif subcommand in ["패치", "ㅍㅊ"]:
-        await send_lol_patch_note(ctx)
-    else:
-        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+# 롤 명령어 그룹
+class 롤(app_commands.Group):
+    @app_commands.command(name="전적", description="롤 전적을 확인합니다.")
+    @app_commands.describe(riot_id="Riot ID#태그")
+    async def 전적(self, interaction: discord.Interaction, riot_id: str):
+        await send_lol_stats(interaction, riot_id)
 
-# !롤체 
-@bot.command(name="롤체", aliases=["ㄹㅊ"])
-async def tft_command(ctx, subcommand: str = None, *, riot_id: str = None):
-    if subcommand in ["전적", "ㅈㅈ"]:
-        await send_tft_stats(ctx, riot_id)
-    elif subcommand in ["관전", "ㄱㅈ"]:
-        await send_tft_live_status(ctx, riot_id)
-    elif subcommand in ["패치", "ㅍㅊ"]:
-        await send_tft_patch_note(ctx)
-    elif subcommand in ["메타", "ㅁㅌ"]:
-        await send_tft_meta(ctx, riot_id)
-    else:
-        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+    @app_commands.command(name="관전", description="롤 라이브 관전을 확인합니다.")
+    @app_commands.describe(riot_id="Riot ID#태그")
+    async def 관전(self, interaction: discord.Interaction, riot_id: str):
+        await send_lol_live_status(interaction, riot_id)
 
-# !발로
-@bot.command(name="발로", aliases=["ㅂㄹ"])
-async def valorant_command(ctx, subcommand: str = None):  
-    if subcommand in ["권총", "ㄱㅊ"]:
-        await send_random_weapon(ctx, category="권총", label="권총")
-    elif subcommand in ["주무기", "ㅈㅁㄱ"]:
-        await send_random_weapon(ctx, category="주무기", label="주무기")
-    elif subcommand in ["랜덤", "ㄹㄷ", None]:
-        await send_random_weapon(ctx, category="랜덤", label="총")
-    elif subcommand in ["패치", "ㅍㅊ"]:
-        await send_val_patch_note(ctx)
-    elif subcommand in ["로테", "ㄾ", "로테이션"]:
-        await send_valorant_rotation(ctx)
-    else:
-        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+    @app_commands.command(name="상대정보", description="롤 상대팀 정보를 확인합니다.")
+    @app_commands.describe(riot_id="Riot ID#태그")
+    async def 상대정보(self, interaction: discord.Interaction, riot_id: str):
+        await send_lol_opponent_info(interaction, riot_id)
 
-@bot.event
+    @app_commands.command(name="패치", description="롤 패치노트를 확인합니다.")
+    async def 패치(self, interaction: discord.Interaction):
+        await send_lol_patch_note(interaction)
+
+# 롤체 명령어 그룹
+class 롤체(app_commands.Group):
+    @app_commands.command(name="전적", description="롤체 전적을 확인합니다.")
+    @app_commands.describe(riot_id="Riot ID#태그")
+    async def 전적(self, interaction: discord.Interaction, riot_id: str):
+        await send_tft_stats(interaction, riot_id)
+
+    @app_commands.command(name="관전", description="롤체 관전을 확인합니다.")
+    @app_commands.describe(riot_id="Riot ID#태그")
+    async def 관전(self, interaction: discord.Interaction, riot_id: str):
+        await send_tft_live_status(interaction, riot_id)
+
+    @app_commands.command(name="패치", description="롤체 패치노트를 확인합니다.")
+    async def 패치(self, interaction: discord.Interaction):
+        await send_tft_patch_note(interaction)
+
+    @app_commands.command(name="메타", description="롤체 메타 정보를 확인합니다.")
+    @app_commands.describe(type="전체 | 번호 | 유닛 이름")
+    async def 메타(self, interaction: discord.Interaction, type: str):
+        await send_tft_meta(interaction, type)
+
+# 발로 명령어 그룹
+class 발로(app_commands.Group):
+    @app_commands.command(name="권총", description="발로란트 권총 추천")
+    async def 권총(self, interaction: discord.Interaction):
+        await send_random_weapon(interaction, category="권총", label="권총")
+
+    @app_commands.command(name="주무기", description="발로란트 주무기 추천")
+    async def 주무기(self, interaction: discord.Interaction):
+        await send_random_weapon(interaction, category="주무기", label="주무기")
+
+    @app_commands.command(name="랜덤", description="발로란트 무기 랜덤 추천")
+    async def 랜덤(self, interaction: discord.Interaction):
+        await send_random_weapon(interaction, category="랜덤", label="총")
+
+    @app_commands.command(name="패치", description="발로란트 패치노트 확인")
+    async def 패치(self, interaction: discord.Interaction):
+        await send_val_patch_note(interaction)
+
+    @app_commands.command(name="로테", description="발로란트 로테이션 확인")
+    async def 로테(self, interaction: discord.Interaction):
+        await send_valorant_rotation(interaction)
+
+@client.event
 async def on_reaction_add(reaction, user):
-    await handle_valorant_refresh(reaction, user, bot)
+    await handle_valorant_refresh(reaction, user, client)
 
 
-@bot.command(name="스팀")
-async def steam_command(ctx, subcommand: str = None, *, game_name: str = None):
-    if subcommand == "정보" and game_name:
-        await send_steam_game_info(ctx, game_name)
-    else:
-        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+# 참치 명령어 그룹
+class 참치(app_commands.Group):
+    @app_commands.command(name="등록", description="참치봇에 등록합니다.")
+    async def 등록(self, interaction: discord.Interaction):
+        await send_tuna_register(interaction)
 
+    @app_commands.command(name="삭제", description="참치봇에서 탈퇴합니다.")
+    async def 삭제(self, interaction: discord.Interaction):
+        await send_tuna_unregister(interaction)
 
-# !참치 도움
-@bot.command(name="참치", aliases=["ㅊㅊ"])
-async def tuna(ctx, subcommand = None):
-    if subcommand == "help":
-        await ctx.send("""
-🐟 **참치봇 사용 가이드**
+    @app_commands.command(name="포인트", description="포인트를 조회합니다.")
+    async def 포인트(self, interaction: discord.Interaction):
+        await send_tuna_point(interaction)
 
-🌊 **롤 전적 및 라이브**
-- !롤 전적 닉#태그 또는 !ㄹ ㅈㅈ 닉#태그 : 소환사 전적 확인
-- !롤 관전 닉#태그 또는 !ㄹ ㄱㅈ 닉#태그 : 현재 롤 정보 확인
-- !롤 상대정보 닉#태그 또는 !ㄹ ㅅㄷ 닉#태그 : 상대 팀 티어/모스트 분석
-- !롤 패치 또는 !ㄹ ㅍㅊ : 최신 패치노트 확인
+    @app_commands.command(name="출첵", description="출석체크를 합니다.")
+    async def 출첵(self, interaction: discord.Interaction):
+        await send_tuna_checkin(interaction)
 
-🌊 **롤체(TFT)**
-- !롤체 전적 닉#태그 또는 !ㄹㅊ ㅈㅈ 닉#태그 : 소환사 전적 확인
-- !롤체 관전 닉#태그 또는 !ㄹㅊ ㄱㅈ 닉#태그 : 현재 게임 관전
-- !롤체 패치 또는 !ㄹㅊ ㅍㅊ : 최신 TFT 패치노트 확인
-- !롤체 메타 전체 : 현재 메타 조합 목록 출력
-- !롤체 메타 [번호] : 해당 번호의 메타 + 상세정보 확인
-   예) !롤체 메타 2
-- !롤체 메타 [유닛이름] : 특정 유닛이 포함된 메타 리스트 출력
-   예) !롤체 메타 유미
+# 스팀
+@tree.command(name="스팀정보", description="스팀 게임 정보를 조회합니다.")
+@app_commands.describe(game_name="게임 이름(영문)")
+async def slash_steam(interaction: discord.Interaction, game_name: str):
+    await send_steam_game_info(interaction, game_name)
 
-🐬 모든 명령어는 줄임말로도 사용 가능합니다!
-""")
-    elif subcommand in ["등록", "ㄷㄹ"]:
-        await send_tuna_register(ctx)   
-    elif subcommand in ["삭제", "ㅅㅈ"]:
-        await send_tuna_unregister(ctx)
-    elif subcommand in ["포인트", "ㅍㅇㅌ"]:
-        await send_tuna_point(ctx)
-    elif subcommand in ["출첵", "ㅊㅊ"]:
-        await send_tuna_checkin(ctx)
-    else:
-        await ctx.send("🤔 지원하지 않는 명령어입니다.")
+# 관리자 전용 명령어
+ADMIN_USER_ID = int(os.getenv("DISCORD_ADMIN_ID"))
 
-# !잘못된 명령어
-@bot.event
-async def on_command_error(ctx, error):
-    if isinstance(error, commands.CommandNotFound):
-        await ctx.send("🤔 지원하지 않는 명령어입니다.")
-    else:
-        raise error  # 다른 오류는 디버깅을 위해 그대로 발생시킴
+def is_admin(interaction: discord.Interaction):
+    return interaction.user.id == ADMIN_USER_ID
 
-#관리자 명령어
-@bot.command(name="롤토체스")
-async def tft_meta_patch(ctx, subcommand: str = None):
+@tree.command(name="롤토체스", description="관리자 전용 메타 카드 패치")
+@app_commands.describe(subcommand="메타패치")
+@app_commands.check(is_admin)
+async def slash_meta_patch(interaction: discord.Interaction, subcommand: str):
     if subcommand in ["메타패치"]:
-        await ctx.send("🔄 롤체 메타 정보를 수집 중입니다. 약 5분가량 소요됩니다./n 오래 걸릴경우 관리자 pal_tak에게 문의 주세요!")
+        await interaction.response.send_message("🔄 롤체 메타 정보를 수집 중입니다. 약 5분가량 소요됩니다.")
 
         loop = asyncio.get_running_loop()
-
-        # 1. 메타 정보 수집 및 저장
         data = await loop.run_in_executor(None, crawl_tft_meta)
         await loop.run_in_executor(None, save_meta_json, data)
-
-        # 2. 세부 정보 수집
         await loop.run_in_executor(None, crawl_detail_info)
-
-        # 3. 카드 이미지 생성
         await loop.run_in_executor(None, generate_all_meta_cards)
 
-        await ctx.send("✅ 롤체 메타 패치 완료! 최신 카드 이미지가 생성되었습니다.")
+        await interaction.followup.send("✅ 롤체 메타 패치 완료! 최신 카드 이미지가 생성되었습니다.")
     else:
-        await ctx.send("❓ 사용법: !롤체 메타 패치")
+        await interaction.response.send_message("❓ 사용법: `/롤토체스 메타패치`")
+
+# 그룹 등록
+@client.event
+async def setup_hook():
+    tree.add_command(롤(name="롤"))
+    tree.add_command(롤체(name="롤체"))
+    tree.add_command(발로(name="발로"))
+    tree.add_command(참치(name="참치"))
+    await tree.sync()
+
+client.run(TOKEN)
