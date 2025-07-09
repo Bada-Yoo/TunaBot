@@ -38,9 +38,10 @@ def get_summoner_by_puuid(puuid):
     url = f"https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/{puuid}"
     return requests.get(url, headers=HEADERS).json()
 
-def get_rank_data(encrypted_summoner_id):
-    url = f"https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/{encrypted_summoner_id}"
+def get_rank_data_by_puuid(puuid):
+    url = f"https://kr.api.riotgames.com/lol/league/v4/entries/by-puuid/{puuid}"
     return requests.get(url, headers=HEADERS).json()
+
 
 def get_match_ids(puuid, count=10):
     url = f"https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?start=0&count={count}"
@@ -81,7 +82,7 @@ async def send_lol_stats(interaction, riot_id):
         profile_icon_id = summoner["profileIconId"]
         icon_url = f"http://ddragon.leagueoflegends.com/cdn/{latest_version}/img/profileicon/{profile_icon_id}.png"
 
-        rank_data = get_rank_data(encrypted_id)
+        rank_data = get_rank_data_by_puuid(puuid)
         solo = next((r for r in rank_data if r["queueType"] == "RANKED_SOLO_5x5"), None)
         rank_info = solo["tier"] + " " + solo["rank"] if solo else "Unranked"
 

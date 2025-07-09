@@ -50,9 +50,26 @@ def get_tft_summoner_by_puuid(puuid):
     url = f"https://kr.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/{puuid}"
     return requests.get(url, headers=HEADERS).json()
 
-def get_tft_rank_by_id(encrypted_id):
-    url = f"https://kr.api.riotgames.com/tft/league/v1/entries/by-summoner/{encrypted_id}"
-    return requests.get(url, headers=HEADERS).json()
+def get_tft_rank_by_puuid(puuid):
+    url = f"https://kr.api.riotgames.com/tft/league/v1/by-puuid/{puuid}"
+    res = requests.get(url, headers=HEADERS)
+
+    if res.status_code == 403:
+        print(f"❌ [403] 리그 데이터 접근 거부됨 (PUUID: {puuid}) → Unranked 처리")
+        return []
+
+    try:
+        data = res.json()
+        if not isinstance(data, list):
+            print(f"❗ get_tft_rank_by_puuid: 반환이 리스트가 아님! type={type(data)}, 내용={data}")
+            return []
+        return data
+    except Exception as e:
+        print(f"❗ get_tft_rank_by_puuid JSON 파싱 실패: {e}, 응답: {res.text}")
+        return []
+
+
+
 
 def get_tft_match_ids(puuid, count=10):
     url = f"https://asia.api.riotgames.com/tft/match/v1/matches/by-puuid/{puuid}/ids?count={count}"
@@ -105,8 +122,8 @@ async def send_tft_stats(interaction, riot_id):
 
     puuid = account["puuid"]
     summoner = get_tft_summoner_by_puuid(puuid)
-    encrypted_id = summoner.get("id")
-    rank_data = get_tft_rank_by_id(encrypted_id)
+    rank_data = get_tft_rank_by_puuid(puuid)
+
     solo = next((r for r in rank_data if r["queueType"] == "RANKED_TFT"), None)
     duo = next((r for r in rank_data if r["queueType"] == "RANKED_TFT_DOUBLE_UP"), None)
 
