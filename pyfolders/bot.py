@@ -19,9 +19,10 @@ from valrotate import send_valorant_rotation
 
 from steamgame import send_steam_game_info
 
-from tunaregister import send_tuna_register, send_tuna_unregister
-from tunapointcheck import send_tuna_point
-from tunacheckin import send_tuna_checkin
+# 🔒 참치 관련 기능 임시 비활성화
+# from tunaregister import send_tuna_register, send_tuna_unregister
+# from tunapointcheck import send_tuna_point
+# from tunacheckin import send_tuna_checkin
 
 from tft_update_meta import crawl_tft_meta, save_meta_json
 from tft_update_metadetail import crawl_detail_info
@@ -110,24 +111,23 @@ class 발로(app_commands.Group):
 async def on_reaction_add(reaction, user):
     await handle_valorant_refresh(reaction, user, client)
 
+# 🔒 참치 명령어 그룹 (비활성화)
+# class 참치(app_commands.Group):
+#     @app_commands.command(name="등록", description="참치봇에 등록합니다.")
+#     async def 등록(self, interaction: discord.Interaction):
+#         await send_tuna_register(interaction)
 
-# 참치 명령어 그룹
-class 참치(app_commands.Group):
-    @app_commands.command(name="등록", description="참치봇에 등록합니다.")
-    async def 등록(self, interaction: discord.Interaction):
-        await send_tuna_register(interaction)
+#     @app_commands.command(name="삭제", description="참치봇에서 탈퇴합니다.")
+#     async def 삭제(self, interaction: discord.Interaction):
+#         await send_tuna_unregister(interaction)
 
-    @app_commands.command(name="삭제", description="참치봇에서 탈퇴합니다.")
-    async def 삭제(self, interaction: discord.Interaction):
-        await send_tuna_unregister(interaction)
+#     @app_commands.command(name="포인트", description="포인트를 조회합니다.")
+#     async def 포인트(self, interaction: discord.Interaction):
+#         await send_tuna_point(interaction)
 
-    @app_commands.command(name="포인트", description="포인트를 조회합니다.")
-    async def 포인트(self, interaction: discord.Interaction):
-        await send_tuna_point(interaction)
-
-    @app_commands.command(name="출첵", description="출석체크를 합니다.")
-    async def 출첵(self, interaction: discord.Interaction):
-        await send_tuna_checkin(interaction)
+#     @app_commands.command(name="출첵", description="출석체크를 합니다.")
+#     async def 출첵(self, interaction: discord.Interaction):
+#         await send_tuna_checkin(interaction)
 
 # 스팀
 @tree.command(name="스팀정보", description="스팀 게임 정보를 조회합니다.")
@@ -164,7 +164,7 @@ async def setup_hook():
     tree.add_command(롤(name="롤"))
     tree.add_command(롤체(name="롤체"))
     tree.add_command(발로(name="발로"))
-    tree.add_command(참치(name="참치"))
+    # tree.add_command(참치(name="참치"))
     await tree.sync()
 
 client.run(TOKEN)
