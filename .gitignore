@@ -12,8 +12,5 @@ __pycache__/
 # 토큰 무시
 .env
 
-#tft_meta_images 폴더 무시
-tft_meta_images/
-
 #json 파일 무시
 *.json
