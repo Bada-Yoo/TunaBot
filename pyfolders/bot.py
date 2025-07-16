@@ -19,17 +19,13 @@ from valrotate import send_valorant_rotation
 
 from steamgame import send_steam_game_info
 
-# 🔒 참치 관련 기능 임시 비활성화
-# from tunaregister import send_tuna_register, send_tuna_unregister
-# from tunapointcheck import send_tuna_point
-# from tunacheckin import send_tuna_checkin
-
 from tft_update_meta import crawl_tft_meta, save_meta_json
 from tft_update_metadetail import crawl_detail_info
 from tft_generate_meta_card import generate_all_meta_cards
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
+ADMIN_USER_ID = int(os.getenv("DISCORD_ADMIN_ID"))
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -42,6 +38,37 @@ tree = app_commands.CommandTree(client)
 async def on_ready():
     await tree.sync()
     print(f"✅ 봇 로그인 완료: {client.user}")
+
+# 옵션 추출 유틸
+def extract_options(options):
+    if not isinstance(options, list):
+        return ""
+    extracted = []
+    for opt in options:
+        name = opt.get("name")
+        value = opt.get("value")
+        if value is None and "options" in opt:
+            nested = extract_options(opt["options"])
+            extracted.append(f"{name} {nested}".strip())
+        elif name and value is not None:
+            extracted.append(f"{name}={value}")
+    return " ".join(extracted)
+
+# 명령 감지 → 관리자 DM
+@client.event
+async def on_interaction(interaction: discord.Interaction):
+    if interaction.type == discord.InteractionType.application_command:
+        try:
+            admin = await client.fetch_user(ADMIN_USER_ID)
+            user = interaction.user
+            command_name = interaction.command.name if interaction.command else "Unknown"
+            group_name = interaction.command.parent.name if interaction.command and interaction.command.parent else None
+            options = interaction.data.get("options", [])
+            args_text = extract_options(options)
+            full_command = f"/{group_name + ' ' if group_name else ''}{command_name} {args_text}".strip()
+            await admin.send(f"👤 {user} ({user.id})\n💬 {full_command}")
+        except Exception as e:
+            print(f"⚠️ 관리자 DM 전송 실패: {e}")
 
 # 롤 명령어 그룹
 class 롤(app_commands.Group):
@@ -107,37 +134,18 @@ class 발로(app_commands.Group):
     async def 로테(self, interaction: discord.Interaction):
         await send_valorant_rotation(interaction)
 
+# 반응 이모지 이벤트
 @client.event
 async def on_reaction_add(reaction, user):
     await handle_valorant_refresh(reaction, user, client)
 
-# 🔒 참치 명령어 그룹 (비활성화)
-# class 참치(app_commands.Group):
-#     @app_commands.command(name="등록", description="참치봇에 등록합니다.")
-#     async def 등록(self, interaction: discord.Interaction):
-#         await send_tuna_register(interaction)
-
-#     @app_commands.command(name="삭제", description="참치봇에서 탈퇴합니다.")
-#     async def 삭제(self, interaction: discord.Interaction):
-#         await send_tuna_unregister(interaction)
-
-#     @app_commands.command(name="포인트", description="포인트를 조회합니다.")
-#     async def 포인트(self, interaction: discord.Interaction):
-#         await send_tuna_point(interaction)
-
-#     @app_commands.command(name="출첵", description="출석체크를 합니다.")
-#     async def 출첵(self, interaction: discord.Interaction):
-#         await send_tuna_checkin(interaction)
-
-# 스팀
+# 스팀 명령어
 @tree.command(name="스팀정보", description="스팀 게임 정보를 조회합니다.")
 @app_commands.describe(game_name="게임 이름(영문)")
 async def slash_steam(interaction: discord.Interaction, game_name: str):
     await send_steam_game_info(interaction, game_name)
 
 # 관리자 전용 명령어
-ADMIN_USER_ID = int(os.getenv("DISCORD_ADMIN_ID"))
-
 def is_admin(interaction: discord.Interaction):
     return interaction.user.id == ADMIN_USER_ID
 
@@ -158,34 +166,12 @@ async def slash_meta_patch(interaction: discord.Interaction, subcommand: str):
     else:
         await interaction.response.send_message("❓ 사용법: `/롤토체스 메타패치`")
 
-@client.event
-async def on_interaction(interaction: discord.Interaction):
-    if interaction.type == discord.InteractionType.application_command:
-        try:
-            admin = await client.fetch_user(ADMIN_USER_ID)
-            user = interaction.user
-            command_name = interaction.command.name if interaction.command else "Unknown"
-            group_name = interaction.command.parent.name if interaction.command and interaction.command.parent else None
-            options = interaction.data.get("options", [])
-            args_text = " ".join(f"{opt['name']}={opt['value']}" for opt in options) if options else ""
-
-            full_command = f"/{group_name + ' ' if group_name else ''}{command_name} {args_text}".strip()
-
-            await admin.send(
-                f"👤 {user} ({user.id})\n"
-                f"💬 {full_command}"
-            )
-        except Exception as e:
-            print(f"⚠️ 관리자 DM 전송 실패: {e}")
-
-
 # 그룹 등록
 @client.event
 async def setup_hook():
     tree.add_command(롤(name="롤"))
     tree.add_command(롤체(name="롤체"))
     tree.add_command(발로(name="발로"))
-    # tree.add_command(참치(name="참치"))
     await tree.sync()
 
 client.run(TOKEN)
