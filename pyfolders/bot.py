@@ -158,6 +158,27 @@ async def slash_meta_patch(interaction: discord.Interaction, subcommand: str):
     else:
         await interaction.response.send_message("❓ 사용법: `/롤토체스 메타패치`")
 
+@client.event
+async def on_interaction(interaction: discord.Interaction):
+    if interaction.type == discord.InteractionType.application_command:
+        try:
+            admin = await client.fetch_user(ADMIN_USER_ID)
+            user = interaction.user
+            command_name = interaction.command.name if interaction.command else "Unknown"
+            group_name = interaction.command.parent.name if interaction.command and interaction.command.parent else None
+            options = interaction.data.get("options", [])
+            args_text = " ".join(f"{opt['name']}={opt['value']}" for opt in options) if options else ""
+
+            full_command = f"/{group_name + ' ' if group_name else ''}{command_name} {args_text}".strip()
+
+            await admin.send(
+                f"👤 {user} ({user.id})\n"
+                f"💬 {full_command}"
+            )
+        except Exception as e:
+            print(f"⚠️ 관리자 DM 전송 실패: {e}")
+
+
 # 그룹 등록
 @client.event
 async def setup_hook():
