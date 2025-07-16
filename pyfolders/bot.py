@@ -1,3 +1,4 @@
+
 import os
 from dotenv import load_dotenv
 import discord
@@ -175,3 +176,27 @@ async def setup_hook():
     await tree.sync()
 
 client.run(TOKEN)
+
+# 🔒 참치 관련 기능 임시 비활성화
+# from tunaregister import send_tuna_register, send_tuna_unregister
+# from tunapointcheck import send_tuna_point
+# from tunacheckin import send_tuna_checkin
+
+
+# 🔒 참치 명령어 그룹 (비활성화)
+# class 참치(app_commands.Group):
+#     @app_commands.command(name="등록", description="참치봇에 등록합니다.")
+#     async def 등록(self, interaction: discord.Interaction):
+#         await send_tuna_register(interaction)
+
+#     @app_commands.command(name="삭제", description="참치봇에서 탈퇴합니다.")
+#     async def 삭제(self, interaction: discord.Interaction):
+#         await send_tuna_unregister(interaction)
+
+#     @app_commands.command(name="포인트", description="포인트를 조회합니다.")
+#     async def 포인트(self, interaction: discord.Interaction):
+#         await send_tuna_point(interaction)
+
+#     @app_commands.command(name="출첵", description="출석체크를 합니다.")
+#     async def 출첵(self, interaction: discord.Interaction):
+#         await send_tuna_checkin(interaction)
