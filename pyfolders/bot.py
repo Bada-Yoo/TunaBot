@@ -1,3 +1,4 @@
+
 import os
 from dotenv import load_dotenv
 import discord
@@ -134,7 +135,6 @@ class 발로(app_commands.Group):
         await send_valorant_rotation(interaction)
 
 # 익명 명령어 그룹
-# 익명 명령어 그룹
 class 익명(app_commands.Group):
     @app_commands.command(name="채널", description="현재 채널에 익명 메시지를 보냅니다.")
     @app_commands.describe(message="보낼 메시지 내용")
@@ -155,8 +155,6 @@ class 익명(app_commands.Group):
         username: str = None
     ):
         await send_anonymous_dm(interaction, message, target=target, username=username)
-
-
 
 # 반응 이모지 이벤트
 @client.event
@@ -196,11 +194,10 @@ async def setup_hook():
     tree.add_command(롤(name="롤"))
     tree.add_command(롤체(name="롤체"))
     tree.add_command(발로(name="발로"))
-    tree.add_command(익명(name="익명"))  # ✅ 익명 등록
+    tree.add_command(익명(name="익명")) 
     await tree.sync()
 
 client.run(TOKEN)
-
 
 # 🔒 참치 관련 기능 임시 비활성화
 # from tunaregister import send_tuna_register, send_tuna_unregister
@@ -225,3 +222,4 @@ client.run(TOKEN)
 #     @app_commands.command(name="출첵", description="출석체크를 합니다.")
 #     async def 출첵(self, interaction: discord.Interaction):
 #         await send_tuna_checkin(interaction)
+
