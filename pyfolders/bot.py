@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import discord
 import asyncio
 from discord import app_commands
+from anonymous import send_anonymous_channel, send_anonymous_dm
 
 from lol import send_lol_stats
 from lolwatch import send_lol_live_status, send_lol_opponent_info
@@ -40,7 +41,6 @@ async def on_ready():
     await tree.sync()
     print(f"✅ 봇 로그인 완료: {client.user}")
 
-# 옵션 추출 유틸
 def extract_options(options):
     if not isinstance(options, list):
         return ""
@@ -55,7 +55,6 @@ def extract_options(options):
             extracted.append(f"{name}={value}")
     return " ".join(extracted)
 
-# 명령 감지 → 관리자 DM
 @client.event
 async def on_interaction(interaction: discord.Interaction):
     if interaction.type == discord.InteractionType.application_command:
@@ -135,6 +134,28 @@ class 발로(app_commands.Group):
     async def 로테(self, interaction: discord.Interaction):
         await send_valorant_rotation(interaction)
 
+# 익명 명령어 그룹
+class 익명(app_commands.Group):
+    @app_commands.command(name="채널", description="현재 채널에 익명 메시지를 보냅니다.")
+    @app_commands.describe(message="보낼 메시지 내용")
+    async def 채널(self, interaction: discord.Interaction, message: str):
+        await send_anonymous_channel(interaction, message)
+
+    @app_commands.command(name="갠디", description="특정 유저에게 익명 DM을 보냅니다.")
+    @app_commands.describe(
+        target="(선택) 서버내 유저 선택",
+        username="(선택) 유저 아이디 입력 (예:462922287730130945)//모른다면? 해당 유저 클릭->점3개->ID 복사",
+        message="보낼 메시지 내용"
+    )
+    async def 갠디(
+        self,
+        interaction: discord.Interaction,
+        message: str,
+        target: discord.User = None,
+        username: str = None
+    ):
+        await send_anonymous_dm(interaction, message, target=target, username=username)
+
 # 반응 이모지 이벤트
 @client.event
 async def on_reaction_add(reaction, user):
@@ -173,6 +194,7 @@ async def setup_hook():
     tree.add_command(롤(name="롤"))
     tree.add_command(롤체(name="롤체"))
     tree.add_command(발로(name="발로"))
+    tree.add_command(익명(name="익명")) 
     await tree.sync()
 
 client.run(TOKEN)
@@ -200,3 +222,4 @@ client.run(TOKEN)
 #     @app_commands.command(name="출첵", description="출석체크를 합니다.")
 #     async def 출첵(self, interaction: discord.Interaction):
 #         await send_tuna_checkin(interaction)
+
