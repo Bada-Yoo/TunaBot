@@ -152,11 +152,7 @@ class 익명(app_commands.Group):
         message: str,
         target: discord.User
     ):
-<<<<<<< HEAD
         await send_anonymous_dm(interaction, message, target)
-=======
-        await send_anonymous_dm(interaction, message, target=target, username=username)
->>>>>>> 88b478ca92cc32b5f0dccac359c3b06dad10d1b1
 
 # 반응 이모지 이벤트
 @client.event
