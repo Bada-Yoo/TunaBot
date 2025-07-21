@@ -143,18 +143,16 @@ class 익명(app_commands.Group):
 
     @app_commands.command(name="갠디", description="특정 유저에게 익명 DM을 보냅니다.")
     @app_commands.describe(
-        target="(선택) 서버내 유저 선택",
-        username="(선택) 유저 아이디 입력 (예:462922287730130945)//모른다면? 해당 유저 클릭->점3개->ID 복사",
+        target="서버 내 유저 선택",
         message="보낼 메시지 내용"
     )
     async def 갠디(
         self,
         interaction: discord.Interaction,
         message: str,
-        target: discord.User = None,
-        username: str = None
+        target: discord.User
     ):
-        await send_anonymous_dm(interaction, message, target=target, username=username)
+        await send_anonymous_dm(interaction, message, target)
 
 # 반응 이모지 이벤트
 @client.event
