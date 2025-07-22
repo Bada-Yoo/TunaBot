@@ -15,7 +15,7 @@ async def send_anonymous_channel(interaction: discord.Interaction, message: str)
         description=message,
         color=discord.Color.blurple()
     )
-    embed.set_footer(text="🦈 TunaBot Secret Message | tuna.gg")
+    embed.set_footer(text="🪸 TunaBot Secret Message | tuna.gg")
 
     await interaction.channel.send(embed=embed)
     await interaction.followup.send("✅ 익명 메시지를 보냈어요.")
@@ -31,7 +31,7 @@ async def send_anonymous_dm(interaction: discord.Interaction, message: str, targ
             description=message,
             color=discord.Color.blurple()
         )
-        embed.set_footer(text="🦈 TunaBot Secret Message | tuna.gg")
+        embed.set_footer(text="🪸 TunaBot Secret Message | tuna.gg")
 
         token = str(uuid.uuid4())
         reply_tokens[token] = (interaction.user.id, target.id, time.time())
@@ -71,9 +71,9 @@ async def handle_anonymous_reply(interaction: discord.Interaction, message: str,
         embed = discord.Embed(
             title="익명 답장이 도착했어요!",
             description=message,
-            color=discord.Color.green()
+            color=discord.Color.blurple()
         )
-        embed.set_footer(text=f"💌 보낸 사람: {interaction.user.display_name}")
+        embed.set_footer(text=f"🪸 보낸 사람: {interaction.user.display_name} | tuna.gg")
         await sender.send(embed=embed)
 
         await interaction.followup.send("✅ 답장을 보냈어요.")
