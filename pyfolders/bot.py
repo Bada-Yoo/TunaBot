@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import discord
 import asyncio
 from discord import app_commands
-from anonymous import send_anonymous_channel, send_anonymous_dm
+from anonymous import send_anonymous_channel, send_anonymous_dm, handle_anonymous_reply
 
 from lol import send_lol_stats
 from lolwatch import send_lol_live_status, send_lol_opponent_info
@@ -153,6 +153,19 @@ class 익명(app_commands.Group):
         target: discord.User
     ):
         await send_anonymous_dm(interaction, message, target)
+
+    @app_commands.command(name="답장", description="받은 익명 DM에 답장합니다.")
+    @app_commands.describe(
+        message="답장할 내용",
+        token="익명 DM에 포함된 토큰"
+    )
+    async def 답장(
+        self,
+        interaction: discord.Interaction,
+        message: str,
+        token: str
+    ):
+        await handle_anonymous_reply(interaction, message, token)
 
 # 반응 이모지 이벤트
 @client.event
