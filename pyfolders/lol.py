@@ -77,7 +77,11 @@ async def send_lol_stats(interaction, riot_id):
 
         puuid = account["puuid"]
         summoner = get_summoner_by_puuid(puuid)
-        encrypted_id = summoner["id"]
+
+        if not summoner or "summonerLevel" not in summoner or "profileIconId" not in summoner:
+            await interaction.followup.send("⚠️ 소환사 정보를 가져올 수 없습니다. Riot API에 문제가 있거나 Riot ID가 잘못되었습니다.")
+            return
+
         level = summoner["summonerLevel"]
         profile_icon_id = summoner["profileIconId"]
         icon_url = f"http://ddragon.leagueoflegends.com/cdn/{latest_version}/img/profileicon/{profile_icon_id}.png"
@@ -100,7 +104,9 @@ async def send_lol_stats(interaction, riot_id):
                 continue
 
             queue_id = match["info"].get("queueId", -1)
-            me = next(p for p in match["info"]["participants"] if p["puuid"] == puuid)
+            me = next((p for p in match["info"]["participants"] if p["puuid"] == puuid), None)
+            if not me:
+                continue
 
             champ = me["championName"]
             k, d, a = me["kills"], me["deaths"], me["assists"]
