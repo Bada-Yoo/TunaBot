@@ -149,23 +149,24 @@ class 익명(app_commands.Group):
     async def 갠디(
         self,
         interaction: discord.Interaction,
-        message: str,
-        target: discord.User
+        target: discord.User,
+        message: str
     ):
-        await send_anonymous_dm(interaction, message, target)
+        await send_anonymous_dm(interaction, target, message)
 
     @app_commands.command(name="답장", description="받은 익명 DM에 답장합니다.")
     @app_commands.describe(
-        message="답장할 내용",
-        token="익명 DM에 포함된 토큰"
+        token="익명 DM에 포함된 토큰",
+        message="답장할 내용"
     )
     async def 답장(
         self,
         interaction: discord.Interaction,
-        message: str,
-        token: str
+        token: str,
+        message: str
     ):
-        await handle_anonymous_reply(interaction, message, token)
+        await handle_anonymous_reply(interaction, token, message)
+
 
 # 반응 이모지 이벤트
 @client.event
