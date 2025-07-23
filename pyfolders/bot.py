@@ -257,6 +257,27 @@ async def slash_help(interaction: discord.Interaction):
 """
     await interaction.response.send_message(help_text, ephemeral=True)
 
+@tree.command(name="서버", description="봇이 들어가 있는 서버 목록과 인원수를 확인합니다.")
+@app_commands.check(is_admin)
+async def slash_server_info(interaction: discord.Interaction):
+    if not client.guilds:
+        await interaction.response.send_message("🤖 봇이 현재 어떤 서버에도 들어가 있지 않습니다.", ephemeral=True)
+        return
+
+    embed = discord.Embed(
+        title="📂 현재 접속 중인 서버 목록",
+        color=discord.Color.blurple()
+    )
+
+    for guild in client.guilds:
+        embed.add_field(
+            name=guild.name,
+            value=f"👥 {guild.member_count}명",
+            inline=False
+        )
+
+    await interaction.response.send_message(embed=embed, ephemeral=True)
+
 
 
 # 그룹 등록
