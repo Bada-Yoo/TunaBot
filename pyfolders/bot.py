@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import discord
 import asyncio
 from discord import app_commands
-from anonymous import send_anonymous_channel, send_anonymous_dm
+from anonymous import send_anonymous_channel, send_anonymous_dm, handle_anonymous_reply
 
 from lol import send_lol_stats
 from lolwatch import send_lol_live_status, send_lol_opponent_info
@@ -39,7 +39,11 @@ tree = app_commands.CommandTree(client)
 @client.event
 async def on_ready():
     await tree.sync()
+    await client.change_presence(
+        activity=discord.Game(name="🎣TunaBot|궁금할땐 /도움말")
+    )
     print(f"✅ 봇 로그인 완료: {client.user}")
+
 
 def extract_options(options):
     if not isinstance(options, list):
@@ -149,10 +153,24 @@ class 익명(app_commands.Group):
     async def 갠디(
         self,
         interaction: discord.Interaction,
-        message: str,
-        target: discord.User
+        target: discord.User,
+        message: str
     ):
-        await send_anonymous_dm(interaction, message, target)
+        await send_anonymous_dm(interaction, target, message)
+
+    @app_commands.command(name="답장", description="받은 익명 DM에 답장합니다.")
+    @app_commands.describe(
+        token="익명 DM에 포함된 토큰",
+        message="답장할 내용"
+    )
+    async def 답장(
+        self,
+        interaction: discord.Interaction,
+        token: str,
+        message: str
+    ):
+        await handle_anonymous_reply(interaction, token, message)
+
 
 # 반응 이모지 이벤트
 @client.event
@@ -185,6 +203,82 @@ async def slash_meta_patch(interaction: discord.Interaction, subcommand: str):
         await interaction.followup.send("✅ 롤체 메타 패치 완료! 최신 카드 이미지가 생성되었습니다.")
     else:
         await interaction.response.send_message("❓ 사용법: `/롤토체스 메타패치`")
+
+@tree.command(name="도움말", description="참치봇의 전체 기능을 안내합니다.")
+async def slash_help(interaction: discord.Interaction):
+    help_text = """
+**🎣 참치봇**  
+게임 전적부터 무기 추천, 스팀 검색, 익명 메시지까지!  
+게이머를 위한 디스코드 올인원 유틸리티 봇입니다.
+
+---
+
+**✏️ 소개**  
+**참치봇**은 LoL, TFT, VALORANT, Steam 기반의 전적/정보 조회 기능과  
+익명 메시지 시스템을 제공하는 다기능 디스코드 봇입니다.
+
+---
+
+**🛠️ 기능 명령어 안내**
+
+**🐬 League of Legends (롤)**  
+`/롤 전적 소환사명` – 소환사 전적을 확인합니다.  
+`/롤 관전 소환사명` – 라이브 게임 상태를 확인합니다.  
+`/롤 상대정보 소환사명` – 상대팀 정보를 확인합니다.  
+`/롤 패치` – 최신 패치노트를 확인합니다.
+
+**🐬 Teamfight Tactics (롤토체스)**  
+`/롤체 전적 소환사명` – TFT 전적을 확인합니다.  
+`/롤체 관전 소환사명` – TFT 라이브 게임 상태를 확인합니다.  
+`/롤체 메타 전체|숫자|챔피언이름` – 메타 티어표를 확인합니다.  
+예: `/롤체 메타 전체`, `/롤체 메타 3`, `/롤체 메타 모르가나`  
+`/롤체 패치` – TFT 패치노트를 확인합니다.
+
+**🐳 VALORANT**  
+`/발로 권총` – 권총을 랜덤으로 추천합니다.  
+`/발로 랜덤` – 무기를 랜덤으로 추천합니다.  
+`/발로 주무기` – 주무기를 랜덤으로 추천합니다.  
+`/발로 로테` – 경쟁전 맵 로테이션을 확인합니다.  
+`/발로 패치` – 발로란트 패치노트를 확인합니다.
+
+**🦈 Steam**  
+`/스팀정보 게임이름` – 입력한 게임의 스팀 정보를 조회합니다.  
+(※ 게임 이름은 **영문**으로 입력해주세요.)
+
+**🪸 익명 메시지**  
+`/익명 채널 메시지` – 현재 채널에 익명 메시지를 보냅니다.  
+`/익명 갠디 유저 메시지` – 특정 유저에게 익명 DM을 보냅니다.  
+`/익명 답장 토큰 메세지` – 받은 익명 DM에 답장합니다.
+
+---
+
+> 🤝 새로운 기능 아이디어가 있다면 언제든지 제안해주세요!  
+> 📎 **참치봇 초대하기**: https://discord.com/oauth2/authorize?client_id=1372049356659626104&scope=bot&permissions=337984
+"""
+    await interaction.response.send_message(help_text, ephemeral=True)
+
+@tree.command(name="서버", description="봇이 들어가 있는 서버 목록과 인원수를 확인합니다.")
+@app_commands.check(is_admin)
+async def slash_server_info(interaction: discord.Interaction):
+    if not client.guilds:
+        await interaction.response.send_message("🤖 봇이 현재 어떤 서버에도 들어가 있지 않습니다.", ephemeral=True)
+        return
+
+    embed = discord.Embed(
+        title="📂 현재 접속 중인 서버 목록",
+        color=discord.Color.blurple()
+    )
+
+    for guild in client.guilds:
+        embed.add_field(
+            name=guild.name,
+            value=f"👥 {guild.member_count}명",
+            inline=False
+        )
+
+    await interaction.response.send_message(embed=embed, ephemeral=True)
+
+
 
 # 그룹 등록
 @client.event
