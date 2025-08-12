@@ -289,7 +289,6 @@ async def slash_event(interaction: discord.Interaction):
         support_url="https://discord.gg/xt6qVWa8rj",               # 예: "https://discord.gg/your-support"
     )
 
-
 # 그룹 등록
 @client.event
 async def setup_hook():
@@ -324,4 +323,3 @@ client.run(TOKEN)
 #     @app_commands.command(name="출첵", description="출석체크를 합니다.")
 #     async def 출첵(self, interaction: discord.Interaction):
 #         await send_tuna_checkin(interaction)
-
