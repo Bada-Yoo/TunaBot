@@ -181,7 +181,7 @@ async def send_tft_meta_with_filter(interaction, metas, updated_at, detail_data,
                     color=discord.Color(0x5CD1E5)
                 )
                 detail_embed.set_author(name="🐟TunaBot 현메타 정보")
-                detail_embed.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")
+                detail_embed.set_footer(text=f"🐧 Updated At {updated_at} | tuna.gg")
                 await interaction.followup.send(embed=detail_embed)
                 continue
 
