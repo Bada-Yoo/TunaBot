@@ -25,6 +25,8 @@ from tft_update_meta import crawl_tft_meta, save_meta_json
 from tft_update_metadetail import crawl_detail_info
 from tft_generate_meta_card import generate_all_meta_cards
 
+from event1 import send_event1_embed
+
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 ADMIN_USER_ID = int(os.getenv("DISCORD_ADMIN_ID"))
@@ -278,6 +280,14 @@ async def slash_server_info(interaction: discord.Interaction):
 
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
+@tree.command(name="이벤트", description=" ")  # 설명은 최소화해서 노출 줄이기
+async def slash_event(interaction: discord.Interaction):
+    # 필요시 URL 버튼 활성화 (없으면 None 유지)
+    await send_event1_embed(
+        interaction,
+        ephemeral=True,                 # 공개로 하고 싶으면 False로
+        support_url="https://discord.gg/xt6qVWa8rj",               # 예: "https://discord.gg/your-support"
+    )
 
 
 # 그룹 등록
