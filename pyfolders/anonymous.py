@@ -11,7 +11,7 @@ async def send_anonymous_channel(interaction: discord.Interaction, message: str)
     await interaction.response.defer(ephemeral=True)
 
     embed = discord.Embed(
-        title="💌익명 메세지",
+        title="익명 메세지",
         description=message,
         color=discord.Color.blurple()
     )
@@ -29,7 +29,7 @@ async def send_anonymous_dm(interaction: discord.Interaction, target: discord.Us
         reply_tokens[token] = (interaction.user.id, target.id, time.time())
 
         embed = discord.Embed(
-            title="💌익명 DM 도착!",
+            title="익명 DM 도착!",
             description=message,
             color=discord.Color.blurple()
         )
@@ -60,7 +60,7 @@ async def handle_anonymous_reply(interaction: discord.Interaction, token: str, m
     try:
         sender = await interaction.client.fetch_user(sender_id)
         embed = discord.Embed(
-            title="💌익명 답장 도착!",
+            title="익명 답장 도착!",
             description=message,
             color=discord.Color.blurple()
         )
