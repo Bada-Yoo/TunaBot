@@ -82,6 +82,6 @@ async def send_tft_live_status(interaction, riot_id):
     embed.set_author(name="🐟TunaBot 롤토체스 라이브 정보")
     if icon_url:
         embed.set_thumbnail(url=icon_url)
-    embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
+    embed.set_footer(text="🐧 Powered by Riot API | tuna.gg")
 
     await interaction.response.send_message(embed=embed)
