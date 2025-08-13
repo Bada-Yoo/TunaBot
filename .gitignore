@@ -16,4 +16,4 @@ __pycache__/
 *.json
 
 #testpys 파일 무시
-*.testpys
+testpys/
