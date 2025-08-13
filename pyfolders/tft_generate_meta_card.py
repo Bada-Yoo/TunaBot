@@ -18,7 +18,7 @@ UNIT_SIZE = 100
 ITEM_SIZE = UNIT_SIZE // 3
 PADDING = 10
 MAX_COLS = 5
-FONT_PATH = "/usr/share/fonts/truetype/nanum/NanumSquareRoundB.ttf"
+FONT_PATH = "C:/Windows/Fonts/malgun.ttf"
 FONT = ImageFont.truetype(FONT_PATH, 13)
 
 def load_image_from_url(url, size=None, rounded=False):
