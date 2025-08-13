@@ -196,7 +196,7 @@ async def send_tft_stats(interaction, riot_id):
         color=discord.Color(0x5CD1E5)
     )
     embed.set_author(name="🐟TunaBot 전적 정보")
-    embed.set_footer(text="🐬 Powered by Riot API | tuna.gg")
+    embed.set_footer(text="🐧 Powered by Riot API | tuna.gg")
 
     
     if companion_counter:

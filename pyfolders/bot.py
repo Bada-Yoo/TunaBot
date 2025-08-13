@@ -288,7 +288,7 @@ async def slash_event(interaction: discord.Interaction):
     embed = discord.Embed(
         title=EVENT_TITLE,
         description=EVENT_TEXT,
-        color=discord.Color.blurple()
+        color=discord.Color.pink()
     )
     embed.set_footer(text="참치봇 v1.0.0 오픈 이벤트 🎉")
 
