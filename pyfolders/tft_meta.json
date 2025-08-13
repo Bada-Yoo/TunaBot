@@ -1,124 +1,10 @@
 {
-  "updated_at": "2025-07-30 09:08:17",
+  "updated_at": "2025-08-13 14:21:09",
   "meta": [
     {
       "index": 1,
-      "name": "7거대 메크 요네",
-      "url": "https://lolchess.gg/builder/guide/b81e8309693b6db335010f5f5f6e87fea97979e0?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "루시안",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Lucian_1752221434-Lucian.jpg",
-          "items": []
-        },
-        {
-          "name": "아트록스",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
-          "items": []
-        },
-        {
-          "name": "갱플랭크",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gangplank_1752221201-Gangplank.jpg",
-          "items": []
-        },
-        {
-          "name": "세나",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Senna_1752221948-Senna.jpg",
-          "items": []
-        },
-        {
-          "name": "라이즈",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
-          "items": [
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
-        },
-        {
-          "name": "자르반 4세",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
-          "items": [
-            {
-              "name": "FrozenHeart",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_FrozenHeart.png"
-            },
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "카르마",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Karma_1752222367-Karma.jpg",
-          "items": []
-        },
-        {
-          "name": "리 신",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        },
-        {
-          "name": "요네",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 2,
       "name": "[상징] 8소울 파이터",
-      "url": "https://lolchess.gg/builder/guide/93ad5edc1c1908deea373e7f06eb369bf4e30685?type=guide",
+      "url": "https://lolchess.gg/builder/guide/1c8594a78c358725b6cf3e6e4824e73431749ca6?type=guide",
       "hot": false,
       "units": [
         {
@@ -146,81 +32,461 @@
           "items": []
         },
         {
+          "name": "볼리베어",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
+          "items": []
+        },
+        {
           "name": "사미라",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Samira_1752221829-Samira.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "세트",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "그웬",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Gwen_1752222533-Gwen.jpg",
-          "items": [
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
+          "items": []
         },
         {
-          "name": "요네",
+          "name": "브라움",
           "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            }
-          ]
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "7전사관 케틀 제이스",
+      "url": "https://lolchess.gg/builder/guide/995926c46a56d3fc14d62032776150cd4d3d905f?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "가렌",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGaren_1752221162-Garen.jpg",
+          "items": []
+        },
+        {
+          "name": "이즈리얼",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEEzreal_1752222249-Ezreal.jpg",
+          "items": []
+        },
+        {
+          "name": "라칸",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
+          "items": []
+        },
+        {
+          "name": "제이스",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jayce_1752222315-Jayce.jpg",
+          "items": []
+        },
+        {
+          "name": "케이틀린",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Caitlyn_1752223645-Caitlyn.jpg",
+          "items": []
+        },
+        {
+          "name": "레오나",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Leona_1752221411-Leona.jpg",
+          "items": []
+        },
+        {
+          "name": "뽀삐",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Poppy_1752221894-Poppy.jpg",
+          "items": []
+        },
+        {
+          "name": "유미",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yuumi_1752222238-Yuumi.jpg",
+          "items": []
+        },
+        {
+          "name": "징크스",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jinx_1752222355-Jinx.jpg",
+          "items": []
         }
       ]
     },
     {
       "index": 3,
+      "name": "6전쟁기계 케일",
+      "url": "https://lolchess.gg/builder/guide/75e5229ae169d153da9e1cb974b913a62ec659c2?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "나피리",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Naafiri_1752221225-Naafiri.jpg",
+          "items": []
+        },
+        {
+          "name": "아트록스",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
+          "items": []
+        },
+        {
+          "name": "자크",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zac_1752222297-Zac.jpg",
+          "items": []
+        },
+        {
+          "name": "케일",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEKayle_1752222485-Kayle.jpg",
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/DrMundo_1752223940-DrMundo.jpg",
+          "items": []
+        },
+        {
+          "name": "우디르",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "세트",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
+          "items": []
+        },
+        {
+          "name": "리 신",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "5전사관 5신동 유미",
+      "url": "https://lolchess.gg/builder/guide/5742a29db8388c2f046d4b11f5ff50330fc4b855?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "가렌",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGaren_1752221162-Garen.jpg",
+          "items": []
+        },
+        {
+          "name": "신드라",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBESyndra_1752222146-Syndra.jpg",
+          "items": []
+        },
+        {
+          "name": "이즈리얼",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEEzreal_1752222249-Ezreal.jpg",
+          "items": []
+        },
+        {
+          "name": "라칸",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
+          "items": []
+        },
+        {
+          "name": "말자하",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Malzahar_1752221468-Malzahar.jpg",
+          "items": []
+        },
+        {
+          "name": "레오나",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Leona_1752221411-Leona.jpg",
+          "items": []
+        },
+        {
+          "name": "유미",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yuumi_1752222238-Yuumi.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        },
+        {
+          "name": "세라핀",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Seraphine_1752222098-Seraphine.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "6마법사 카르마",
+      "url": "https://lolchess.gg/builder/guide/1e2b4b35b454268923c918abef608481122e979b?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "루시안",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Lucian_1752221434-Lucian.jpg",
+          "items": []
+        },
+        {
+          "name": "럭스",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Lux_1752221391-Lux.jpg",
+          "items": []
+        },
+        {
+          "name": "스웨인",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
+          "items": []
+        },
+        {
+          "name": "아리",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ahri_1752223774-Ahri.jpg",
+          "items": []
+        },
+        {
+          "name": "라이즈",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "카르마",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Karma_1752222367-Karma.jpg",
+          "items": []
+        },
+        {
+          "name": "그웬",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gwen_1752222533-Gwen.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "name": "6결투가 애쉬 (명멸검)",
+      "url": "https://lolchess.gg/builder/guide/d2831cf8816ee02cd4e9487b654cfab4db99e859?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "아트록스",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
+          "items": []
+        },
+        {
+          "name": "케일",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEKayle_1752222485-Kayle.jpg",
+          "items": []
+        },
+        {
+          "name": "갱플랭크",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gangplank_1752221201-Gangplank.jpg",
+          "items": []
+        },
+        {
+          "name": "비에고",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Viego_1752221641-Viego.jpg",
+          "items": []
+        },
+        {
+          "name": "우디르",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "애쉬",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "리 신",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
+          "items": []
+        },
+        {
+          "name": "자이라",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zyra_1752222289-Zyra.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "name": "6전쟁기계 진",
+      "url": "https://lolchess.gg/builder/guide/ad3145ff30837a8d6f55d1d591c0d0623674c340?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "나르",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGnar_1752221207-Gnar.jpg",
+          "items": []
+        },
+        {
+          "name": "나피리",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Naafiri_1752221225-Naafiri.jpg",
+          "items": []
+        },
+        {
+          "name": "아트록스",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/DrMundo_1752223940-DrMundo.jpg",
+          "items": []
+        },
+        {
+          "name": "바이",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Vi_1752221533-Vi.jpg",
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jhin_1752223834-Jhin.jpg",
+          "items": []
+        },
+        {
+          "name": "우디르",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "세트",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "name": "7전사관 카타리나",
+      "url": "https://lolchess.gg/builder/guide/1d43d95721cfdcbdb991747f1c495a80ed993b73?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "가렌",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGaren_1752221162-Garen.jpg",
+          "items": []
+        },
+        {
+          "name": "이즈리얼",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEEzreal_1752222249-Ezreal.jpg",
+          "items": []
+        },
+        {
+          "name": "라칸",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
+          "items": []
+        },
+        {
+          "name": "카타리나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Katarina_1752222433-Katarina.jpg",
+          "items": []
+        },
+        {
+          "name": "제이스",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jayce_1752222315-Jayce.jpg",
+          "items": []
+        },
+        {
+          "name": "라이즈",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
+          "items": []
+        },
+        {
+          "name": "레오나",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Leona_1752221411-Leona.jpg",
+          "items": []
+        },
+        {
+          "name": "유미",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yuumi_1752222238-Yuumi.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 9,
       "name": "5크루 4책략가 직스",
       "url": "https://lolchess.gg/builder/guide/1e1eaf3bb72cd62fe5c8cffcb8fef4ddeb780339?type=guide",
       "hot": false,
@@ -229,58 +495,19 @@
           "name": "말파이트",
           "cost": 1,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEMalphite_1752221500-Malphite.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "BrambleVest",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BrambleVest.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "시비르",
           "cost": 1,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Sivir_1752222107-Sivir.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "쉔",
           "cost": 2,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Shen_1752222015-Shen.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "잔나",
@@ -292,20 +519,7 @@
           "name": "직스",
           "cost": 3,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Ziggs_1752222323-Ziggs.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "라이즈",
@@ -328,21 +542,629 @@
       ]
     },
     {
-      "index": 4,
-      "name": "4멘토 거대 메크",
-      "url": "https://lolchess.gg/builder/guide/acfcffbdb597e784157ca6b82be0587c5fe91eec?type=guide",
+      "index": 10,
+      "name": "[9,000볼트] 케넨",
+      "url": "https://lolchess.gg/builder/guide/c46e664d027841c0ffeae3c313232055199bb06c?type=guide",
       "hot": false,
       "units": [
         {
-          "name": "아트록스",
+          "name": "말파이트",
           "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEMalphite_1752221500-Malphite.jpg",
+          "items": []
+        },
+        {
+          "name": "케넨",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
+          "items": []
+        },
+        {
+          "name": "라칸",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
+          "items": []
+        },
+        {
+          "name": "잔나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Darius_1752221274-Darius.jpg",
+          "items": []
+        },
+        {
+          "name": "라이즈",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
+          "items": []
+        },
+        {
+          "name": "아칼리",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Akali_1752222159-Akali.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "name": "[완전체] 6악령 자크",
+      "url": "https://lolchess.gg/builder/guide/2f2a53f23f768ad9c9350945817a69246ed0eb59?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "자크",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zac_1752222297-Zac.jpg",
+          "items": []
+        },
+        {
+          "name": "케일",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEKayle_1752222485-Kayle.jpg",
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jhin_1752223834-Jhin.jpg",
           "items": []
         },
         {
           "name": "코부코",
           "cost": 2,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Kobuko_1752222505-Kobuko.jpg",
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Darius_1752221274-Darius.jpg",
+          "items": []
+        },
+        {
+          "name": "말자하",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Malzahar_1752221468-Malzahar.jpg",
+          "items": []
+        },
+        {
+          "name": "뽀삐",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Poppy_1752221894-Poppy.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        },
+        {
+          "name": "바루스",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Varus_1752222589-Varus.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "name": "별 수호자 징크스",
+      "url": "https://lolchess.gg/builder/guide/2aed30845741a9a0f41f7260e126aa6551d52a23?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "렐",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rell_1752221423-Rell.jpg",
+          "items": []
+        },
+        {
+          "name": "신드라",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBESyndra_1752222146-Syndra.jpg",
+          "items": []
+        },
+        {
+          "name": "자야",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Xayah_1752222282-Xayah.jpg",
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kobuko_1752222505-Kobuko.jpg",
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
+          "items": []
+        },
+        {
+          "name": "아리",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ahri_1752223774-Ahri.jpg",
+          "items": []
+        },
+        {
+          "name": "뽀삐",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Poppy_1752221894-Poppy.jpg",
+          "items": []
+        },
+        {
+          "name": "징크스",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jinx_1752222355-Jinx.jpg",
+          "items": []
+        },
+        {
+          "name": "세라핀",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Seraphine_1752222098-Seraphine.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "name": "고밸류 바루스",
+      "url": "https://lolchess.gg/builder/guide/b8b3fe31cb35af45daa0399ebf6f04bea77d2262?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "나르",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGnar_1752221207-Gnar.jpg",
+          "items": []
+        },
+        {
+          "name": "잔나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
+          "items": []
+        },
+        {
+          "name": "스웨인",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        },
+        {
+          "name": "바루스",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Varus_1752222589-Varus.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
+        },
+        {
+          "name": "자이라",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zyra_1752222289-Zyra.jpg",
+          "items": []
+        },
+        {
+          "name": "트위스티드 페이트",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/TwistedFate_1752222523-TwistedFate.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "name": "4레슬러 볼리베어",
+      "url": "https://lolchess.gg/builder/guide/53fda95a4f6e4fbbfd84d64dd2f6942033800774?type=guide",
+      "hot": true,
+      "units": [
+        {
+          "name": "나르",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGnar_1752221207-Gnar.jpg",
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/DrMundo_1752223940-DrMundo.jpg",
+          "items": []
+        },
+        {
+          "name": "쉔",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Shen_1752222015-Shen.jpg",
+          "items": []
+        },
+        {
+          "name": "야스오",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yasuo_1752222182-Yasuo.jpg",
+          "items": []
+        },
+        {
+          "name": "볼리베어",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
+          "items": []
+        },
+        {
+          "name": "사미라",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Samira_1752221829-Samira.jpg",
+          "items": []
+        },
+        {
+          "name": "세트",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "name": "6전쟁기계 애쉬 (명멸검)",
+      "url": "https://lolchess.gg/builder/guide/b0ca85c320bf795a32e4c81c9e4a0b30c9c88ef1?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "나피리",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Naafiri_1752221225-Naafiri.jpg",
+          "items": []
+        },
+        {
+          "name": "문도 박사",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/DrMundo_1752223940-DrMundo.jpg",
+          "items": []
+        },
+        {
+          "name": "바이",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Vi_1752221533-Vi.jpg",
+          "items": []
+        },
+        {
+          "name": "우디르",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "세트",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
+          "items": []
+        },
+        {
+          "name": "애쉬",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
+          "items": []
+        },
+        {
+          "name": "리 신",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
+        },
+        {
+          "name": "자이라",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zyra_1752222289-Zyra.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "name": "6봉쇄자 잔나 리롤",
+      "url": "https://lolchess.gg/builder/guide/04d8b14375703cd3451b4ccb4433ae55bd91bbc2?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "말파이트",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEMalphite_1752221500-Malphite.jpg",
+          "items": []
+        },
+        {
+          "name": "케넨",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
+          "items": []
+        },
+        {
+          "name": "라칸",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
+          "items": []
+        },
+        {
+          "name": "잔나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
+          "items": []
+        },
+        {
+          "name": "라이즈",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "name": "봉쇄자 스몰더(룰루)",
+      "url": "https://lolchess.gg/builder/guide/5c932c9e5b3e31994e0298eee00d44119ed95f95?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "말파이트",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEMalphite_1752221500-Malphite.jpg",
+          "items": []
+        },
+        {
+          "name": "케넨",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
+          "items": []
+        },
+        {
+          "name": "라칸",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
+          "items": []
+        },
+        {
+          "name": "잔나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
+          "items": []
+        },
+        {
+          "name": "스몰더",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Smolder_1752222029-Smolder.jpg",
+          "items": []
+        },
+        {
+          "name": "라이즈",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "name": "봉쇄자 크산테 (총공세)",
+      "url": "https://lolchess.gg/builder/guide/9c4dfefc07be6f5c11050cee8683959459cbde73?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "자크",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zac_1752222297-Zac.jpg",
+          "items": []
+        },
+        {
+          "name": "케넨",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
+          "items": []
+        },
+        {
+          "name": "잔나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
+          "items": []
+        },
+        {
+          "name": "니코",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
+          "items": []
+        },
+        {
+          "name": "라이즈",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
+          "items": []
+        },
+        {
+          "name": "아칼리",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Akali_1752222159-Akali.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "name": "책략가 크산테 (총공세)",
+      "url": "https://lolchess.gg/builder/guide/7085e5e4acc02281c18cd6e06651ee0198482799?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "자크",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zac_1752222297-Zac.jpg",
+          "items": []
+        },
+        {
+          "name": "잔나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Darius_1752221274-Darius.jpg",
+          "items": []
+        },
+        {
+          "name": "직스",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ziggs_1752222323-Ziggs.jpg",
+          "items": []
+        },
+        {
+          "name": "라이즈",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
+          "items": []
+        },
+        {
+          "name": "아칼리",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Akali_1752222159-Akali.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "name": "4멘토 4슈프림 셀",
+      "url": "https://lolchess.gg/builder/guide/c49810d0f839329c01337896bda8f66e4ea8a6d6?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "케넨",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
+          "items": []
+        },
+        {
+          "name": "카이사",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KaiSa_1752223864-KaiSa.jpg",
+          "items": []
+        },
+        {
+          "name": "코부코",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kobuko_1752222505-Kobuko.jpg",
+          "items": []
+        },
+        {
+          "name": "다리우스",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Darius_1752221274-Darius.jpg",
           "items": []
         },
         {
@@ -361,77 +1183,75 @@
           "name": "라이즈",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
-          "items": [
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
+          "items": []
+        },
+        {
+          "name": "아칼리",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Akali_1752222159-Akali.jpg",
+          "items": []
         },
         {
           "name": "자르반 4세",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
-          "items": [
-            {
-              "name": "FrozenHeart",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_FrozenHeart.png"
-            },
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            }
-          ]
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "name": "[상징] 수정 갬빗 애쉬",
+      "url": "https://lolchess.gg/builder/guide/a10a904b6222a48978ce8521db62eec16dd18649?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "신드라",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBESyndra_1752222146-Syndra.jpg",
+          "items": []
         },
         {
-          "name": "리 신",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
+          "name": "바이",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Vi_1752221533-Vi.jpg",
+          "items": []
         },
         {
-          "name": "요네",
+          "name": "잔나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
+          "items": []
+        },
+        {
+          "name": "스웨인",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
+          "items": []
+        },
+        {
+          "name": "우디르",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "애쉬",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
           "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
         },
         {
           "name": "자이라",
@@ -442,108 +1262,7 @@
       ]
     },
     {
-      "index": 5,
-      "name": "4요새 5저격수 바루스",
-      "url": "https://lolchess.gg/builder/guide/2e9868b83d973d97e339db2ab77a787191e07ea2?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "가렌",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGaren_1752221162-Garen.jpg",
-          "items": []
-        },
-        {
-          "name": "나르",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGnar_1752221207-Gnar.jpg",
-          "items": []
-        },
-        {
-          "name": "렐",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rell_1752221423-Rell.jpg",
-          "items": []
-        },
-        {
-          "name": "진",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jhin_1752223834-Jhin.jpg",
-          "items": []
-        },
-        {
-          "name": "케이틀린",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Caitlyn_1752223645-Caitlyn.jpg",
-          "items": []
-        },
-        {
-          "name": "레오나",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Leona_1752221411-Leona.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            }
-          ]
-        },
-        {
-          "name": "징크스",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jinx_1752222355-Jinx.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "LastWhisper",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_LastWhisper.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "바루스",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Varus_1752222589-Varus.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            }
-          ]
-        },
-        {
-          "name": "브라움",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
-          "items": []
-        }
-      ]
-    },
-    {
-      "index": 6,
+      "index": 22,
       "name": "6악령 바루스",
       "url": "https://lolchess.gg/builder/guide/309a23c00ac92e0e5c16cd102538be15d20e24a4?type=guide",
       "hot": false,
@@ -582,82 +1301,86 @@
           "name": "뽀삐",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Poppy_1752221894-Poppy.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "NightHarvester",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_NightHarvester.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "징크스",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Jinx_1752222355-Jinx.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "RunaansHurricane",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_RunaansHurricane.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "크산테",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "바루스",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Varus_1752222589-Varus.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            }
-          ]
+          "items": []
         }
       ]
     },
     {
-      "index": 7,
+      "index": 23,
+      "name": "6악령 케일",
+      "url": "https://lolchess.gg/builder/guide/f3fefb520d93c48455b3a1552ede259a50d04fad?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "아트록스",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
+          "items": []
+        },
+        {
+          "name": "자크",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zac_1752222297-Zac.jpg",
+          "items": []
+        },
+        {
+          "name": "케일",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEKayle_1752222485-Kayle.jpg",
+          "items": []
+        },
+        {
+          "name": "진",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jhin_1752223834-Jhin.jpg",
+          "items": []
+        },
+        {
+          "name": "말자하",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Malzahar_1752221468-Malzahar.jpg",
+          "items": []
+        },
+        {
+          "name": "우디르",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        },
+        {
+          "name": "바루스",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Varus_1752222589-Varus.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 24,
       "name": "6헤비급 여명 다리우스",
       "url": "https://lolchess.gg/builder/guide/ff8eefb1b73d02844e9d58a45f54b449dfa38b01?type=guide",
       "hot": false,
@@ -684,20 +1407,7 @@
           "name": "카이사",
           "cost": 2,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/KaiSa_1752223864-KaiSa.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "LastWhisper",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_LastWhisper.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "코부코",
@@ -709,50 +1419,19 @@
           "name": "다리우스",
           "cost": 3,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Darius_1752221274-Darius.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "Artifact SilvermereDawn",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Artifact_SilvermereDawn.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "제이스",
           "cost": 3,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Jayce_1752222315-Jayce.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "뽀삐",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Poppy_1752221894-Poppy.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "아칼리",
@@ -763,9 +1442,9 @@
       ]
     },
     {
-      "index": 8,
-      "name": "6헤비급 스몰더",
-      "url": "https://lolchess.gg/builder/guide/725ce905d4ac656fb774d7bb3a63ff7536325688?type=guide",
+      "index": 25,
+      "name": "6헤비급 스몰더(룰루)",
+      "url": "https://lolchess.gg/builder/guide/7688c04b6bc3a07e61bc0f563bd05b59cfd23f77?type=guide",
       "hot": false,
       "units": [
         {
@@ -790,58 +1469,19 @@
           "name": "다리우스",
           "cost": 3,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Darius_1752221274-Darius.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "Artifact SilvermereDawn",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Artifact_SilvermereDawn.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "스몰더",
           "cost": 3,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Smolder_1752222029-Smolder.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "제이스",
           "cost": 3,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Jayce_1752222315-Jayce.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "뽀삐",
@@ -858,448 +1498,39 @@
       ]
     },
     {
-      "index": 9,
-      "name": "[상징] 7전투 5신동 유미",
-      "url": "https://lolchess.gg/builder/guide/7cabf55c5c385fe01817ea3f361777eb561ad841?type=guide",
+      "index": 26,
+      "name": "7거대 메크 요네",
+      "url": "https://lolchess.gg/builder/guide/2cdd13b970c2954ded27c76614166152033d2456?type=guide",
       "hot": false,
       "units": [
         {
-          "name": "가렌",
+          "name": "루시안",
           "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGaren_1752221162-Garen.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Lucian_1752221434-Lucian.jpg",
           "items": []
         },
         {
-          "name": "신드라",
+          "name": "아트록스",
           "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBESyndra_1752222146-Syndra.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
           "items": []
         },
         {
-          "name": "이즈리얼",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEEzreal_1752222249-Ezreal.jpg",
-          "items": []
-        },
-        {
-          "name": "라칸",
+          "name": "갱플랭크",
           "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gangplank_1752221201-Gangplank.jpg",
           "items": []
         },
         {
-          "name": "말자하",
+          "name": "세나",
           "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Malzahar_1752221468-Malzahar.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Senna_1752221948-Senna.jpg",
           "items": []
         },
-        {
-          "name": "제이스",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jayce_1752222315-Jayce.jpg",
-          "items": []
-        },
-        {
-          "name": "레오나",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Leona_1752221411-Leona.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
-        },
-        {
-          "name": "유미",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yuumi_1752222238-Yuumi.jpg",
-          "items": [
-            {
-              "name": "AdaptiveHelm",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_AdaptiveHelm.png"
-            },
-            {
-              "name": "HextechGunblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_HextechGunblade.png"
-            },
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "세라핀",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Seraphine_1752222098-Seraphine.jpg",
-          "items": [
-            {
-              "name": "Morellonomicon",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Morellonomicon.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 10,
-      "name": "[상징] 6이단아 4레슬러",
-      "url": "https://lolchess.gg/builder/guide/9f5f950aff9a3c4748d4e562055081715b07a320?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "문도 박사",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/DrMundo_1752223940-DrMundo.jpg",
-          "items": []
-        },
-        {
-          "name": "쉔",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Shen_1752222015-Shen.jpg",
-          "items": []
-        },
-        {
-          "name": "자야",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Xayah_1752222282-Xayah.jpg",
-          "items": []
-        },
-        {
-          "name": "야스오",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yasuo_1752222182-Yasuo.jpg",
-          "items": []
-        },
-        {
-          "name": "볼리베어",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
-          "items": []
-        },
-        {
-          "name": "사미라",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Samira_1752221829-Samira.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            }
-          ]
-        },
-        {
-          "name": "세트",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
-          "items": []
-        },
-        {
-          "name": "브라움",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
-        },
-        {
-          "name": "요네",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 11,
-      "name": "[상징] 7수정 갬빗 애쉬",
-      "url": "https://lolchess.gg/builder/guide/e2dad4d392b0c953161bde261fa741b1296aba5d?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "신드라",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBESyndra_1752222146-Syndra.jpg",
-          "items": []
-        },
-        {
-          "name": "바이",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Vi_1752221533-Vi.jpg",
-          "items": []
-        },
-        {
-          "name": "잔나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
-          "items": []
-        },
-        {
-          "name": "스웨인",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
-          "items": []
-        },
-        {
-          "name": "우디르",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
-          "items": []
-        },
-        {
-          "name": "세트",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
-          "items": [
-            {
-              "name": "FrozenHeart",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_FrozenHeart.png"
-            },
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "애쉬",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "RunaansHurricane",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_RunaansHurricane.png"
-            }
-          ]
-        },
-        {
-          "name": "리 신",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            }
-          ]
-        },
-        {
-          "name": "자이라",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zyra_1752222289-Zyra.jpg",
-          "items": [
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 12,
-      "name": "고밸류 (1)",
-      "url": "https://lolchess.gg/builder/guide/78c1187e35e373ad04f98b9594bb682cfaf474c5?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "스웨인",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
-          "items": []
-        },
-        {
-          "name": "우디르",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
-          "items": []
-        },
-        {
-          "name": "볼리베어",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
-          "items": []
-        },
-        {
-          "name": "세트",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
-          "items": []
-        },
-        {
-          "name": "애쉬",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "RunaansHurricane",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_RunaansHurricane.png"
-            }
-          ]
-        },
-        {
-          "name": "그웬",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gwen_1752222533-Gwen.jpg",
-          "items": []
-        },
-        {
-          "name": "브라움",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
-          "items": [
-            {
-              "name": "FrozenHeart",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_FrozenHeart.png"
-            },
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "요네",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        },
-        {
-          "name": "자이라",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zyra_1752222289-Zyra.jpg",
-          "items": [
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 13,
-      "name": "고밸류 (2)",
-      "url": "https://lolchess.gg/builder/guide/e57716191ed1ebbf9f883b4db4eecfcdd186c063?type=guide",
-      "hot": false,
-      "units": [
         {
           "name": "라이즈",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
-          "items": [
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
-        },
-        {
-          "name": "볼리베어",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
           "items": []
         },
         {
@@ -1315,118 +1546,172 @@
           "items": []
         },
         {
-          "name": "그웬",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gwen_1752222533-Gwen.jpg",
-          "items": []
-        },
-        {
           "name": "리 신",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
           "items": []
         },
         {
+          "name": "요네",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "name": "[영원한 브론즈] 애쉬",
+      "url": "https://lolchess.gg/builder/guide/fdd4f8a8ee43728dcf93b921741b61d18801b454?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "스웨인",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
+          "items": []
+        },
+        {
+          "name": "우디르",
+          "cost": 3,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "볼리베어",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
+          "items": []
+        },
+        {
+          "name": "세트",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
+          "items": []
+        },
+        {
+          "name": "애쉬",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
+          "items": []
+        },
+        {
+          "name": "그웬",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gwen_1752222533-Gwen.jpg",
+          "items": []
+        },
+        {
           "name": "브라움",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
-          "items": [
-            {
-              "name": "FrozenHeart",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_FrozenHeart.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "요네",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "자이라",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Zyra_1752222289-Zyra.jpg",
-          "items": [
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "Morellonomicon",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Morellonomicon.png"
-            }
-          ]
+          "items": []
         }
       ]
     },
     {
-      "index": 14,
-      "name": "5신동 역병 말자하",
-      "url": "https://lolchess.gg/builder/guide/63bb786ca8339771de69a5e211c0c472017036d6?type=guide",
+      "index": 28,
+      "name": "[영원한 브론즈] 케일",
+      "url": "https://lolchess.gg/builder/guide/f58c64cb7f618667f1a8a226d5124ad0a9d8862b?type=guide",
       "hot": false,
       "units": [
         {
-          "name": "신드라",
+          "name": "아트록스",
           "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBESyndra_1752222146-Syndra.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
           "items": []
         },
         {
-          "name": "이즈리얼",
+          "name": "케일",
           "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEEzreal_1752222249-Ezreal.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEKayle_1752222485-Kayle.jpg",
           "items": []
         },
         {
-          "name": "니코",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
+          "name": "잔나",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
           "items": []
         },
         {
-          "name": "말자하",
+          "name": "우디르",
           "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Malzahar_1752221468-Malzahar.jpg",
-          "items": [
-            {
-              "name": "Artifact BlightingJewel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Artifact_BlightingJewel.png"
-            },
-            {
-              "name": "Morellonomicon",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Morellonomicon.png"
-            },
-            {
-              "name": "HextechGunblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_HextechGunblade.png"
-            }
-          ]
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "볼리베어",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
+          "items": []
+        },
+        {
+          "name": "자르반 4세",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
+          "items": []
+        },
+        {
+          "name": "크산테",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
+        },
+        {
+          "name": "요네",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
+          "items": []
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "name": "[황혼 강습] 쉔",
+      "url": "https://lolchess.gg/builder/guide/497b27982490c73d986c344328ab5895fe862d77?type=guide",
+      "hot": false,
+      "units": [
+        {
+          "name": "렐",
+          "cost": 1,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rell_1752221423-Rell.jpg",
+          "items": []
+        },
+        {
+          "name": "쉔",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Shen_1752222015-Shen.jpg",
+          "items": []
+        },
+        {
+          "name": "신 짜오",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/XinZhao_1752222130-XinZhao.jpg",
+          "items": []
+        },
+        {
+          "name": "자야",
+          "cost": 2,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Xayah_1752222282-Xayah.jpg",
+          "items": []
         },
         {
           "name": "스웨인",
@@ -1438,58 +1723,32 @@
           "name": "레오나",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Leona_1752221411-Leona.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "NightHarvester",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_NightHarvester.png"
-            }
-          ]
-        },
-        {
-          "name": "유미",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yuumi_1752222238-Yuumi.jpg",
-          "items": [
-            {
-              "name": "AdaptiveHelm",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_AdaptiveHelm.png"
-            },
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "크산테",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
           "items": []
         },
         {
-          "name": "세라핀",
+          "name": "볼리베어",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
+          "items": []
+        },
+        {
+          "name": "사미라",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Samira_1752221829-Samira.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
           "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Seraphine_1752222098-Seraphine.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
           "items": []
         }
       ]
     },
     {
-      "index": 15,
-      "name": "6전쟁기계 애쉬",
-      "url": "https://lolchess.gg/builder/guide/e526387e31fe1794eabf7ec4d2e6865252627476?type=guide",
+      "index": 30,
+      "name": "[금속 너클] 바이",
+      "url": "https://lolchess.gg/builder/guide/b98bba4421307174164df162e90050b065850fca?type=guide",
       "hot": false,
       "units": [
         {
@@ -1520,58 +1779,19 @@
           "name": "세트",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "애쉬",
           "cost": 4,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "RunaansHurricane",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_RunaansHurricane.png"
-            },
-            {
-              "name": "HextechGunblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_HextechGunblade.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "리 신",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "브라움",
@@ -1583,760 +1803,26 @@
           "name": "자이라",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Zyra_1752222289-Zyra.jpg",
-          "items": [
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 16,
-      "name": "6이단아 자야 리롤",
-      "url": "https://lolchess.gg/builder/guide/c086343b5a597d25bad254e1f280fdcfb53f5e33?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "렐",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rell_1752221423-Rell.jpg",
-          "items": []
-        },
-        {
-          "name": "쉔",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Shen_1752222015-Shen.jpg",
-          "items": []
-        },
-        {
-          "name": "신 짜오",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/XinZhao_1752222130-XinZhao.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
-        },
-        {
-          "name": "자야",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Xayah_1752222282-Xayah.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "RunaansHurricane",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_RunaansHurricane.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "야스오",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yasuo_1752222182-Yasuo.jpg",
-          "items": []
-        },
-        {
-          "name": "볼리베어",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
-          "items": [
-            {
-              "name": "ThiefsGloves",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ThiefsGloves.png"
-            }
-          ]
-        },
-        {
-          "name": "사미라",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Samira_1752221829-Samira.jpg",
-          "items": []
-        },
-        {
-          "name": "브라움",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
-          "items": []
-        },
-        {
-          "name": "요네",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 17,
-      "name": "6결투가 리롤",
-      "url": "https://lolchess.gg/builder/guide/65f79f2c165a0846c9e99ccb923fef530ec468b0?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "케일",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEKayle_1752222485-Kayle.jpg",
-          "items": []
-        },
-        {
-          "name": "갱플랭크",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gangplank_1752221201-Gangplank.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        },
-        {
-          "name": "카이사",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/KaiSa_1752223864-KaiSa.jpg",
-          "items": []
-        },
-        {
-          "name": "비에고",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Viego_1752221641-Viego.jpg",
-          "items": [
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "Quicksilver",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Quicksilver.png"
-            }
-          ]
-        },
-        {
-          "name": "우디르",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
-        },
-        {
-          "name": "세트",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
-          "items": []
-        },
-        {
-          "name": "애쉬",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "RunaansHurricane",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_RunaansHurricane.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 18,
-      "name": "4멘토 4슈프림 셀",
-      "url": "https://lolchess.gg/builder/guide/7596c1d50c19f725938eb7442f51f32fe5b16f7c?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "케넨",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
-          "items": []
-        },
-        {
-          "name": "카이사",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/KaiSa_1752223864-KaiSa.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "LastWhisper",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_LastWhisper.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "코부코",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kobuko_1752222505-Kobuko.jpg",
-          "items": []
-        },
-        {
-          "name": "다리우스",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Darius_1752221274-Darius.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        },
-        {
-          "name": "야스오",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yasuo_1752222182-Yasuo.jpg",
-          "items": []
-        },
-        {
-          "name": "우디르",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
-          "items": []
-        },
-        {
-          "name": "라이즈",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
-          "items": []
-        },
-        {
-          "name": "아칼리",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Akali_1752222159-Akali.jpg",
-          "items": [
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 19,
-      "name": "6봉쇄자 4책략가",
-      "url": "https://lolchess.gg/builder/guide/310ac623f824277f536d5df37c8241e7fcaf53aa?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "말파이트",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEMalphite_1752221500-Malphite.jpg",
-          "items": []
-        },
-        {
-          "name": "케넨",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
-          "items": []
-        },
-        {
-          "name": "라칸",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
-          "items": [
-            {
-              "name": "BrambleVest",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BrambleVest.png"
-            },
-            {
-              "name": "DragonsClaw",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_DragonsClaw.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
-        },
-        {
-          "name": "잔나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            }
-          ]
-        },
-        {
-          "name": "니코",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
-          "items": []
-        },
-        {
-          "name": "직스",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ziggs_1752222323-Ziggs.jpg",
-          "items": []
-        },
-        {
-          "name": "라이즈",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
-          "items": [
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            },
-            {
-              "name": "Morellonomicon",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Morellonomicon.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
-        },
-        {
-          "name": "자르반 4세",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
-          "items": []
-        },
-        {
-          "name": "크산테",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
           "items": []
         }
       ]
     },
     {
-      "index": 20,
-      "name": "5처형자 4책략가 라이즈",
-      "url": "https://lolchess.gg/builder/guide/c7fc0ebf4a6df1d126cf32a4b5366212afa0d732?type=guide",
+      "index": 31,
+      "name": "[의자를 던지세요!] 문도",
+      "url": "https://lolchess.gg/builder/guide/97d510a7c1bd134efe1ed11dcb3817474ab3790f?type=guide",
       "hot": false,
       "units": [
         {
-          "name": "잔나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
-          "items": []
-        },
-        {
-          "name": "카타리나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Katarina_1752222433-Katarina.jpg",
-          "items": []
-        },
-        {
-          "name": "세나",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Senna_1752221948-Senna.jpg",
-          "items": []
-        },
-        {
-          "name": "직스",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ziggs_1752222323-Ziggs.jpg",
-          "items": []
-        },
-        {
-          "name": "라이즈",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
-          "items": [
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
-        },
-        {
-          "name": "아칼리",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Akali_1752222159-Akali.jpg",
-          "items": [
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        },
-        {
-          "name": "자르반 4세",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            }
-          ]
-        },
-        {
-          "name": "리 신",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            }
-          ]
-        },
-        {
-          "name": "요네",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yone_1752222257-Yone.jpg",
-          "items": []
-        }
-      ]
-    },
-    {
-      "index": 21,
-      "name": "6마법사 아리",
-      "url": "https://lolchess.gg/builder/guide/947714022184a57ee0325618fa0deaa6ec4e6d73?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "렐",
+          "name": "나르",
           "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rell_1752221423-Rell.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGnar_1752221207-Gnar.jpg",
           "items": []
         },
         {
-          "name": "케넨",
+          "name": "나피리",
           "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
-          "items": []
-        },
-        {
-          "name": "럭스",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Lux_1752221391-Lux.jpg",
-          "items": []
-        },
-        {
-          "name": "니코",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
-          "items": []
-        },
-        {
-          "name": "스웨인",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "Crownguard",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Crownguard.png"
-            }
-          ]
-        },
-        {
-          "name": "아리",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ahri_1752223774-Ahri.jpg",
-          "items": [
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            },
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "카르마",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Karma_1752222367-Karma.jpg",
-          "items": []
-        },
-        {
-          "name": "그웬",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gwen_1752222533-Gwen.jpg",
-          "items": [
-            {
-              "name": "Morellonomicon",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Morellonomicon.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            },
-            {
-              "name": "GuardianAngel",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 22,
-      "name": "[완전체] 6악령 자크",
-      "url": "https://lolchess.gg/builder/guide/27ed78822b78257628b79ab32c91ba9dd86ab8df?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "아트록스",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
-          "items": []
-        },
-        {
-          "name": "자크",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Zac_1752222297-Zac.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "케일",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEKayle_1752222485-Kayle.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "HextechGunblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_HextechGunblade.png"
-            },
-            {
-              "name": "MadredsBloodrazor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_MadredsBloodrazor.png"
-            }
-          ]
-        },
-        {
-          "name": "라칸",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
-          "items": []
-        },
-        {
-          "name": "진",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jhin_1752223834-Jhin.jpg",
-          "items": []
-        },
-        {
-          "name": "말자하",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Malzahar_1752221468-Malzahar.jpg",
-          "items": []
-        },
-        {
-          "name": "우디르",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
-          "items": []
-        },
-        {
-          "name": "크산테",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/KSante_1752222514-KSante.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "NightHarvester",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_NightHarvester.png"
-            }
-          ]
-        },
-        {
-          "name": "바루스",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Varus_1752222589-Varus.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 23,
-      "name": "[금속 너클] 바이",
-      "url": "https://lolchess.gg/builder/guide/9318c29f78eddbb24784bddc469ccc5fcb4ab25e?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "신드라",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBESyndra_1752222146-Syndra.jpg",
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Naafiri_1752221225-Naafiri.jpg",
           "items": []
         },
         {
@@ -2349,50 +1835,18 @@
           "name": "바이",
           "cost": 2,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Vi_1752221533-Vi.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            }
-          ]
-        },
-        {
-          "name": "잔나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
           "items": []
-        },
-        {
-          "name": "스웨인",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
         },
         {
           "name": "우디르",
           "cost": 3,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
+          "items": []
+        },
+        {
+          "name": "볼리베어",
+          "cost": 4,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
           "items": []
         },
         {
@@ -2402,265 +1856,36 @@
           "items": []
         },
         {
-          "name": "애쉬",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ashe_1752222175-Ashe.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "RunaansHurricane",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_RunaansHurricane.png"
-            },
-            {
-              "name": "MadredsBloodrazor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_MadredsBloodrazor.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 24,
-      "name": "[유성] 별 수호자 니코",
-      "url": "https://lolchess.gg/builder/guide/dbec6431fb26a9d9858893eb1e6d38527e59aee2?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "렐",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rell_1752221423-Rell.jpg",
-          "items": []
-        },
-        {
-          "name": "신드라",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBESyndra_1752222146-Syndra.jpg",
-          "items": []
-        },
-        {
-          "name": "잔나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
-          "items": []
-        },
-        {
-          "name": "니코",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Neeko_1752221264-Neeko.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "ArchangelsStaff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            }
-          ]
-        },
-        {
-          "name": "스웨인",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "Crownguard",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Crownguard.png"
-            }
-          ]
-        },
-        {
-          "name": "아리",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ahri_1752223774-Ahri.jpg",
-          "items": [
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            },
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "라이즈",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Ryze_1752221287-Ryze.jpg",
-          "items": []
-        },
-        {
-          "name": "뽀삐",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Poppy_1752221894-Poppy.jpg",
-          "items": []
-        },
-        {
-          "name": "세라핀",
+          "name": "리 신",
           "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Seraphine_1752222098-Seraphine.jpg",
-          "items": [
-            {
-              "name": "AdaptiveHelm",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_AdaptiveHelm.png"
-            },
-            {
-              "name": "Morellonomicon",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Morellonomicon.png"
-            },
-            {
-              "name": "StatikkShiv",
-              "image": "https://ddragon.leagueoflegends.com/cdn/15.13.1/img/tft-item/TFT_Item_StatikkShiv.png"
-            }
-          ]
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
+          "items": []
+        },
+        {
+          "name": "브라움",
+          "cost": 5,
+          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
+          "items": []
         }
       ]
     },
     {
-      "index": 25,
-      "name": "[9,000볼트] 케넨",
-      "url": "https://lolchess.gg/builder/guide/280f614b8c08c744143a06e76058c664f320c073?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "루시안",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Lucian_1752221434-Lucian.jpg",
-          "items": []
-        },
-        {
-          "name": "아트록스",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEAatrox_1752222166-Aatrox.jpg",
-          "items": []
-        },
-        {
-          "name": "케넨",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Kennen_1752222446-Kennen.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "갱플랭크",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Gangplank_1752221201-Gangplank.jpg",
-          "items": []
-        },
-        {
-          "name": "잔나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
-          "items": []
-        },
-        {
-          "name": "다리우스",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Darius_1752221274-Darius.jpg",
-          "items": []
-        },
-        {
-          "name": "세나",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Senna_1752221948-Senna.jpg",
-          "items": []
-        },
-        {
-          "name": "자르반 4세",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/JarvanIV_1752222273-JarvanIV.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 26,
+      "index": 32,
       "name": "[지표면의 거인] 말파이트",
-      "url": "https://lolchess.gg/builder/guide/d5f501990e25b1d8c1818af6cf162d64e4dfb8db?type=guide",
+      "url": "https://lolchess.gg/builder/guide/4ae26fc22739b535335e96953da287c085ba33f0?type=guide",
       "hot": false,
       "units": [
         {
           "name": "말파이트",
           "cost": 1,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEMalphite_1752221500-Malphite.jpg",
-          "items": [
-            {
-              "name": "JeweledGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            },
-            {
-              "name": "UnstableConcoction",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "시비르",
           "cost": 1,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Sivir_1752222107-Sivir.jpg",
-          "items": [
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            },
-            {
-              "name": "SpearOfShojin",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "라칸",
@@ -2672,20 +1897,7 @@
           "name": "쉔",
           "cost": 2,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/Shen_1752222015-Shen.jpg",
-          "items": [
-            {
-              "name": "GargoyleStoneplate",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            },
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            }
-          ]
+          "items": []
         },
         {
           "name": "잔나",
@@ -2709,303 +1921,6 @@
           "name": "트위스티드 페이트",
           "cost": 5,
           "icon": "https://cdn.lolchess.gg/upload/images/champions/TwistedFate_1752222523-TwistedFate.jpg",
-          "items": []
-        }
-      ]
-    },
-    {
-      "index": 27,
-      "name": "[의자를 던지세요!] 문도",
-      "url": "https://lolchess.gg/builder/guide/fa9e800f20c0d3a594af9402d08f8b66a32c6a82?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "나르",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGnar_1752221207-Gnar.jpg",
-          "items": []
-        },
-        {
-          "name": "나피리",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Naafiri_1752221225-Naafiri.jpg",
-          "items": []
-        },
-        {
-          "name": "문도 박사",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/DrMundo_1752223940-DrMundo.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "바이",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Vi_1752221533-Vi.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            }
-          ]
-        },
-        {
-          "name": "우디르",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Udyr_1752222192-Udyr.jpg",
-          "items": []
-        },
-        {
-          "name": "볼리베어",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
-          "items": []
-        },
-        {
-          "name": "세트",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Sett_1752221956-Sett.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
-        },
-        {
-          "name": "리 신",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/LeeSin_1752221994-LeeSin.jpg",
-          "items": []
-        },
-        {
-          "name": "브라움",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
-          "items": []
-        }
-      ]
-    },
-    {
-      "index": 28,
-      "name": "[운동장의 정의] 가렌",
-      "url": "https://lolchess.gg/builder/guide/9885c881c76e7eafb8acd543849bbaa0d9ae9424?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "가렌",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEGaren_1752221162-Garen.jpg",
-          "items": [
-            {
-              "name": "Bloodthirster",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png"
-            },
-            {
-              "name": "TitansResolve",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png"
-            },
-            {
-              "name": "SteraksGage",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png"
-            }
-          ]
-        },
-        {
-          "name": "이즈리얼",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/PBEEzreal_1752222249-Ezreal.jpg",
-          "items": []
-        },
-        {
-          "name": "라칸",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rakan_1752221301-Rakan.jpg",
-          "items": []
-        },
-        {
-          "name": "잔나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Janna_1752222308-Janna.jpg",
-          "items": []
-        },
-        {
-          "name": "카타리나",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Katarina_1752222433-Katarina.jpg",
-          "items": []
-        },
-        {
-          "name": "제이스",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Jayce_1752222315-Jayce.jpg",
-          "items": []
-        },
-        {
-          "name": "레오나",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Leona_1752221411-Leona.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
-        },
-        {
-          "name": "유미",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Yuumi_1752222238-Yuumi.jpg",
-          "items": [
-            {
-              "name": "BlueBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BlueBuff.png"
-            },
-            {
-              "name": "HextechGunblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_HextechGunblade.png"
-            },
-            {
-              "name": "RabadonsDeathcap",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RabadonsDeathcap.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "index": 29,
-      "name": "[황혼 강습] 쉔",
-      "url": "https://lolchess.gg/builder/guide/b76e251c7e54ebdaee733d5e0bd5a3757e0ef7f5?type=guide",
-      "hot": false,
-      "units": [
-        {
-          "name": "렐",
-          "cost": 1,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Rell_1752221423-Rell.jpg",
-          "items": []
-        },
-        {
-          "name": "쉔",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Shen_1752222015-Shen.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "HextechGunblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_HextechGunblade.png"
-            }
-          ]
-        },
-        {
-          "name": "신 짜오",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/XinZhao_1752222130-XinZhao.jpg",
-          "items": [
-            {
-              "name": "RedBuff",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png"
-            },
-            {
-              "name": "SpectralGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png"
-            },
-            {
-              "name": "WarmogsArmor",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png"
-            }
-          ]
-        },
-        {
-          "name": "자야",
-          "cost": 2,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Xayah_1752222282-Xayah.jpg",
-          "items": [
-            {
-              "name": "GuinsoosRageblade",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png"
-            },
-            {
-              "name": "InfinityEdge",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png"
-            },
-            {
-              "name": "PowerGauntlet",
-              "image": "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png"
-            }
-          ]
-        },
-        {
-          "name": "스웨인",
-          "cost": 3,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Swain_1752222090-Swain.jpg",
-          "items": []
-        },
-        {
-          "name": "레오나",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Leona_1752221411-Leona.jpg",
-          "items": []
-        },
-        {
-          "name": "볼리베어",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Volibear_1752221633-Volibear.jpg",
-          "items": []
-        },
-        {
-          "name": "사미라",
-          "cost": 4,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Samira_1752221829-Samira.jpg",
-          "items": []
-        },
-        {
-          "name": "브라움",
-          "cost": 5,
-          "icon": "https://cdn.lolchess.gg/upload/images/champions/Braum_1752221939-Braum.jpg",
           "items": []
         }
       ]

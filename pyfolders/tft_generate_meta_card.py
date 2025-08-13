@@ -5,6 +5,21 @@ from io import BytesIO
 import math
 import json
 
+# ===== 폰트: 프로젝트 폴더 내 fonts/ 사용 =====
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# 예) pyfolders/fonts/NanumSquareRoundB.ttf
+FONT_PATH = os.path.join(SCRIPT_DIR, "fonts", "NanumSquareRoundB.ttf")
+
+def get_font(size=13):
+    try:
+        return ImageFont.truetype(FONT_PATH, size)
+    except Exception as e:
+        print(f"[경고] 폰트 로드 실패: {e}\n -> {FONT_PATH} 경로를 확인하거나 폰트를 넣어주세요.")
+        # 마지막 수단: 기본 폰트
+        return ImageFont.load_default()
+
+FONT = get_font(13)
+
 # 유닛 테두리 색상 (코스트 기준)
 COST_COLOR = {
     1: (132, 137, 153),
@@ -18,8 +33,6 @@ UNIT_SIZE = 100
 ITEM_SIZE = UNIT_SIZE // 3
 PADDING = 10
 MAX_COLS = 5
-FONT_PATH = "C:/Windows/Fonts/malgun.ttf"
-FONT = ImageFont.truetype(FONT_PATH, 13)
 
 def load_image_from_url(url, size=None, rounded=False):
     response = requests.get(url)
@@ -75,8 +88,8 @@ def generate_meta_card(meta_data, output_dir="tft_meta_images"):
             item_y = y + UNIT_SIZE + 2
             card.paste(item_img, (item_x, item_y), item_img)
 
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    full_output_dir = os.path.join(script_dir, output_dir)
+    # 출력 폴더도 스크립트 기준 상대경로 (pyfolders/tft_meta_images)
+    full_output_dir = os.path.join(SCRIPT_DIR, output_dir)
     os.makedirs(full_output_dir, exist_ok=True)
 
     output_path = os.path.join(full_output_dir, f"meta_card_{index}.png")
@@ -85,9 +98,8 @@ def generate_meta_card(meta_data, output_dir="tft_meta_images"):
     return output_path
 
 def generate_all_meta_cards():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(script_dir, "tft_meta.json")
-    output_dir = os.path.join(script_dir, "tft_meta_images")
+    json_path = os.path.join(SCRIPT_DIR, "tft_meta.json")
+    output_dir = os.path.join(SCRIPT_DIR, "tft_meta_images")
 
     # 기존 이미지 삭제
     if os.path.exists(output_dir):
