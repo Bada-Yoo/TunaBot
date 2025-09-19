@@ -26,6 +26,7 @@ from tft_update_metadetail import crawl_detail_info
 from tft_generate_meta_card import generate_all_meta_cards
 
 from event1 import EVENT_TITLE, EVENT_TEXT
+import datetime
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -262,23 +263,47 @@ async def slash_help(interaction: discord.Interaction):
 @tree.command(name="서버", description="봇이 들어가 있는 서버 목록과 인원수를 확인합니다.")
 @app_commands.check(is_admin)
 async def slash_server_info(interaction: discord.Interaction):
-    if not client.guilds:
+    guilds = sorted(
+    interaction.client.guilds,
+    key=lambda g: g.me.joined_at or datetime.datetime.min
+)
+
+    if not guilds:
         await interaction.response.send_message("🤖 봇이 현재 어떤 서버에도 들어가 있지 않습니다.", ephemeral=True)
         return
 
-    embed = discord.Embed(
-        title="📂 현재 접속 중인 서버 목록",
-        color=discord.Color.blurple()
-    )
-
-    for guild in client.guilds:
-        embed.add_field(
-            name=guild.name,
-            value=f"👥 {guild.member_count}명",
-            inline=False
+    chunk_size = 25
+    for i in range(0, len(guilds), chunk_size):
+        chunk = guilds[i:i + chunk_size]
+        embed = discord.Embed(
+            title=f"📂 현재 접속 중인 서버 목록 ({i + 1}~{i + len(chunk)} / {len(guilds)})",
+            color=discord.Color.blurple()
         )
 
-    await interaction.response.send_message(embed=embed, ephemeral=True)
+        for g in chunk:
+            owner = g.owner
+            owner_text = (
+                f"`{g.owner_id}`" if not g.owner
+                else f"{g.owner.name}#{g.owner.discriminator} (`{g.owner.id}`)"
+            )
+            joined_at = g.me.joined_at.strftime("%Y-%m-%d %H:%M") if g.me.joined_at else "알 수 없음"
+            embed.add_field(
+                name=g.name,
+                value=(
+                    f"👥 **{g.member_count}명**\n"
+                    f"👑 {owner_text}\n"
+                    f"⏱ {joined_at}"
+                ),
+                inline=False
+            )
+
+        if i == 0:
+            await interaction.response.send_message(embed=embed, ephemeral=True)
+        else:
+            await interaction.followup.send(embed=embed, ephemeral=True)
+
+
+
 
 @tree.command(
     name="이벤트",
@@ -294,6 +319,21 @@ async def slash_event(interaction: discord.Interaction):
 
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
+class 참치(app_commands.Group):
+    @app_commands.command(name="서버", description="참치봇이 들어간 서버 수와 총 유저 수를 확인합니다.")
+    async def 서버(self, interaction: discord.Interaction):
+        guilds = interaction.client.guilds
+        total_servers = len(guilds)
+        total_members = sum(g.member_count for g in guilds)
+
+        await interaction.response.send_message(
+            f"📊 **참치봇 현황**\n"
+            f"• 서버 수: **{total_servers}개**\n"
+            f"• 총 유저 수: **{total_members:,}명**",
+            ephemeral=True
+        )
+
+
 # 그룹 등록
 @client.event
 async def setup_hook():
@@ -301,6 +341,7 @@ async def setup_hook():
     tree.add_command(롤체(name="롤체"))
     tree.add_command(발로(name="발로"))
     tree.add_command(익명(name="익명")) 
+    tree.add_command(참치(name="참치"))
     await tree.sync()
 
 client.run(TOKEN)
