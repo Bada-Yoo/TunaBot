@@ -27,6 +27,7 @@ from tft_generate_meta_card import generate_all_meta_cards
 
 from event1 import EVENT_TITLE, EVENT_TEXT
 import datetime
+from debug import log_reaction_simple, handle_raw_reaction_add
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -73,7 +74,7 @@ async def on_interaction(interaction: discord.Interaction):
             options = interaction.data.get("options", [])
             args_text = extract_options(options)
             full_command = f"/{group_name + ' ' if group_name else ''}{command_name} {args_text}".strip()
-            await admin.send(f"👤 {user} ({user.id})\n💬 {full_command}")
+            await admin.send(f"{user} ({user.id})\n{full_command}")
         except Exception as e:
             print(f"⚠️ 관리자 DM 전송 실패: {e}")
 
@@ -177,8 +178,11 @@ class 익명(app_commands.Group):
 
 # 반응 이모지 이벤트
 @client.event
-async def on_reaction_add(reaction, user):
-    await handle_valorant_refresh(reaction, user, client)
+async def on_raw_reaction_add(payload: discord.RawReactionActionEvent):
+    # 필요하면 발로란트 새로고침 콜백 연결
+    await handle_raw_reaction_add(client, payload, refresh_cb=handle_valorant_refresh)
+
+
 
 # 스팀 명령어
 @tree.command(name="스팀정보", description="스팀 게임 정보를 조회합니다.")

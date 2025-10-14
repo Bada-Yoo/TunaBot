@@ -2,6 +2,8 @@ import discord
 import random
 from urllib.parse import quote
 from discord.ext import commands
+from debug import log_reaction_simple, handle_raw_reaction_add
+
 
 # 총기 이미지 경로 (GitHub raw)
 GITHUB_BASE_URL = "https://raw.githubusercontent.com/Bada-Yoo/TunaBot/refs/heads/main/pyfolders/gun_images/"
@@ -50,8 +52,6 @@ async def send_random_weapon(interaction: discord.Interaction, category: str, la
 
 # 리액션으로 새 무기 갱신
 async def handle_valorant_refresh(reaction, user, bot):
-    print(f"[DEBUG] 리액션 감지됨: {reaction.emoji} by {user.name}")
-
     if user.bot or str(reaction.emoji) != "🔁":
         return
 
@@ -98,11 +98,12 @@ intents.reactions = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-
-
-
-
-# 리액션 이벤트 핸들러 등록
 @bot.event
 async def on_reaction_add(reaction, user):
+    log_reaction_simple(reaction, user)
     await handle_valorant_refresh(reaction, user, bot)
+
+@bot.event
+async def on_raw_reaction_add(payload: discord.RawReactionActionEvent):
+    await handle_raw_reaction_add(bot, payload, refresh_cb=handle_valorant_refresh)
+
