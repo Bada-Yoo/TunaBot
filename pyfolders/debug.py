@@ -132,16 +132,6 @@ async def handle_raw_reaction_add(
         log_text = f"[서버] {guild_name} | {user}\n{preview} | {emoji_str}"
         print(log_text)
 
-        # 관리자 DM 발송
-        if ADMIN_ID:
-            try:
-                admin = await client.fetch_user(ADMIN_ID)
-                await admin.send(log_text)
-            except discord.Forbidden:
-                print("⚠️ 관리자 DM 전송 실패 (차단 또는 DM 비허용)")
-            except Exception as e:
-                print(f"⚠️ 관리자 DM 전송 중 오류: {e}")
-
         # 선택 콜백 (예: 발로란트 새로고침)
         if callable(refresh_cb):
             class _ReactionLike:

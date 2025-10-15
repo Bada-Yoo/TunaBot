@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import discord
 import asyncio
 from discord import app_commands
+
 from anonymous import send_anonymous_channel, send_anonymous_dm, handle_anonymous_reply
 
 from lol import send_lol_stats
@@ -44,7 +45,7 @@ tree = app_commands.CommandTree(client)
 async def on_ready():
     await tree.sync()
     await client.change_presence(
-        activity=discord.Game(name="🎣TunaBot|궁금할땐 /도움말")
+        activity=discord.Game(name="🎣TunaBot| 궁금할땐 /도움말")
     )
     print(f"✅ 봇 로그인 완료: {client.user}")
 
@@ -74,7 +75,7 @@ async def on_interaction(interaction: discord.Interaction):
             options = interaction.data.get("options", [])
             args_text = extract_options(options)
             full_command = f"/{group_name + ' ' if group_name else ''}{command_name} {args_text}".strip()
-            await admin.send(f"{user} ({user.id})\n{full_command}")
+            await admin.send(f"🐳 {user} ({user.id})\n{full_command}")
         except Exception as e:
             print(f"⚠️ 관리자 DM 전송 실패: {e}")
 
