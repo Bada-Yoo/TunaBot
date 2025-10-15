@@ -26,7 +26,7 @@ from tft_update_meta import crawl_tft_meta, save_meta_json
 from tft_update_metadetail import crawl_detail_info
 from tft_generate_meta_card import generate_all_meta_cards
 
-from event1 import EVENT_TITLE, EVENT_TEXT
+from event0 import EVENT_TITLE, EVENT_TEXT
 import datetime
 from debug import log_reaction_simple, handle_raw_reaction_add
 
@@ -176,6 +176,19 @@ class 익명(app_commands.Group):
     ):
         await handle_anonymous_reply(interaction, token, message)
 
+    @app_commands.command(name="개발자", description="개발자에게 익명 건의사항을 보냅니다.")
+    @app_commands.describe(
+        message="보낼 메시지 내용"
+    )
+    async def 개발자(self, interaction: discord.Interaction, message: str):
+        try:
+            admin = await interaction.client.fetch_user(ADMIN_USER_ID)
+            await send_anonymous_dm(interaction, admin, message)
+        except Exception as e:
+            await interaction.response.send_message("⚠️ 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.", ephemeral=True)
+            print(f"익명 개발자 DM 오류: {e}")
+
+
 
 # 반응 이모지 이벤트
 @client.event
@@ -257,6 +270,10 @@ async def slash_help(interaction: discord.Interaction):
 `/익명 채널 메시지` – 현재 채널에 익명 메시지를 보냅니다.  
 `/익명 갠디 유저 메시지` – 특정 유저에게 익명 DM을 보냅니다.  
 `/익명 답장 토큰 메세지` – 받은 익명 DM에 답장합니다.
+`/익명 개발자 메세지` – 개발자에게 문의사항이나 하고싶은 익명 메세지를 보냅니다.(답장이 올지도?)
+
+**🎣 참치**  
+`/참치 서버` – 현재 참치봇의 서버와 유저수를 알 수 있습니다.  
 
 ---
 
@@ -312,7 +329,7 @@ async def slash_server_info(interaction: discord.Interaction):
 
 @tree.command(
     name="이벤트",
-    description="참치봇 v1.0.0 오픈 이벤트 안내"
+    description="현재 이벤트"
 )
 async def slash_event(interaction: discord.Interaction):
     embed = discord.Embed(
@@ -320,7 +337,7 @@ async def slash_event(interaction: discord.Interaction):
         description=EVENT_TEXT,
         color=discord.Color.pink()
     )
-    embed.set_footer(text="참치봇 v1.0.0 오픈 이벤트 🎉")
+    embed.set_footer(text="참치봇 이벤트 🎉")
 
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
@@ -331,12 +348,18 @@ class 참치(app_commands.Group):
         total_servers = len(guilds)
         total_members = sum(g.member_count for g in guilds)
 
-        await interaction.response.send_message(
-            f"📊 **참치봇 현황**\n"
-            f"• 서버 수: **{total_servers}개**\n"
-            f"• 총 유저 수: **{total_members:,}명**",
-            ephemeral=True
+        embed = discord.Embed(
+            description=(
+                f"• 서버 수: **{total_servers}개**\n"
+                f"• 총 유저 수: **{total_members:,}명**"
+            ),
+            color=discord.Color.pink()
         )
+        embed.set_author(name="🐟 TunaBot 서버 정보")
+        embed.set_footer(text="🎣 TunaBot Server | tuna.gg")
+
+        await interaction.response.send_message(embed=embed, ephemeral=False)
+
 
 
 # 그룹 등록
