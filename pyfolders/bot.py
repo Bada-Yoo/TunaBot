@@ -22,9 +22,9 @@ from valrotate import send_valorant_rotation
 
 from steamgame import send_steam_game_info
 
-from tft_update_meta import crawl_tft_meta, save_meta_json
-from tft_update_metadetail import crawl_detail_info
-from tft_generate_meta_card import generate_all_meta_cards
+from tft_generate_meta import crawl_tft_meta, save_meta_json
+from tft_generate_card import generate_all_meta_cards
+from tft_generate_metadetail import generate_meta_detail
 
 from event0 import EVENT_TITLE, EVENT_TEXT
 import datetime
@@ -45,7 +45,7 @@ tree = app_commands.CommandTree(client)
 async def on_ready():
     await tree.sync()
     await client.change_presence(
-        activity=discord.Game(name="🎣TunaBot| 궁금할땐 /도움말")
+        activity=discord.Game(name="🎣TunaBot|updated_2026-03-06")
     )
     print(f"✅ 봇 로그인 완료: {client.user}")
 
@@ -212,18 +212,21 @@ def is_admin(interaction: discord.Interaction):
 @app_commands.describe(subcommand="메타패치")
 @app_commands.check(is_admin)
 async def slash_meta_patch(interaction: discord.Interaction, subcommand: str):
-    if subcommand in ["메타패치"]:
-        await interaction.response.send_message("🔄 롤체 메타 정보를 수집 중입니다. 약 5분가량 소요됩니다.")
 
+    if subcommand == "메타패치":
+
+        await interaction.response.send_message("🔄 롤체 메타 정보를 수집 중입니다. 약 1~2분 정도 소요됩니다.")
         loop = asyncio.get_running_loop()
         data = await loop.run_in_executor(None, crawl_tft_meta)
         await loop.run_in_executor(None, save_meta_json, data)
-        await loop.run_in_executor(None, crawl_detail_info)
         await loop.run_in_executor(None, generate_all_meta_cards)
-
+        await loop.run_in_executor(None, generate_meta_detail)
         await interaction.followup.send("✅ 롤체 메타 패치 완료! 최신 카드 이미지가 생성되었습니다.")
+
     else:
-        await interaction.response.send_message("❓ 사용법: `/롤토체스 메타패치`")
+        await interaction.response.send_message(
+            "❓ 사용법: `/롤토체스 메타패치`"
+        )
 
 @tree.command(name="도움말", description="참치봇의 전체 기능을 안내합니다.")
 async def slash_help(interaction: discord.Interaction):
