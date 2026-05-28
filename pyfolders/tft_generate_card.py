@@ -36,6 +36,8 @@ ITEM_SIZE = UNIT_SIZE // 3
 PADDING = 10
 MAX_COLS = 5
 
+TRIM_OFFSET = 2
+
 # ===== 코스트 데이터 =====
 def load_cost_data():
 
@@ -232,7 +234,7 @@ def generate_meta_card(meta_data,index,output_dir="tft_meta_images"):
 def clean_meta_data(meta_list):
 
     # 1️⃣ 앞 두개 메타 제거
-    meta_list = meta_list[2:]
+    meta_list = meta_list[TRIM_OFFSET:]
 
     cleaned_meta = []
 

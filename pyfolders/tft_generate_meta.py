@@ -15,6 +15,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 BASE_URL = "https://lolchess.gg"
 META_URL = "https://lolchess.gg/meta"
 
+TRIM_OFFSET = 2
+
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -176,6 +178,9 @@ def crawl_tft_meta():
             })
 
             print("수집:", name)
+
+        # 앞 2개 메타는 무시된 항목이므로 저장 전에 제거
+        meta_list = meta_list[2:]
 
         return {
             "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

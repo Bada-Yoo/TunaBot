@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+TRIM_OFFSET = 2
 
 META_JSON = os.path.join(SCRIPT_DIR, "tft_meta.json")
 OUTPUT_JSON = os.path.join(SCRIPT_DIR, "tft_metadetail.json")
@@ -52,7 +53,7 @@ def generate_meta_detail():
     with open(META_JSON, encoding="utf-8") as f:
         data = json.load(f)
 
-    meta_list = data.get("meta", [])
+    meta_list = data.get("meta", [])[TRIM_OFFSET:]
 
     driver = create_driver()
 

@@ -2,6 +2,8 @@ import discord
 import json
 import os
 
+TRIM_OFFSET = 2
+
 
 class MetaView(discord.ui.View):
 
@@ -15,11 +17,11 @@ class MetaView(discord.ui.View):
 
     def make_embed(self):
 
-        meta = self.metas[self.page]
+        meta = self.metas[self.page]["data"]
 
         embed = discord.Embed(
-            title="롤체 현메타 추천 조합",
-            description=meta["name"],
+            title=meta["name"],
+            url=meta.get("url"),
             color=0x5CD1E5
         )
 
@@ -31,9 +33,11 @@ class MetaView(discord.ui.View):
 
     def get_file(self):
 
+        meta_index = self.metas[self.page]["index"]
+
         path = os.path.join(
             self.image_dir,
-            f"meta_card_{self.page+1}.png"
+            f"meta_card_{meta_index+1}.png"
         )
 
         return discord.File(path, filename="meta.png")
@@ -71,17 +75,12 @@ class MetaView(discord.ui.View):
     @discord.ui.button(label="상세보기", style=discord.ButtonStyle.green)
     async def detail(self, interaction: discord.Interaction, button: discord.ui.Button):
 
-        detail = self.details[self.page] if self.page < len(self.details) else None
-
-        if not detail:
-            await interaction.response.send_message(
-                "상세 정보를 찾을 수 없습니다.",
-                ephemeral=True
-            )
-            return
+        meta = self.metas[self.page]
+        detail = meta.get("detail") or self.details[meta["index"]]
 
         embed = discord.Embed(
-            title=f"{self.metas[self.page]['name']} 상세정보",
+            title=f"{meta['data']['name']} 상세정보",
+            url=detail.get("url"),
             description=detail.get("overview", "정보 없음"),
             color=0x5CD1E5
         )
@@ -92,24 +91,30 @@ class MetaView(discord.ui.View):
         await interaction.response.send_message(embed=embed)
 
 
-async def send_tft_meta_with_filter(
-        interaction,
-        metas,
-        updated_at,
-        details,
-        image_dir
-):
+class SingleMetaView(discord.ui.View):
 
-    view = MetaView(metas, details, updated_at, image_dir)
+    def __init__(self, meta, detail, updated_at):
+        super().__init__(timeout=120)
+        self.meta = meta
+        self.detail = detail
+        self.updated_at = updated_at
 
-    file = view.get_file()
-    embed = view.make_embed()
+    @discord.ui.button(label="상세보기", style=discord.ButtonStyle.green)
+    async def detail_btn(self, interaction: discord.Interaction, button: discord.ui.Button):
 
-    await interaction.response.send_message(
-        embed=embed,
-        file=file,
-        view=view
-    )
+        embed = discord.Embed(
+            title=f"{self.meta['name']} 상세정보",
+            url=self.detail.get("url"),
+            description=self.detail.get("overview", "정보 없음"),
+            color=0x5CD1E5
+        )
+
+        embed.set_author(name="🐟TunaBot 현메타 정보")
+        embed.set_footer(text=f"🐬 Updated At {self.updated_at} | tuna.gg")
+
+        await interaction.response.send_message(embed=embed)
+
+
 async def send_tft_meta(interaction: discord.Interaction, query=None):
 
     base_dir = os.path.dirname(__file__)
@@ -124,20 +129,21 @@ async def send_tft_meta(interaction: discord.Interaction, query=None):
     with open(detail_path, encoding="utf-8") as f:
         detail_data = json.load(f)
 
-    metas = meta_data.get("meta", [])
+    metas = meta_data.get("meta", [])[TRIM_OFFSET:]
     details = detail_data.get("meta_detail", [])
 
-    # 앞 두 개 제거
-    metas = metas[2:]
-    details = details[2:]
-
     updated_at = meta_data.get("updated_at", "알 수 없음")
+
+    metas_with_index = [
+        {"index": i, "data": m, "detail": details[i]}
+        for i, m in enumerate(metas)
+    ]
 
     if query is None or query.strip().lower() == "전체":
 
         name_list = [
-            f"{i+1}. {'🔥 ' if m.get('hot') else ''}{m['name']}"
-            for i, m in enumerate(metas)
+            f"{i+1}. {'🔥 ' if m['data'].get('hot') else ''}{m['data']['name']}"
+            for i, m in enumerate(metas_with_index)
         ]
 
         embed = discord.Embed(
@@ -154,42 +160,67 @@ async def send_tft_meta(interaction: discord.Interaction, query=None):
 
     keyword = query.strip()
 
+    # 숫자 검색
     if keyword.isdigit():
 
-        index = int(keyword) - 1
+        display_index = int(keyword) - 1
 
-        if 0 <= index < len(metas):
+        if display_index >= len(metas_with_index):
 
-            await send_tft_meta_with_filter(
-                interaction,
-                metas,
-                updated_at,
-                details,
-                image_dir
-            )
+            await interaction.response.send_message("❌ 해당 메타가 없습니다.")
             return
 
-    matched = [
-        m for m in metas
-        if any(keyword in u["name"] for u in m.get("units", []))
-    ]
+        meta_entry = metas_with_index[display_index]
 
-    if not matched:
+        meta = meta_entry["data"]
+        meta_index = meta_entry["index"]
+        detail = meta_entry["detail"]
 
-        embed = discord.Embed(
-            title="❌ 메타를 찾을 수 없습니다",
-            description="유닛 이름 또는 번호를 확인해주세요.",
-            color=discord.Color.red()
+        image_path = os.path.join(
+            image_dir,
+            f"meta_card_{meta_index+1}.png"
         )
 
-        await interaction.response.send_message(embed=embed)
+        file = discord.File(image_path, filename="meta.png")
+
+        embed = discord.Embed(
+            title=meta["name"],
+            url=meta.get("url"),
+            color=0x5CD1E5
+        )
+
+        embed.set_image(url="attachment://meta.png")
+        embed.set_author(name="🐟TunaBot 메타 정보")
+        embed.set_footer(text=f"🐬 Updated At {updated_at} | tuna.gg")
+
+        view = SingleMetaView(meta, detail, updated_at)
+
+        await interaction.response.send_message(
+            embed=embed,
+            file=file,
+            view=view
+        )
+
         return
 
-    await send_tft_meta_with_filter(
-        interaction,
-        matched,
-        updated_at,
-        details,
-        image_dir
+    # 챔피언 검색
+    metas_filtered = [
+        m for m in metas_with_index
+        if any(keyword in u["name"] for u in m["data"].get("units", []))
+    ]
+
+    if not metas_filtered:
+
+        await interaction.response.send_message("❌ 메타를 찾을 수 없습니다.")
+        return
+
+    view = MetaView(metas_filtered, details, updated_at, image_dir)
+
+    file = view.get_file()
+    embed = view.make_embed()
+
+    await interaction.response.send_message(
+        embed=embed,
+        file=file,
+        view=view
     )
-        
