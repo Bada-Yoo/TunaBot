@@ -92,7 +92,6 @@ async def handle_valorant_refresh(reaction, user, bot):
 
 # 봇 설정 (intents 필수)
 intents = discord.Intents.default()
-intents.message_content = True
 intents.messages = True
 intents.reactions = True
 

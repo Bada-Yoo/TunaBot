@@ -35,7 +35,6 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 ADMIN_USER_ID = int(os.getenv("DISCORD_ADMIN_ID"))
 
 intents = discord.Intents.default()
-intents.message_content = True
 intents.reactions = True
 intents.messages = True
 client = discord.Client(intents=intents)
