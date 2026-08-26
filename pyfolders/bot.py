@@ -44,7 +44,7 @@ tree = app_commands.CommandTree(client)
 async def on_ready():
     await tree.sync()
     await client.change_presence(
-        activity=discord.Game(name="🎣TunaBot|updated_2026-06-21")
+        activity=discord.Game(name="🎣롤체18시즌 업뎃!|updated_2026-08-26")
     )
     print(f"✅ 봇 로그인 완료: {client.user}")
 

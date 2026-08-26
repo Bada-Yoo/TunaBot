@@ -1,12 +1,21 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 import requests
+from bs4 import BeautifulSoup
 from io import BytesIO
 import math
 import json
 
 # ===== 설정 =====
-SEASON_PREFIX = "TFT16"
+LOLCHESS_SET = "set18"
+LOLCHESS_CHAMPION_URL = f"https://lolchess.gg/champions/{LOLCHESS_SET}"
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 Chrome/131.0 Safari/537.36"
+    )
+}
 
 # ===== 경로 =====
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -14,20 +23,23 @@ FONT_PATH = os.path.join(SCRIPT_DIR, "fonts", "NanumSquareRoundB.ttf")
 
 # ===== 폰트 =====
 def get_font(size=13):
+
     try:
         return ImageFont.truetype(FONT_PATH, size)
+
     except:
         return ImageFont.load_default()
+
 
 FONT = get_font(13)
 
 # ===== 코스트 색 =====
 COST_COLOR = {
-    1: (132,137,153),
-    2: (17,178,136),
-    3: (32,122,199),
-    4: (196,64,218),
-    5: (255,185,59)
+    1: (132, 137, 153),
+    2: (17, 178, 136),
+    3: (32, 122, 199),
+    4: (196, 64, 218),
+    5: (255, 185, 59)
 }
 
 # ===== 카드 설정 =====
@@ -38,77 +50,170 @@ MAX_COLS = 5
 
 TRIM_OFFSET = 2
 
-# ===== 코스트 데이터 =====
+
+# =========================================================
+# 롤체지지 SET18 코스트 데이터
+# =========================================================
 def load_cost_data():
 
-    url = "https://raw.communitydragon.org/latest/cdragon/tft/ko_kr.json"
+    print(f"롤체지지 {LOLCHESS_SET.upper()} 코스트 데이터 로드 중...")
 
     try:
-        data = requests.get(url,timeout=10).json()
-    except:
-        print("코스트 데이터 로드 실패")
+
+        response = requests.get(
+            LOLCHESS_CHAMPION_URL,
+            headers=HEADERS,
+            timeout=20
+        )
+
+        response.raise_for_status()
+
+        soup = BeautifulSoup(
+            response.text,
+            "html.parser"
+        )
+
+        script = soup.find(
+            "script",
+            id="__NEXT_DATA__"
+        )
+
+        if not script:
+            print("❌ __NEXT_DATA__를 찾을 수 없습니다.")
+            return {}
+
+        data = json.loads(script.string)
+
+    except Exception as e:
+
+        print("❌ 롤체지지 코스트 데이터 로드 실패")
+        print(e)
+
         return {}
+
 
     cost_map = {}
 
-    for setdata in data.get("setData",[]):
 
-        for champ in setdata.get("champions",[]):
+    # ===== JSON 재귀 탐색 =====
+    def walk(obj):
 
-            api = champ.get("apiName")
-            cost = champ.get("cost")
+        if isinstance(obj, dict):
 
-            if not api or cost is None:
-                continue
+            name = obj.get("name")
+            key = obj.get("key")
+            cost = obj.get("cost")
 
-            cost_map[api] = cost
+            # 챔피언 데이터인지 확인
+            if (
+                isinstance(name, str)
+                and isinstance(key, str)
+                and isinstance(cost, list)
+                and len(cost) > 0
+                and isinstance(cost[0], int)
+                and 1 <= cost[0] <= 5
+            ):
+
+                # set18 페이지 내부에 포함된
+                # 이전 Set17 데이터 제외
+                if not key.startswith("Set17"):
+
+                    clean_name = name.strip()
+                    unit_cost = cost[0]
+
+                    cost_map[clean_name] = unit_cost
+
+            # 하위 데이터 탐색
+            for value in obj.values():
+                walk(value)
+
+        elif isinstance(obj, list):
+
+            for value in obj:
+                walk(value)
+
+
+    walk(data)
+
+    print(
+        f"✅ {LOLCHESS_SET.upper()} "
+        f"코스트 데이터 {len(cost_map)}개 로드"
+    )
 
     return cost_map
 
+
+# 프로그램 시작 시 한 번만 로드
 COST_MAP = load_cost_data()
 
-# ===== 아이콘에서 챔피언 이름 추출 =====
-def get_champion_api_name(icon_url):
 
-    if not icon_url:
-        return None
-
-    try:
-
-        filename = icon_url.split("/")[-1]
-
-        name = filename.split("-")[-1].replace(".jpg","")
-
-        return f"{SEASON_PREFIX}_{name}"
-
-    except:
-        return None
-
-# ===== 이미지 로딩 =====
-def load_image_from_url(url,size=None,rounded=False):
+# =========================================================
+# 이미지 로딩
+# =========================================================
+def load_image_from_url(url, size=None, rounded=False):
 
     try:
-        r = requests.get(url,timeout=10)
-        img = Image.open(BytesIO(r.content)).convert("RGBA")
-    except:
-        img = Image.new("RGBA",(UNIT_SIZE,UNIT_SIZE),(200,200,200,255))
+
+        r = requests.get(
+            url,
+            headers=HEADERS,
+            timeout=10
+        )
+
+        r.raise_for_status()
+
+        img = Image.open(
+            BytesIO(r.content)
+        ).convert("RGBA")
+
+    except Exception as e:
+
+        print(f"⚠️ 이미지 로드 실패: {url}")
+        print(e)
+
+        img = Image.new(
+            "RGBA",
+            (UNIT_SIZE, UNIT_SIZE),
+            (200, 200, 200, 255)
+        )
 
     if size:
-        img = img.resize(size,Image.Resampling.LANCZOS)
+
+        img = img.resize(
+            size,
+            Image.Resampling.LANCZOS
+        )
 
     if rounded:
 
-        mask = Image.new("L",img.size,0)
+        mask = Image.new(
+            "L",
+            img.size,
+            0
+        )
+
         draw = ImageDraw.Draw(mask)
-        draw.rounded_rectangle([(0,0),img.size],radius=12,fill=255)
+
+        draw.rounded_rectangle(
+            [(0, 0), img.size],
+            radius=12,
+            fill=255
+        )
+
         img.putalpha(mask)
 
     return img
 
-# ===== 테두리 =====
-def draw_unit_border(draw,box,cost):
 
-    color = COST_COLOR.get(cost,(0,0,0))
+# =========================================================
+# 유닛 테두리
+# =========================================================
+def draw_unit_border(draw, box, cost):
+
+    color = COST_COLOR.get(
+        cost,
+        (0, 0, 0)
+    )
 
     draw.rounded_rectangle(
         box,
@@ -117,90 +222,207 @@ def draw_unit_border(draw,box,cost):
         radius=12
     )
 
-# ===== 이름 =====
-def draw_unit_name_inside(card,x,y,name):
+
+# =========================================================
+# 유닛 이름
+# =========================================================
+def draw_unit_name_inside(card, x, y, name):
 
     draw = ImageDraw.Draw(card)
 
-    text_x = x+4
-    text_y = y+UNIT_SIZE-20
+    text_x = x + 4
+    text_y = y + UNIT_SIZE - 20
 
-    for dx,dy in [(-1,0),(1,0),(0,-1),(0,1)]:
-        draw.text((text_x+dx,text_y+dy),name,fill="black",font=FONT)
+    # 검은 외곽선
+    for dx, dy in [
+        (-1, 0),
+        (1, 0),
+        (0, -1),
+        (0, 1)
+    ]:
 
-    draw.text((text_x,text_y),name,fill="white",font=FONT)
+        draw.text(
+            (text_x + dx, text_y + dy),
+            name,
+            fill="black",
+            font=FONT
+        )
 
-# ===== 아이템 =====
+    # 흰 글씨
+    draw.text(
+        (text_x, text_y),
+        name,
+        fill="white",
+        font=FONT
+    )
+
+
+# =========================================================
+# 아이템 URL
+# =========================================================
 def get_item_url(item):
 
-    if isinstance(item,str):
+    if isinstance(item, str):
         return item
 
-    if isinstance(item,dict):
+    if isinstance(item, dict):
         return item.get("image")
 
     return None
 
-# ===== 카드 생성 =====
-def generate_meta_card(meta_data,index,output_dir="tft_meta_images"):
 
-    units = meta_data.get("units",[])
+# =========================================================
+# 카드 생성
+# =========================================================
+def generate_meta_card(
+    meta_data,
+    index,
+    output_dir="tft_meta_images"
+):
 
-    rows = math.ceil(len(units)/MAX_COLS)
+    units = meta_data.get(
+        "units",
+        []
+    )
 
-    card_width = MAX_COLS*(UNIT_SIZE+PADDING)+PADDING
-    unit_block_height = UNIT_SIZE+ITEM_SIZE+PADDING
-    card_height = rows*unit_block_height+PADDING*2
+    rows = math.ceil(
+        len(units) / MAX_COLS
+    )
+
+    card_width = (
+        MAX_COLS
+        * (UNIT_SIZE + PADDING)
+        + PADDING
+    )
+
+    unit_block_height = (
+        UNIT_SIZE
+        + ITEM_SIZE
+        + PADDING
+    )
+
+    card_height = (
+        rows
+        * unit_block_height
+        + PADDING * 2
+    )
 
     card = Image.new(
         "RGBA",
-        (card_width,card_height),
-        (255,255,255,255)
+        (
+            card_width,
+            card_height
+        ),
+        (
+            255,
+            255,
+            255,
+            255
+        )
     )
 
     draw = ImageDraw.Draw(card)
 
-    for i,unit in enumerate(units):
 
-        row = i//MAX_COLS
-        col = i%MAX_COLS
+    # =====================================================
+    # 유닛 생성
+    # =====================================================
+    for i, unit in enumerate(units):
 
-        x = PADDING + col*(UNIT_SIZE+PADDING)
-        y = PADDING + row*unit_block_height
+        row = i // MAX_COLS
+        col = i % MAX_COLS
+
+        x = (
+            PADDING
+            + col
+            * (UNIT_SIZE + PADDING)
+        )
+
+        y = (
+            PADDING
+            + row
+            * unit_block_height
+        )
+
+        # ===== 유닛 이름 =====
+
+        name = unit.get(
+            "name",
+            ""
+        ).strip()
+
+        # ===== 유닛 이미지 =====
 
         icon = unit.get("icon")
 
         unit_img = load_image_from_url(
             icon,
-            size=(UNIT_SIZE,UNIT_SIZE),
+            size=(
+                UNIT_SIZE,
+                UNIT_SIZE
+            ),
             rounded=True
         )
 
-        card.paste(unit_img,(x,y),unit_img)
+        card.paste(
+            unit_img,
+            (x, y),
+            unit_img
+        )
 
-        # ===== cost lookup =====
 
-        api_name = get_champion_api_name(icon)
+        # =================================================
+        # 코스트 조회
+        # =================================================
 
-        cost = COST_MAP.get(api_name,0)
+        cost = COST_MAP.get(
+            name,
+            0
+        )
+
+        if cost == 0:
+
+            print(
+                f"⚠️ 코스트 찾기 실패: {name}"
+            )
+
+
+        # ===== 코스트 테두리 =====
 
         draw_unit_border(
             draw,
-            (x,y,x+UNIT_SIZE,y+UNIT_SIZE),
+            (
+                x,
+                y,
+                x + UNIT_SIZE,
+                y + UNIT_SIZE
+            ),
             cost
         )
+
+
+        # ===== 유닛 이름 =====
 
         draw_unit_name_inside(
             card,
             x,
             y,
-            unit.get("name","?")
+            name or "?"
         )
 
-        # 아이템
-        items = unit.get("items",[])
 
-        for j,item in enumerate(items[:3]):
+        # =================================================
+        # 아이템
+        # =================================================
+
+        items = unit.get(
+            "items",
+            []
+        )
+
+        for j, item in enumerate(
+            items[:3]
+        ):
 
             url = get_item_url(item)
 
@@ -209,17 +431,46 @@ def generate_meta_card(meta_data,index,output_dir="tft_meta_images"):
 
             item_img = load_image_from_url(
                 url,
-                size=(ITEM_SIZE,ITEM_SIZE)
+                size=(
+                    ITEM_SIZE,
+                    ITEM_SIZE
+                )
             )
 
-            item_x = x + j*ITEM_SIZE
-            item_y = y + UNIT_SIZE + 2
+            item_x = (
+                x
+                + j * ITEM_SIZE
+            )
 
-            card.paste(item_img,(item_x,item_y),item_img)
+            item_y = (
+                y
+                + UNIT_SIZE
+                + 2
+            )
 
+            card.paste(
+                item_img,
+                (
+                    item_x,
+                    item_y
+                ),
+                item_img
+            )
+
+
+    # =====================================================
     # 저장
-    full_output_dir = os.path.join(SCRIPT_DIR,output_dir)
-    os.makedirs(full_output_dir,exist_ok=True)
+    # =====================================================
+
+    full_output_dir = os.path.join(
+        SCRIPT_DIR,
+        output_dir
+    )
+
+    os.makedirs(
+        full_output_dir,
+        exist_ok=True
+    )
 
     output_path = os.path.join(
         full_output_dir,
@@ -228,12 +479,19 @@ def generate_meta_card(meta_data,index,output_dir="tft_meta_images"):
 
     card.save(output_path)
 
-    print(f"카드 생성: {output_path}")
+    print(
+        f"카드 생성: {output_path}"
+    )
 
     return output_path
+
+
+# =========================================================
+# 메타 데이터 정리
+# =========================================================
 def clean_meta_data(meta_list):
 
-    # 1️⃣ 앞 두개 메타 제거
+    # 앞 두 개 메타 제거
     meta_list = meta_list[TRIM_OFFSET:]
 
     cleaned_meta = []
@@ -242,8 +500,10 @@ def clean_meta_data(meta_list):
 
         units = meta.get("units", [])
 
-        seen = set()
-        unique_units = []
+        # 첫 번째 유닛 제거
+        units = units[1:]
+
+        valid_units = []
 
         for unit in units:
 
@@ -252,43 +512,97 @@ def clean_meta_data(meta_list):
             if not name:
                 continue
 
-            if name in seen:
-                continue
+            # 중복 유닛은 그대로 유지
+            valid_units.append(unit)
 
-            seen.add(name)
-            unique_units.append(unit)
-
-        meta["units"] = unique_units
+        meta["units"] = valid_units
         cleaned_meta.append(meta)
 
     return cleaned_meta
 
-# ===== 전체 생성 =====
+
+# =========================================================
+# 전체 카드 생성
+# =========================================================
 def generate_all_meta_cards():
 
-    json_path = os.path.join(SCRIPT_DIR,"tft_meta.json")
-    output_dir = os.path.join(SCRIPT_DIR,"tft_meta_images")
+    json_path = os.path.join(
+        SCRIPT_DIR,
+        "tft_meta.json"
+    )
 
-    if os.path.exists(output_dir):
+    output_dir = os.path.join(
+        SCRIPT_DIR,
+        "tft_meta_images"
+    )
 
-        for file in os.listdir(output_dir):
 
-            if file.startswith("meta_card_") and file.endswith(".png"):
+    # ===== 기존 카드 삭제 =====
 
-                os.remove(os.path.join(output_dir,file))
+    if os.path.exists(
+        output_dir
+    ):
 
-    with open(json_path,encoding="utf-8") as f:
+        for file in os.listdir(
+            output_dir
+        ):
+
+            if (
+                file.startswith(
+                    "meta_card_"
+                )
+                and file.endswith(
+                    ".png"
+                )
+            ):
+
+                os.remove(
+                    os.path.join(
+                        output_dir,
+                        file
+                    )
+                )
+
+
+    # ===== 메타 JSON 로드 =====
+
+    with open(
+        json_path,
+        encoding="utf-8"
+    ) as f:
+
         data = json.load(f)
 
-    meta_list = data.get("meta", [])
 
-    # 🔧 meta.json 정리
-    meta_list = clean_meta_data(meta_list)
+    meta_list = data.get(
+        "meta",
+        []
+    )
 
-    for i,meta in enumerate(meta_list,start=1):
 
-        generate_meta_card(meta,i)
+    # ===== 메타 정리 =====
 
-# ===== 실행 =====
+    meta_list = clean_meta_data(
+        meta_list
+    )
+
+
+    # ===== 카드 생성 =====
+
+    for i, meta in enumerate(
+        meta_list,
+        start=1
+    ):
+
+        generate_meta_card(
+            meta,
+            i
+        )
+
+
+# =========================================================
+# 실행
+# =========================================================
 if __name__ == "__main__":
+
     generate_all_meta_cards()
